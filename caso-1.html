@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caso 1: Fala, Sistema e Poder - Portfólio para Prof. Lenita</title>
+    <style>
+        :root {
+            --primary: #003366;
+            --primary-light: #e8f0f8;
+            --accent: #2c5282;
+            --accent-light: #4a90e2;
+            --danger: #c53030;
+            --warning: #d69e2e;
+            --success: #2f855a;
+            --border: #cbd5e0;
+            --border-light: #e2e8f0;
+            --card: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15mm;
+            font-size: 10.5pt;
+        }
+        
+        .case-header {
+            text-align: center;
+            border-bottom: 4px solid #003366;
+            padding-bottom: 20pt;
+            margin-bottom: 25pt;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20pt;
+            border-radius: 8px;
+        }
+        
+        .case-number {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 8pt;
+            text-transform: uppercase;
+            letter-spacing: 1.5pt;
+        }
+        
+        .case-header h1 {
+            font-size: 20pt;
+            color: #003366;
+            margin-bottom: 2pt;
+            text-transform: none;
+            letter-spacing: normal;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .case-subtitle {
+            font-size: 14pt;
+            color: #003366;
+            font-weight: 600;
+            margin-bottom: 15pt;
+            font-style: italic;
+        }
+        
+        .case-tags {
+            margin-top: 20pt;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 4pt;
+        }
+        
+        .case-tag {
+            display: inline-block;
+            background: #003366;
+            color: white;
+            padding: 4pt 8pt;
+            border-radius: 5px;
+            font-size: 8.5pt;
+            font-weight: bold;
+            margin-right: 0;
+            margin-bottom: 8pt;
+        }
+        
+        .research-statement {
+            background: #f9f9f9;
+            padding: 15pt;
+            border-left: 4px solid #003366;
+            font-style: italic;
+            margin-bottom: 20pt;
+            text-align: justify;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        section {
+            margin-bottom: 30pt;
+            page-break-inside: avoid;
+        }
+        
+        h2 {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #003366;
+            border-bottom: 3px solid #003366;
+            padding-bottom: 5pt;
+            margin-bottom: 15pt;
+            text-transform: uppercase;
+            letter-spacing: 0.8pt;
+        }
+        
+        h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            color: #003366;
+            margin-top: 18pt;
+            margin-bottom: 10pt;
+            border-left: 5px solid #003366;
+            padding-left: 10pt;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .bias-card {
+            background: white;
+            border: 2px solid #003366;
+            border-radius: 8px;
+            padding: 15pt;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .bias-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .bias-card h4 {
+            color: #003366;
+            font-size: 10pt;
+            margin-bottom: 8pt;
+            font-weight: bold;
+        }
+        
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20pt;
+            margin: 20pt 0;
+        }
+        
+        .problem-box, .solution-box {
+            background: white;
+            border: 2px solid #003366;
+            border-radius: 8px;
+            padding: 15pt;	    
+            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
+        }
+        
+        .problem-box h3, .solution-box h3 {
+            text-align: center;
+            margin-top: 3pt;
+            border: none;
+            padding-left: 0;
+            color: #003366;
+            margin-bottom: 12pt;
+            padding-bottom: 8pt;
+            border-bottom: 1px solid #003366;
+        }
+
+        .click-hint {
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            font-size: 9pt; 
+            color: var(--accent); 
+            margin-bottom: 8pt; 
+            font-style: italic;
+        }
+        
+        .hand-icon { 
+            width: 18px; 
+            height: 18px;
+            transform: rotate(-180deg);
+            fill: var(--accent); 
+            margin: 0 2px;
+        }
+
+        .hand-icon.left { 
+            transform: rotate(90deg); 
+        }
+
+        .hand-icon.right { 
+            transform: rotate(-90deg); 
+        }
+
+        .click-hint .arrows-container {
+            display: flex;
+            align-items: center;
+            margin: 0 6px;
+        }
+
+        .image-container {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 8pt;
+            margin: 10pt 0;
+            background: #fafafa;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+        }
+
+        .image-caption {
+            font-size: 9pt;
+            color: #666;
+            margin-top: 4pt;
+            font-style: italic;
+        }
+
+        .analysis-box {
+            background: #fff; 
+            border: 1px solid var(--border);
+            padding: 12pt; 
+            border-radius: 6px; 
+            margin-top: 10pt;
+        }
+        
+        .analysis-box h4 { 
+            font-size: 10pt; 
+            text-transform: uppercase; 
+            color: var(--accent); 
+            margin-bottom: 8pt;
+            padding-bottom: 4pt;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        ul.analysis-list { 
+            margin-left: 0;
+            margin-top: 0;
+        }
+        
+        ul.analysis-list li { 
+            margin-bottom: 12pt;
+            font-size: 10pt; 
+            list-style: none;
+            padding-left: 15pt;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        ul.analysis-list li::before { 
+            content: '→'; 
+            position: absolute; 
+            left: 0; 
+            color: var(--primary); 
+        }
+
+        .error-tag {
+            display: inline-block;
+            background: #fff5f5;
+            color: var(--danger);
+            padding: 2pt 6pt;
+            border-radius: 4px;
+            font-size: 7pt;
+            font-weight: 600;
+            margin-top: 5pt;
+            margin-right: 4pt;
+            border: 1px solid #feb2b2;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: help;
+        }
+
+        .error-tag:hover {
+            background: var(--danger);
+            color: white;
+        }
+
+        .error-tag::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 75%;
+            transform: translateX(-50%);
+            background: rgba(197, 48, 48, 0.95);
+            color: white;
+            padding: 6pt 10pt;
+            border-radius: 4px;
+            font-size: 8.5pt;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+            margin-bottom: 6pt;
+        }
+
+        .error-tag:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .error-tag-after {
+            display: inline-block;
+            background: #F2FFEE;
+            color: var(--accent);
+            padding: 2pt 4pt;
+            border-radius: 4px;
+            border: 1px solid #9ae6b4;
+            font-size: 7.5pt;
+            font-weight: 600;
+            margin-top: 5pt;
+            margin-right: 4pt;
+            transition: all 0.3s ease;
+            position: relative;            
+        }
+
+        .error-tag-after:hover {
+            background: #2f855a;
+            color: white;
+        }
+
+        .error-tag-after:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .tech-term {
+            background: var(--primary-light);
+            color: var(--accent);
+            padding: 1pt 4pt;
+            border-radius: 3px;
+            font-weight: 600;
+            font-size: 9.5pt;
+            cursor: help;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .tech-term:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .tech-term::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 70%;
+            transform: translateX(-40%);
+            background: rgba(44, 82, 130, 0.95);
+            color: white;
+            padding: 6pt 10pt;
+            border-radius: 4px;
+            font-size: 8.5pt;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+            margin-bottom: 6pt;
+        }
+
+        .tech-term:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }        
+
+        .interactive-rewrite {
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20pt 0;
+            background: var(--card);
+        }
+        
+        .tab-nav { 
+            display: flex; 
+            background: var(--primary-light); 
+            border-bottom: 1px solid var(--border); 
+        }
+        
+        .tab-btn { 
+            flex: 1; 
+            padding: 10pt; 
+            border: none; 
+            background: none; 
+            cursor: pointer; 
+            font-weight: bold; 
+            color: var(--primary); 
+            transition: 0.3s; 
+            font-size: 10pt;
+        }
+        
+        .tab-btn.active { 
+            background: var(--primary); 
+            color: white; 
+        }
+        
+        .tab-content { 
+            padding: 15pt; 
+            display: none; 
+        }
+        
+        .tab-content.active { 
+            display: block; 
+        }
+        
+        .methodology-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20pt 0;
+            font-size: 9pt;
+            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
+        }
+        
+        .methodology-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            padding: 10pt;
+            border: 1px solid var(--primary-light);
+            vertical-align: middle;
+        }
+        
+        .methodology-table td {
+            padding: 8pt;
+            border: 1px solid var(--border-light);
+            vertical-align: top;
+            background: white;
+        }
+        
+        .methodology-table tr:nth-child(even) td {
+            background: #f9f9f9;
+        }
+        
+        .methodology-table .example-cell {
+            text-align: center;
+            padding: 5pt;
+        }
+        
+        .methodology-table .example-img {
+            max-width: 120px;
+            max-height: 60px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .severity-badge {
+            display: inline-block;
+            padding: 3pt 8pt;
+            border-radius: 12px;
+            font-size: 8.5pt;
+            font-weight: bold;
+            margin: 2pt;
+        }
+        
+        .critical-severity { background: #fed7d7; color: #7b341e; border: 1px solid #fc8181; }
+        .major-severity { background: #feebc8; color: #744210; border: 1px solid #f6ad55; }
+        .minor-severity { background: #c6f6d5; color: #22543d; border: 1px solid #68d391; }
+        .not-present-severity { background: #e2e8f0; color: #2d3748; border: 1px solid #a0aec0; }
+        
+        .pipeline-wrapper {
+            position: relative;
+            background: var(--card);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 30pt 50pt;
+            margin: 20pt 0;
+            overflow: hidden;
+            min-height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .pipeline-container {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            transition: transform 0.6s ease;
+        }
+        
+        .pipeline-box {
+            width: 280px;
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            padding: 20pt;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            position: absolute;
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 0.4s ease;
+        }
+        
+        .pipeline-box.active {
+            opacity: 1;
+            transform: translateX(0);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11pt;
+            font-weight: bold;
+            z-index: 3;
+        }
+        
+        .arrow-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 51, 102, 0.2);
+            color: white;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.7;
+        }
+        
+        .arrow-btn:hover {
+            background: rgba(0, 51, 102, 0.8);
+            opacity: 1;
+        }
+        
+        .arrow-btn:disabled {
+            opacity: 0.2;
+            cursor: not-allowed;
+        }
+        
+        .arrow-btn:disabled:hover {
+            background: rgba(0, 51, 102, 0.2);
+        }
+        
+        .arrow-btn.prev {
+            left: 10px;
+        }
+        
+        .arrow-btn.next {
+            right: 10px;
+        }
+
+        .csat-scale {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8pt;
+            margin: 15pt 0;
+        }
+        
+        .csat-level {
+            padding: 10pt;
+            border-radius: 6px;
+            text-align: center;
+            color: white;
+            font-size: 9pt;
+            font-weight: bold;
+        }
+        
+        .csat-5 { background: #2f855a; }
+        .csat-4 { background: #48bb78; }
+        .csat-3 { background: #ecc94b; color: #333; }
+        .csat-2 { background: #ed8936; }
+        .csat-1 { background: #c53030; }
+
+        .severity-badges {
+            display: flex;
+            gap: 8pt;
+            margin: 10pt 0;
+            flex-wrap: wrap;
+        }
+        
+        .severity-badge {
+            padding: 6pt 12pt;
+            border-radius: 20px;
+            font-size: 9pt;
+            font-weight: bold;
+        }
+        
+        .critical-badge { background: #fff5f5; color: #c53030; border: 1px solid #fc8181; }
+        .major-badge { background: #fefcbf; color: #975a16; border: 1px solid #f6e05e; }
+        .minor-badge { background: #c6f6d5; color: #22543d; border: 1px solid #9ae6b4; }
+
+        .results-vertical {
+            display: block;
+            margin: 20pt 0;
+        }
+
+        .results-vertical > div {
+            margin-bottom: 20pt;
+        }
+
+        .results-vertical > div:last-child {
+            margin-bottom: 0;
+        }
+
+        .qualitative-box, .quantitative-box, .impact-box {
+            background: white;
+            border: 2px solid #003366;
+            border-radius: 8px;
+            padding: 15pt;
+            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
+            width: 100%;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10pt;
+            margin-top: 10pt;
+        }
+        
+        .metric-card {
+            background: #f0f7ff;
+            border: 1px solid #003366;
+            border-radius: 6px;
+            padding: 10pt;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 4pt;
+        }
+        
+        .metric-label {
+            font-size: 9pt;
+            color: #666;
+        }
+        
+        .quote-box {
+            background: linear-gradient(135deg, #003366, hsl(215, 50%, 35%));
+            color: white;
+            padding: 1.75rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(31, 79, 176, 0.2);
+            margin: 1.5rem 0;
+        }
+        
+        .quote-box p {
+            font-size: 1.05rem;
+            font-weight: 500;
+            font-style: italic;
+            opacity: 0.95;
+            text-align: center;
+            margin-bottom: 0.75rem;
+            color: white;
+        }
+        
+        .quote-box .source {
+            font-size: 0.7rem;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-style: normal;
+        }
+        
+        ul {
+            margin-left: 20pt;
+            margin-top: 8pt;
+        }
+        
+        li {
+            margin-bottom: 8pt;
+            text-align: justify;
+        }
+        
+        strong {
+            color: #003366;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15pt 0;
+            font-size: 9pt;
+        }
+        
+        .data-table th {
+            background: var(--primary-light);
+            color: var(--primary);
+            font-weight: bold;
+            text-align: left;
+            padding: 8pt;
+            border: 1px solid var(--border);
+        }
+        
+        .data-table td {
+            padding: 6pt 8pt;
+            border: 1px solid var(--border-light);
+            vertical-align: top;
+        }
+        
+        .data-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+        
+        @media print {
+            body { padding: 5mm; }
+        }
+        
+        @media (max-width: 768px) {
+            .methodology-table {
+                font-size: 8pt;
+            }
+            
+            .methodology-table th,
+            .methodology-table td {
+                padding: 5pt 3pt;
+            }
+            
+            .metrics-grid, .csat-scale {
+                grid-template-columns: 1fr;
+            }
+            
+            .pipeline-wrapper {
+                padding: 20pt 40pt;
+            }
+            
+            .pipeline-box {
+                width: 240px;
+            }
+            
+            .two-columns {
+                grid-template-columns: 1fr;
+            }
+            
+            .severity-badges {
+                flex-direction: column;
+            }
+        }
+
+        .example-block {
+            margin: 10pt 0;
+            padding: 8pt;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border-left: 3px solid var(--accent);
+        }
+        
+        .example-block strong {
+            display: block;
+            margin-bottom: 4pt;
+            color: var(--accent);
+        }
+        
+        .cc-quote {		
+            background: #e3f2fd;
+            border-left: 4px solid #2c5282;
+            padding: 12pt;
+            margin: 12pt 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+		
+        }
+        
+        /* NOVOS ESTILOS PARA O CASO 1 */
+        .transformation-flow {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15pt;
+            margin: 20pt 0;
+        }
+        
+        .transformation-phase {
+            background: white;
+            border-radius: 8px;
+            padding: 15pt;
+            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
+            transition: transform 0.3s ease;
+            border-top: 5px solid;
+        }
+        
+        .transformation-phase:hover {
+            transform: translateY(-5px);
+        }
+        
+        .phase-1 { border-color: #c53030; }
+        .phase-2 { border-color: #d69e2e; }
+        .phase-3 { border-color: #2f855a; }
+        
+        .transformation-phase h4 {
+            text-align: center;
+            color: #003366;
+            margin-bottom: 10pt;
+            font-size: 11pt;
+            font-weight: bold;
+        }
+        
+        .phase-icon {
+            font-size: 24pt;
+            text-align: center;
+            margin-bottom: 10pt;
+        }
+        
+        .term-example {
+            background: #f8f9fa;
+            padding: 8pt;
+            margin: 8pt 0;
+            border-radius: 4px;
+            border-left: 3px solid;
+            font-size: 9.5pt;
+        }
+        
+        .term-before { border-left-color: #c53030; }
+        .term-during { border-left-color: #d69e2e; }
+        .term-after { border-left-color: #2f855a; }
+        
+        .vocabulary-entry {
+            background: #e8f0f8;
+            border: 1px solid #2c5282;
+            border-radius: 6px;
+            padding: 12pt;
+            margin: 15pt 0;
+            font-size: 9.5pt;
+        }
+        
+        .entry-field {
+            margin-bottom: 5pt;
+        }
+        
+        .entry-label {
+            font-weight: bold;
+            color: #2c5282;
+            display: inline-block;
+            width: 120px;
+        }
+/* Abas Antes/Durante/Depois */
+.phase-tabs {
+    display: flex;
+    margin-bottom: 0;
+    background: var(--primary-light);
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+}
+
+.phase-tab {
+    flex: 1;
+    padding: 12pt;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--primary);
+    font-size: 10pt;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.phase-tab.active {
+    color: white;
+}
+
+.phase-tab.phase-before.active { background: #003366; }
+.phase-tab.phase-during.active { background: #003366; }
+.phase-tab.phase-after.active { background: #003366; }
+
+.phase-content {
+    display: none;
+    padding: 20pt;
+    border: 2px solid;
+    border-radius: 0 0 8px 8px;
+    margin-bottom: 20pt;
+}
+
+.phase-content.active {
+    display: block;
+}
+
+.phase-content.before-phase { 
+    border-color: #c53030; 
+    background: #fff5f5;
+}
+
+.phase-content.during-phase { 
+    border-color: #d69e2e; 
+    background: #fefcbf;
+}
+
+.phase-content.after-phase { 
+    border-color: #2f855a; 
+    background: #f0fff4;
+}
+
+/* Cards de outras aplicações */
+.other-applications {
+    margin-top: 25pt;
+    padding-top: 15pt;
+    border-top: 2px dashed var(--border);
+}
+
+.toggle-applications {
+    background: var(--primary-light);
+    border: none;
+    padding: 8pt 15pt;
+    border-radius: 20px;
+    color: var(--primary);
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 9.5pt;
+    transition: all 0.3s ease;
+}
+
+.toggle-applications:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.applications-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15pt;
+    margin-top: 15pt;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.applications-grid.expanded {
+    max-height: 500px;
+}
+
+.application-card {
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    padding: 15pt;
+    transition: all 0.3s ease;
+}
+
+.application-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.application-card h4 {
+    color: var(--primary);
+    font-size: 10.5pt;
+    margin-bottom: 10pt;
+    text-align: center;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 8pt;
+}
+
+.app-problem {
+    background: #fff5f5;
+    padding: 8pt;
+    border-radius: 4px;
+    margin-bottom: 8pt;
+    border-left: 3px solid #c53030;
+}
+
+.app-solution {
+    background: #f0fff4;
+    padding: 8pt;
+    border-radius: 4px;
+    margin-bottom: 8pt;
+    border-left: 3px solid #2f855a;
+}
+
+.app-impact {
+    background: #fefcbf;
+    padding: 8pt;
+    border-radius: 4px;
+    border-left: 3px solid #d69e2e;
+}
+
+/* Indicador de fase ativa */
+.phase-indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 6pt;
+}
+
+.indicator-before { background: #c53030; }
+.indicator-during { background: #d69e2e; }
+.indicator-after { background: #2f855a; }
+
+    </style>
+</head>
+<body>
+
+    <!-- CABEÇALHO DO CASO 1 -->
+    <div class="case-header">
+        <div class="case-number">CASO 1 – PORTFÓLIO PARA PROFA. LENITA</div>
+        <h1>Da fala ao sistema:</h1>
+        <div class="case-subtitle">linguística aplicada, vocabulário controlado e taxonomia corporativa</div>
+        <div class="case-tags">
+            <span class="case-tag">Governança de Dados Linguísticos</span>
+            <span class="case-tag">Fala como Corpus</span>
+            <span class="case-tag">Taxonomia Corporativa</span>
+            <span class="case-tag">Mediação Humano-Máquina</span>
+            <span class="case-tag">Ética Terminológica</span>
+        </div>
+    </div>
+
+    <!-- BOX DE ABERTURA PERSONALIZADO -->
+    <div class="research-statement">
+        <strong>Prof. Lenita:</strong> Você me ensinou que toda mediação linguística é um ato político. Em 2020, encontrei essa política automatizada: sistemas de atendimento que não entendiam a fala real dos clientes, excluindo quem não "falava certo". Usei os conceitos de <strong>sociolinguística, terminologia e ética da tradução</strong> que aprendi com você para criar uma ponte semântica entre a linguagem viva de 30 mil operadores e clientes e a rigidez dos sistemas de IA. Este caso mostra como transformei <strong>fala espontânea em infraestrutura linguística governável</strong>.
+    </div>
+
+    <!-- SEÇÃO 1: O PROBLEMA DO RUÍDO SEMÂNTICO -->
+    <section>
+        <h2>O PROBLEMA: RUÍDO SEMÂNTICO EM ESCALA INDUSTRIAL</h2>
+        <p style="text-align: justify;">
+            Uma multinacional líder no setor de telecomunicações enfrentava um problema crítico de comunicação: <strong>sistemas de IA não entendiam a linguagem real</strong> usada por clientes e operadores. O resultado era um ciclo de frustração: clientes usavam termos coloquiais, operadores buscavam com vocabulário técnico, e o sistema retornava resultados irrelevantes. A <strong>exclusão linguística</strong> que discutimos em sala se tornava exclusão digital em escala nacional.
+        </p>
+        <br>
+        <div class="cards-grid">
+            <div class="bias-card">
+                <h4 style="font-size:12px;">Divergência Cliente-Sistema</h4>
+                <p>Cliente diz: <br> "minha conta tá caríssima"<br><br> Sistema busca: <br>"valor da fatura"<br><br><strong>Resultado:</strong> Nenhum conteúdo relevante</p>
+            </div>
+            
+            <div class="bias-card">
+                <h4 style="font-size:12px;">Pressão sobre Operadores</h4>
+                <p>30k operadores <br>(primeiro emprego)<br> sob metas agressivas, <br>sem glossário unificado. <br><br>Cada um "inventava" termos para buscar soluções.</p>
+            </div>
+            
+            <div class="bias-card">
+                <h4 style="font-size:12px;">Falha em Cascata</h4>
+                <p>Ruído semântico <br> → <br> busca ineficiente <br> → <br> escalonamento <br> → <br> custo operacional ↑ <br> → <br> satisfação ↓</p>
+            </div>
+        </div>
+        
+        <div class="image-container">
+            <div style="background: #f5f5f5; padding: 20pt; border-radius: 4px;">
+                <strong>DADOS DO <i>SPEECH ANALYTICS</I> (EXEMPLO ANONIMIZADO):</strong><br><br>
+                <div style="font-family: monospace; font-size: 9pt; text-align: left; padding: 10pt; background: white; border: 1px solid #ccc;">
+                    <strong>Transcrição de Chamada:</strong> "Oi, meu internet tá ruim desde ontem"<br>
+                    <strong>Termo Buscado pelo Operador:</strong> "queda de sinal"<br>
+                    <strong>Conteúdo Retornado pelo Sistema:</strong> "Otimização de Rede 5G"<br>
+                    <strong><i>Gap</i> semântico:</strong> "internet ruim" ≠ "queda de sinal" ≠ "otimização 5G"
+                </div>
+            </div>
+            <div class="image-caption">Exemplo real do desalinhamento entre fala natural, busca operacional e conteúdo do sistema</div>
+        </div>
+    </section>
+
+    <!-- FUNDAMENTAÇÃO TEÓRICA -->
+    <section>
+        <h2>FUNDAMENTAÇÃO TEÓRICA: DA SOCIOLINGUÍSTICA À GOVERNANÇA DE DADOS</h2>
+        
+        <p style="text-align: justify;">
+            Aplicação direta dos conceitos das suas disciplinas para criar <strong>protocolos de mediação linguística corporativa</strong>:
+        </p>
+        
+        <div class="two-columns">
+            <div class="problem-box">
+                <h3>Conceitos Teóricos Aplicados</h3>
+                <ul>
+                    <li><span class="tech-term" data-tooltip="Estudo da linguagem em seu contexto social real">Sociolinguística (Labov):</span> Variação linguística como sistema, não erro</li>
+                    <li><span class="tech-term" data-tooltip="Criação e gestão de terminologia especializada">Terminologia Corporativa:</span> Poder de nomeação e padronização</li>
+                    <li><span class="tech-term" data-tooltip="Uso de corpora reais para análise linguística">Linguística de Corpus:</span> <i>Speech analytics</i> como corpus naturalístico</li>
+                    <li><span class="tech-term" data-tooltip="Ética nas decisões sobre linguagem em sistemas">Ética da Mediação:</span> Quem é incluído/excluído por escolhas terminológicas</li>
+                    <li><span class="tech-term" data-tooltip="Recuperação de informação baseada em semântica">Information Retrieval:</span> Ponte entre necessidade informacional e sistema</li>
+                </ul>
+            </div>
+            
+            <div class="solution-box">
+                <h3>Minha Intervenção Estrutural</h3>
+                <ul>
+                    <li><strong>Análise de 500+ horas</strong> de transcrições do <i>speech analytics</i></li>
+                    <li><strong>Mapeamento semântico</strong> de 700+ termos iniciais com relações hierárquicas</li>
+                    <li><strong>Criação do Thesa</strong>, vocabulário controlado com termo preferencial, sinônimos, contexto</li>
+                    <li><strong>Mediação entre áreas</strong>: "conta" (atendimento) ↔ "fatura" (financeiro)</li>
+                    <li><strong>Implementação em sistemas</strong> de busca para melhorar recuperação</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIPÓTESE CENTRAL -->
+    <div class="research-statement" style="background: #e3f2fd; border-left-color: #2c5282;">
+        <strong>Hipótese central:</strong> O ruído semântico em ambientes corporativos de grande escala é um problema de <strong>mediação linguística não governada</strong>. A criação de vocabulários controlados baseados em <strong>corpora de fala real <span style="font-style:normal;">(speech analytics)</span></strong> pode reduzir este ruído, melhorar a recuperação de informação e promover <strong>justiça linguística</strong> em sistemas mediados por IA, desde que as decisões terminológicas sejam tomadas com consciência ética sobre inclusão e poder.
+    </div>
+
+    <!-- SEÇÃO DE METODOLOGIA -->
+    <section>
+        <h2>METODOLOGIA: DA FALA ESPONTÂNEA À TAXONOMIA CORPORATIVA</h2>
+        
+        <div class="research-statement" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-left: 4px solid #2c5282; padding: 20pt; border-radius: 0 8px 8px 0;">
+            <strong>Inovação metodológica:</strong> Transformei <strong>dados brutos de fala natural</strong> em <strong>infraestrutura semântica governável</strong>, criando um processo replicável para mediação linguística em ambientes corporativos tecnológicos.
+        </div>
+        
+        <h3>1. Pipeline de Governança Terminológica em 5 Etapas</h3>
+        
+        <div class="pipeline-wrapper">
+            <button class="arrow-btn prev" onclick="moveMethodSlide(-1)" id="methodPrevBtn" disabled>❮</button>
+            
+            <div class="pipeline-container" id="methodPipeline">
+                <!-- Box 1 -->
+                <div class="pipeline-box active" id="methodStep1">
+                    <div class="step-number">1</div>
+                    <strong style="font-size: 11pt; color: var(--primary);">Coleta de Corpus Naturalístico</strong>
+                    <p style="font-size: 9.5pt; margin-top: 8pt; color: #555;">
+                        Extração e análise de transcrições do speech analytics + logs de busca dos operadores
+                    </p>
+                </div>
+                
+                <!-- Box 2 -->
+                <div class="pipeline-box" id="methodStep2">
+                    <div class="step-number">2</div>
+                    <strong style="font-size: 11pt; color: var(--primary);">Análise de Gap Semântico</strong>
+                    <p style="font-size: 9.5pt; margin-top: 8pt; color: #555;">
+                        Identificação sistemática de divergências entre fala do cliente, busca do operador e conteúdo do sistema
+                    </p>
+                </div>
+                
+                <!-- Box 3 -->
+                <div class="pipeline-box" id="methodStep3">
+                    <div class="step-number">3</div>
+                    <strong style="font-size: 11pt; color: var(--primary);">Modelagem Terminológica</strong>
+                    <p style="font-size: 9.5pt; margin-top: 8pt; color: #555;">
+                        Criação de vocabulário controlado com relações semânticas (sinonímia, hierarquia, contexto)
+                    </p>
+                </div>
+                
+                <!-- Box 4 -->
+                <div class="pipeline-box" id="methodStep4">
+                    <div class="step-number">4</div>
+                    <strong style="font-size: 11pt; color: var(--primary);">Validação e Iteração</strong>
+                    <p style="font-size: 9.5pt; margin-top: 8pt; color: #555;">
+                        Teste com operadores, ajuste baseado em <i>feedback</i>, validação com especialistas de negócio
+                    </p>
+                </div>
+                
+                <!-- Box 5 -->
+                <div class="pipeline-box" id="methodStep5">
+                    <div class="step-number">5</div>
+                    <strong style="font-size: 11pt; color: var(--primary);">Escalonamento Corporativo</strong>
+                    <p style="font-size: 9.5pt; margin-top: 8pt; color: #555;">
+                        Expansão do vocabulário para taxonomia corporativa transversal a todas as áreas
+                    </p>
+                </div>
+            </div>
+            
+            <button class="arrow-btn next" onclick="moveMethodSlide(1)" id="methodNextBtn">❯</button>
+        </div>
+        
+        <h3>2. Sistema de Classificação: Decisões Terminológicas Éticas</h3>
+        
+        <table class="methodology-table compact">
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Dimensão Ética</th>
+                    <th style="width: 15%;">Tipo de Decisão</th>
+                    <th style="width: 20%;">Critério de Mediação</th>
+                    <th style="width: 35%;">Exemplo Concreto</th>
+                    <th style="width: 15%;">Complexidade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align: center; vertical-align: middle;"><strong>Inclusão Linguística</strong></td>
+                    <td style="text-align: center; vertical-align: middle;">Termo Preferencial vs. Variantes</td>
+                    <td style="text-align: center; vertical-align: middle;">"Qual forma inclui mais usuários sem perder precisão técnica?"</td>
+                    <td style="text-align: center; vertical-align: middle; padding: 5pt;">
+                        <div style="font-size: 9pt; padding: 8pt; background: #f5f5f5; border-radius: 4px;">
+                            <strong>Variantes Populares:</strong> "conta", "boleto", "fatura"<br>
+                            <strong>Termo Técnico:</strong> "documento de cobrança"<br>
+                            <strong>Solução:</strong> Todos como sinônimos com "documento de cobrança" como preferencial
+                        </div>
+                    </td>
+                    <td style="text-align: center; vertical-align: middle; padding: 5pt;">
+                        <span class="severity-badge critical-severity">Alta</span><br><br>
+                        <small style="font-size: 7.5pt; color: #666;">Equilíbrio inclusão-precisão</small>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td style="text-align: center; vertical-align: middle;"><strong>Poder de Nomeação</strong></td>
+                    <td style="text-align: center; vertical-align: middle;">Hierarquia Semântica</td>
+                    <td style="text-align: center; vertical-align: middle;">"Quem define a estrutura conceitual? Operadores, sistema ou gerentes?"</td>
+                    <td style="text-align: center; vertical-align: middle; padding: 5pt;">
+                        <div style="font-size: 9pt; padding: 8pt; background: #f5f5f5; border-radius: 4px;">
+                            <strong>Visão Operacional:</strong> "problema com internet"<br>
+                            <strong>Visão Técnica:</strong> "falha na conexão banda larga"<br>
+                            <strong>Solução:</strong> Hierarquia que conecta ambas perspectivas
+                        </div>
+                    </td>
+                    <td style="text-align: center; vertical-align: middle; padding: 5pt;">
+                        <span class="severity-badge major-severity">Média</span><br><br>
+                        <small style="font-size: 7.5pt; color: #666;">Negociação de perspectivas</small>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: center; vertical-align: middle;"><strong>Contextualização</strong></td>
+                    <td style="text-align: center; vertical-align: middle;">Registro e Uso</td>
+                    <td style="text-align: center; vertical-align: middle;">"Em que contexto cada variante é apropriada?"</td>
+                    <td style="text-align: center; vertical-align: middle; padding: 5pt;">
+                        <div style="font-size: 9pt; padding: 8pt; background: #f5f5f5; border-radius: 4px;">
+                            <strong>Contexto Atendimento:</strong> "minha net tá lenta"<br>
+                            <strong>Contexto Técnico:</strong> "baixa velocidade de conexão"<br>
+                            <strong>Solução:</strong> Mapeamento contextualizado entre registros
+                        </div>
+                    </td>
+                    <td style="text-align: center; vertical-align: middle; padding: 5pt;">
+                        <span class="severity-badge minor-severity">Baixa</span><br><br>
+                        <small style="font-size: 7.5pt; color: #666;">Adequação contextual</small>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: center; vertical-align: middle;"><strong>Escalabilidade</strong></td>
+                    <td style="text-align: center; vertical-align: middle;">Expansão Corporativa</td>
+                    <td style="text-align: center; vertical-align: middle;">"Como a taxonomia cresce mantendo consistência?"</td>
+                    <td style="text-align: center; vertical-align: middle; padding: 5pt;">
+                        <div style="font-size: 9pt; padding: 8pt; background: #f5f5f5; border-radius: 4px;">
+                            <strong>Área Atendimento:</strong> 700 termos iniciais<br>
+                            <strong>Expansão Corporativa:</strong> +2000 termos em 1 ano<br>
+                            <strong>Solução:</strong> Processo governado com comitê de linguagem
+                        </div>
+                    </td>
+                    <td style="text-align: center; vertical-align: middle; padding: 5pt;">
+                        <span class="severity-badge critical-severity">Alta</span><br><br>
+                        <small style="font-size: 7.5pt; color: #666;">Governança em escala</small>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="research-statement" style="background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); border-left: 4px solid #2c5282;">
+            <strong>Contribuição metodológica:</strong> Este protocolo representa a <strong>operacionalização da ética linguística corporativa</strong>. Ao vincular cada decisão terminológica a princípios éticos explícitos, criei um sistema que não apenas organiza vocabulário, mas <strong>torna visível o poder simbólico</strong> envolvido em nomeações corporativas, permitindo decisões conscientes sobre inclusão e acesso.
+        </div>
+    </section>
+
+    <!-- CASOS PARADIGMÁTICOS - ANTES / DURANTE / DEPOIS -->
+<section>
+    <h2>TRANSFORMAÇÃO TERMINOLÓGICA: ANTES, DURANTE E DEPOIS</h2>
+    
+<div class="click-hint">
+            <svg class="hand-icon" viewBox="0 0 24 24">
+                <path d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M7,9l1.41,1.41L11,7.83V16h2V7.83l2.59,2.58L17,9l-5-5L7,9z"/>
+            </svg>
+            Clique em cada etapa para ver detalhes do fluxo
+        </div>
+
+    
+    <!-- ABAS DE FASE -->
+    <div class="phase-tabs">
+        <button class="phase-tab phase-before active" onclick="openPhase('before')">
+            DIAGNÓSTICO: <br> uso real da linguagem
+        </button>
+        <button class="phase-tab phase-during" onclick="openPhase('during')">
+            ANÁLISE: <br> mediação linguística
+        </button>
+        <button class="phase-tab phase-after" onclick="openPhase('after')">
+            SISTEMA: <br> vocabulário controlado
+        </button>
+    </div>
+
+    <!-- FASE 1 -->
+    <div id="phase-before" class="phase-content active"
+         style="border-color: var(--primary); background: var(--primary-light);">
+
+        <h4 style="color: var(--primary); margin-bottom: 10pt;">
+            Evidência empírica da intenção do cliente
+        </h4>
+
+        <p style="font-size: 9.5pt; text-align:justify;">
+            A análise de <em>speech analytics</em> revelou que uma mesma intenção comunicativa
+            é expressa por meio de <strong>múltiplas formas linguísticas legítimas</strong>,
+            gerando ruído na recuperação de informação.
+        </p>
+
+        <div class="two-columns">
+
+            <!-- Placeholder do print -->
+            <div class="image-container">
+                <div class="placeholder">
+                    <img src="https://github.com/alc-etimo/profa_lenita/blob/main/caso-1-diagnostico.png?raw=true" style="width:100%;height:auto;">
+                </div>
+                <div class="image-caption">
+                    Exemplo real de verbalizações associadas <br> ao ato de solicitar fatura
+                </div>
+            </div>
+
+            <!-- Legenda -->
+            <blockquote class="cc-quote"">
+    
+                <p style="margin-top:60px; text-align:justify;">A fala do cliente expressa claramente a <strong>intenção</strong>,
+                mas a diversidade de formulações (“quero fatura”, “me manda o boleto”,
+                “cadê minha conta”) impede que o sistema reconheça
+                essas ocorrências como semanticamente equivalentes.</p>
+            </blockquote>
+
+        </div>
+
+        <div class="example-block" style="text-align:justify;">
+            <strong>Dado-chave:</strong>
+            Mais de 50 estratégias linguísticas distintas para o mesmo conceito, com baixa taxa de recuperação de <i>scripts</i> e processos relevantes para o atendimento.
+        </div>
+    </div>
+
+    <!-- FASE 2 -->
+    <div id="phase-during" class="phase-content"
+         style="border-color: var(--accent); background: #f4f8fc;">
+
+        <h4 style="color: var(--accent); margin-bottom: 10pt;">
+            Mediação linguística orientada por uso
+        </h4>
+
+        <p style="font-size: 9.5pt; style="text-align:justify;">
+            A etapa analítica não buscou eliminar variação,
+            mas <strong>compreendê-la e estruturá-la</strong>
+            como evidência linguística válida.
+        </p>
+<br>
+        <ul class="compact-list">
+            <li>Identificação de padrões recorrentes de formulação</li>
+            <li>Agrupamento semântico de variantes lexicais</li>
+            <li>Separação entre intenção comunicativa e forma superficial</li>
+        </ul>
+<br>
+        <div class="example-block" style="text-align:justify;">
+            <strong>Decisão metodológica:</strong>
+            Tratar a variação linguística como dado estruturante
+            para o sistema, e não como erro do usuário.
+        </div>
+    </div>
+
+    <!-- FASE 3 -->
+    <div id="phase-after" class="phase-content"
+         style="border-color: var(--accent-light); background: #eef5ff;">
+
+        <h4 style="color: var(--primary); margin-bottom: 10pt;">
+            Consolidação em vocabulário controlado
+        </h4>
+
+        <div class="two-columns">
+
+            <!-- Placeholder do print -->
+
+            <div class="image-container">
+<div class="click-hint" style="text-align:left; font-size:11px;">
+            <svg class="hand-icon" viewBox="0 0 24 24">
+                <path d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M7,9l1.41,1.41L11,7.83V16h2V7.83l2.59,2.58L17,9l-5-5L7,9z"/>
+            </svg>
+            Clique na imagem para vê-la em melhor resolução
+        </div>
+                <div class="placeholder">
+
+                  <a href="https://github.com/alc-etimo/profa_lenita/blob/main/caso-1-vc.png?raw=true" target="_blank;">  <img src="https://github.com/alc-etimo/profa_lenita/blob/main/caso-1-vc.png?raw=true" style="width:100%;height:auto;"></a>
+                </div>
+                <div class="image-caption">
+                    Entrada formal do conceito <br> no sistema terminológico
+                </div>
+            </div>
+
+            <!-- Legenda -->
+            <blockquote class="cc-quote">
+                <p style="margin-top:30px; text-align:justify;">Todas as variações observadas são preservadas como
+                <strong>sinônimos e termos relacionados</strong>,
+                enquanto um <strong>termo preferencial</strong>
+                organiza a escrita, a busca e a governança linguística
+                entre diferentes áreas da empresa.</p>
+            </blockquote>
+
+        </div>
+
+        <div class="vocabulary-entry">
+            <div class="entry-field">
+                <span class="entry-label">Termo preferencial:</span>
+                Fatura
+            </div>
+            <div class="entry-field">
+                <span class="entry-label">Sinônimos:</span>
+                Boleto, conta, 2ª via, cobrança, QR Code, entre outros
+            </div>
+            <div class="entry-field">
+                <span class="entry-label">Função:</span>
+                Unificação da recuperação de informação e padronização institucional
+            </div>
+        </div>
+<br>
+        <div class="example-block" style="text-align:justify;">
+            <strong>Resultado:</strong>
+            Redução do ruído semântico,
+            aumento de eficiência operacional
+            e base para criação de governança linguística corporativa.
+        </div>
+    </div>
+
+
+
+        <!-- ANÁLISE SOCIOLINGUÍSTICA (Presente em todas as fases) -->
+        <div class="analysis-box">
+            <h4>Análise Sociolinguística: Variação como Sistema, não Erro</h4>
+            <ul class="analysis-list">
+                <li><span class="tech-term" data-tooltip="Adaptação criativa a sistemas deficientes">Competência Comunicativa Sob Pressão:</span> Os 57 termos não eram "erros", mas <span class="tech-term" data-tooltip="Soluções linguísticas emergentes">estratégias lexicais criativas</span> desenvolvidas por 30.000 operadores jovens sob metas agressivas. Cada variação representava uma <span class="tech-term" data-tooltip="Tentativa de comunicação eficaz">tentativa de ponte</span> entre a necessidade do cliente e as limitações do sistema.</li>
+                <li><span class="tech-term" data-tooltip="Linguagem especializada do atendimento">Socioleto Operacional:</span> O call center desenvolveu seu próprio <span class="tech-term" data-tooltip="Variedade linguística de um grupo social">socioleto</span> com regras implícitas (uso de NEAR, exclusões NOT). Minha intervenção <span class="tech-term" data-tooltip="Reconhecer e formalizar conhecimento implícito">formalizou conhecimento tácito</span>, transformando práticas informais em governança estruturada.</li>
+                <li><span class="tech-term" data-tooltip="Inclusão linguística como justiça social">Ética da Inclusão Lexical:</span> A decisão de incluir todas as 57 variações (vs. "corrigir" para um padrão) teve <span class="tech-term" data-tooltip="Impacto humano das escolhas terminológicas">implicações éticas profundas:</span> validou a inteligência linguística dos operadores, respeitou a diversidade de expressão dos clientes, e criou sistemas que <span class="tech-term" data-tooltip="Servir às pessoas, não o contrário">servem às pessoas,</span> não o contrário.</li>
+                <li><span class="tech-term" data-tooltip="Transformação de práticas em infraestrutura">Governança como Tradução Ampliada:</span> Este caso exemplifica como a <span class="tech-term" data-tooltip="Mediação entre diferentes formas de conhecimento">tradução sociolinguística</span> pode transformar <span class="tech-term" data-tooltip="Práticas informais e locais">micropráticas comunicativas</span> em <span class="tech-term" data-tooltip="Infraestrutura corporativa escalável">macroestrutura governada,</span> criando pontes entre experiência humana local e sistemas tecnológicos globais.</li>
+            </ul>
+            <center>
+                <span class="error-tag" data-tooltip="57 formas de buscar a mesma coisa">FRAGMENTAÇÃO LEXICAL</span>
+                <span class="error-tag" data-tooltip="Sistemas não entendem variação">RUÍDO SEMÂNTICO</span>
+                <span class="error-tag" data-tooltip="Estresse e ineficiência">SOBRECARGA OPERACIONAL</span>
+                <span class="error-tag" data-tooltip="Cliente não encontra solução">EXCLUSÃO LINGUÍSTICA</span><br>
+
+                <span class="error-tag-after">VARIAÇÃO LEGITIMADA</span>
+                <span class="error-tag-after">MEDIAÇÃO SISTEMATIZADA</span>
+                <span class="error-tag-after">EFICIÊNCIA ESCALADA</span>
+                <span class="error-tag-after">INCLUSÃO INSTITUCIONALIZADA</span>
+            </center>
+        </div>
+
+        <!-- OUTRAS APLICAÇÕES (COLAPSÁVEL) -->
+        <div class="other-applications">
+            <button class="toggle-applications" onclick="toggleApplications()">
+                <svg style="width: 16px; height: 16px; margin-right: 6pt;" viewBox="0 0 24 24">
+                    <path id="app-arrow" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" fill="currentColor"/>
+                </svg>
+                Ver outras aplicações da metodologia
+            </button>
+            
+            <div class="applications-grid" id="applicationsGrid">
+                <div class="application-card">
+                    <h4>Problema de Internet: Mediação de Registros</h4>
+                    <div class="app-problem">
+                        <strong>Desafio:</strong> Cliente fala "internet tá uma porcaria", operador busca "queda de sinal", sistema retorna "otimização 5G"
+                    </div>
+                    <div class="app-solution">
+                        <strong>Solução:</strong> Mapeamento entre registros: coloquial ("porcaria") ↔ funcional ("lenta") ↔ técnico ("performance")
+                    </div>
+                    <div class="app-impact">
+                        <strong>Impacto:</strong> Scripts de empatia desenvolvidos, satisfação +24%, redução reclamações comunicação
+                    </div>
+                </div>
+                
+                <div class="application-card">
+                    <h4>Cancelamento: Unificação Corporativa</h4>
+                    <div class="app-problem">
+                        <strong>Desafio:</strong> Atendimento diz "cancelar", Financeiro "rescisão", Jurídico "término", Sistema "encerramento"
+                    </div>
+                    <div class="app-solution">
+                        <strong>Solução:</strong> Código corporativo CORP-007-ENC com equivalências funcionais entre áreas
+                    </div>
+                    <div class="app-impact">
+                        <strong>Impacto:</strong> 65% menos retrabalho, experiência cliente unificada, Comitê Linguagem criado
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section>
+        <h2>RESULTADOS QUALITATIVOS, QUANTITATIVOS E INSTITUCIONAIS</h2>
+        
+        <div class="results-vertical">
+            <div class="qualitative-box">
+                <h3 style="border-left:3px; margin-top: 5px; #ffffff">Resultados Qualitativos</h3>
+                <ul>
+                    <li><strong>Justiça linguística operacionalizada:</strong> Sistemas passaram a reconhecer a linguagem real dos usuários, reduzindo exclusão causada pela exigência de "termos corretos"</li>                    
+                    <li><strong>Empoderamento de operadores sob pressão:</strong> Profissionais jovens (18–30, primeiro emprego) ganharam respaldo linguístico para atuar com mais segurança e eficácia</li>
+                    <li><strong>Redução do esforço cognitivo operacional:</strong> Menor necessidade de “traduzir” mentalmente a fala do cliente para o vocabulário do sistema</li>
+                    <li><strong>Reconhecimento funcional de equivalências linguísticas:</strong> A empresa passou a ver decisões terminológicas como decisões de inclusão/exclusão</li>
+                    <li><strong>Mudança de percepção sobre erro linguístico:</strong> Variação deixou de ser interpretada como falha do usuário e passou a ser compreendida como dado legítimo de uso</li>
+                </ul>
+            </div>
+            
+            <div class="quantitative-box">
+                <h3 style="border-left:3px; margin-top: 5px; #ffffff">Resultados Quantitativos</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">700 → 2700+</div>
+                        <div class="metric-label">Termos (vocabulário → taxonomia corporativa)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">67% ↓</div>
+                        <div class="metric-label">Redução em buscas sem resultado</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">30.000</div>
+                        <div class="metric-label">Operadores impactados nacionalmente</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">18% ↓</div>
+                        <div class="metric-label">Tempo médio de resolução</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="impact-box">
+                <h3 style="border-left:3px; margin-top: 5px; #ffffff">Impacto Institucional</h3>
+                <ul>
+                    <li><strong>Governança de dados linguísticos estabelecida:</strong> Desenvolvimento de um modelo replicável para mediação terminológica em ambientes corporativos complexos</li>
+                    <li><strong>Criação do Comitê Corporativo de Linguagem:</strong> Estrutura formal com representantes de oito áreas, consolidando decisões linguísticas como políticas organizacionais</li>
+                    <li><strong>Ponte entre linguística e engenharia de dados:</strong> Mediação bem-sucedida entre linguística e arquitetura de sistemas automatizados</li>
+                    <li><strong>Consciência ética sobre linguagem:</strong> A multinacional passou a entender decisões terminológicas como decisões estratégicas de inclusão, exclusão e negócio</li>
+                    <li><strong>Validação da linguística aplicada em escala industrial:</strong> Demonstração concreta de que teoria linguística resolve problemas reais em sistemas de grande porte</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGAÇÃO COM AS DISCIPLINAS -->
+    <section>
+        <h2>LIGAÇÃO COM AS DISCIPLINAS DA PROF. LENITA</h2>
+        
+        <div class="research-statement" style="padding: 20pt;">
+            <p style="font-style: normal; margin-bottom: 15pt;">Este caso aplica diretamente os conceitos das suas linhas de pesquisa:</p>
+            <div>
+                <ul style="margin-top: 0;">
+                    <li><strong>Linguística de Corpus → Evidência Empírica:</strong> Usei o <span style="font-style:normal;">speech analytics</span> como corpus naturalístico para fundamentar decisões em uso real, não em prescrições abstratas</li>
+<li><strong>Terminologia e Poder → Governança Corporativa:</strong> Apliquei a noção de "poder de nomeação" para criar processos democráticos de decisão terminológica, em vez de imposição técnica vertical</li>
+<li><strong>Sociolinguística (Labov) → Variação como Sistema:</strong> Usei o conceito de "variação linguística legítima" para argumentar contra a correção de "net travando" para "problema de conexão", defendendo a inclusão de variantes populares como sinônimos válidos</li>                    
+                    <li><strong>Ética da Tradução (Venuti) → Mediação como Ato Político:</strong> Cada decisão de termo preferencial foi tratada como ato de mediação política entre diferentes grupos e setores (clientes, operadores, gerentes, sistemas)</li>                   
+                                        <li><strong>Norma vs Uso (Aubert) → Adequação Contextual:</strong> Distingui entre norma técnica ("problema de conexão") e norma de uso ("net travando") para criar mapeamentos contextualizados apropriados a cada situação</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- QUOTE BOX -->
+        <div class="quote-box">
+            <p>"Professora Lenita, em 2017 você me ensinou que mediar linguagens é mediar mundos. Desde 2020, venho medindo mundos em escala industrial: o mundo dos clientes que dizem 'net travando', o dos operadores que buscam 'lentidão', e o dos sistemas que exigiam 'problema de conexão'. Minha intervenção tentou garantir que a ponte entre esses mundos fosse de inclusão, não de exclusão."</p>
+            <div class="source">Insight Principal do Caso</div>
+        </div>
+        
+        <div class="research-statement">
+            <p><strong>Para o EMLDS:</strong> Este caso demonstra que preciso do mestrado não para aprender que linguagem é poder – você já me ensinou isso – mas para <strong>aprender a escalar a governança desse poder</strong>. Preciso de métodos computacionais para transformar estes protocolos manuais em <strong>sistemas automatizados de governança linguística ética</strong> que possam monitorar, ajustar e garantir justiça terminológica em tempo real em qualquer organização global.</p>
+        </div>
+    </section>
+
+    <script>
+        // Função de Tabs para Casos Paradigmáticos
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Pipeline da Metodologia
+        let currentMethodStep = 1;
+        const totalMethodSteps = 5;
+        const methodPrevBtn = document.getElementById('methodPrevBtn');
+        const methodNextBtn = document.getElementById('methodNextBtn');
+        
+        function updateMethodPipeline() {
+            for (let i = 1; i <= totalMethodSteps; i++) {
+                const box = document.getElementById(`methodStep${i}`);
+                if (box) box.classList.remove('active');
+            }
+            
+            const currentBox = document.getElementById(`methodStep${currentMethodStep}`);
+            if (currentBox) currentBox.classList.add('active');
+            
+            if (methodPrevBtn) methodPrevBtn.disabled = currentMethodStep === 1;
+            if (methodNextBtn) methodNextBtn.disabled = currentMethodStep === totalMethodSteps;
+        }
+        
+        function moveMethodSlide(direction) {
+            const newStep = currentMethodStep + direction;
+            if (newStep >= 1 && newStep <= totalMethodSteps) {
+                currentMethodStep = newStep;
+                updateMethodPipeline();
+            }
+        }
+        
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            updateMethodPipeline();
+        });
+
+// Função para abrir fases (Antes/Durante/Depois)
+function openPhase(phaseName) {
+    // Remover active de todas as tabs
+    document.querySelectorAll('.phase-tab').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    
+    // Remover active de todos os conteúdos
+    document.querySelectorAll('.phase-content').forEach(content => {
+        content.classList.remove('active');
+    });
+    
+    // Ativar tab clicada
+    document.querySelector(`.phase-tab.phase-${phaseName}`).classList.add('active');
+    
+    // Mostrar conteúdo correspondente
+    document.getElementById(`phase-${phaseName}`).classList.add('active');
+}
+
+// Função para expandir/recolher outras aplicações
+function toggleApplications() {
+    const grid = document.getElementById('applicationsGrid');
+    const arrow = document.getElementById('app-arrow');
+    const button = document.querySelector('.toggle-applications');
+    
+    grid.classList.toggle('expanded');
+    
+    if (grid.classList.contains('expanded')) {
+        arrow.setAttribute('d', 'M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z');
+        button.innerHTML = `<svg style="width: 16px; height: 16px; margin-right: 6pt;" viewBox="0 0 24 24">
+            <path id="app-arrow" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" fill="currentColor"/>
+        </svg> Ocultar outras aplicações`;
+    } else {
+        arrow.setAttribute('d', 'M7.41 8.59L12 13.17l4.59-4.58L18 10l-6-6-6 6 1.41-1.41z');
+        button.innerHTML = `<svg style="width: 16px; height: 16px; margin-right: 6pt;" viewBox="0 0 24 24">
+            <path id="app-arrow" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6-6-6 6 1.41-1.41z" fill="currentColor"/>
+        </svg> Ver outras aplicações da metodologia`;
+    }
+}
+
+// Inicializar fase "antes" como ativa
+document.addEventListener('DOMContentLoaded', function() {
+    openPhase('before');
+});
+
+    </script>
+
+</body>
+</html>

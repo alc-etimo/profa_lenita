@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caso 3: Fidelidade vs. Padronização - Portfólio para Prof. Lenita</title>
+    <style>
+        :root {
+            --primary: #003366;
+            --primary-light: #e8f0f8;
+            --accent: #2c5282;
+            --accent-light: #4a90e2;
+            --danger: #c53030;
+            --warning: #d69e2e;
+            --success: #2f855a;
+            --border: #cbd5e0;
+            --border-light: #e2e8f0;
+            --card: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15mm;
+            font-size: 10.5pt;
+        }
+        
+        .case-header {
+            text-align: center;
+            border-bottom: 4px solid #003366;
+            padding-bottom: 20pt;
+            margin-bottom: 25pt;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20pt;
+            border-radius: 8px;
+        }
+        
+        .case-number {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 8pt;
+            text-transform: uppercase;
+            letter-spacing: 1.5pt;
+        }
+        
+        .case-header h1 {
+            font-size: 20pt;
+            color: #003366;
+            margin-bottom: 2pt;
+            text-transform: none;
+            letter-spacing: normal;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .case-subtitle {
+            font-size: 14pt;
+            color: #003366;
+            font-weight: 600;
+            margin-bottom: 15pt;
+            font-style: italic;
+        }
+        
+        .case-tags {
+            margin-top: 15pt;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 4pt;
+        }
+        
+        .case-tag {
+            display: inline-block;
+            background: #003366;
+            color: white;
+            padding: 4pt 8pt;
+            border-radius: 5px;
+            font-size: 8.5pt;
+            font-weight: bold;
+            margin-right: 0;
+            margin-bottom: 8pt;
+        }
+        
+        .research-statement {
+            background: #f9f9f9;
+            padding: 15pt;
+            border-left: 4px solid #003366;
+            font-style: italic;
+            margin-bottom: 20pt;
+            text-align: justify;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        section {
+            margin-bottom: 30pt;
+            page-break-inside: avoid;
+        }
+        
+        h2 {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #003366;
+            border-bottom: 3px solid #003366;
+            padding-bottom: 5pt;
+            margin-bottom: 15pt;
+            text-transform: uppercase;
+            letter-spacing: 0.8pt;
+        }
+        
+        h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            color: #003366;
+            margin-top: 18pt;
+            margin-bottom: 10pt;
+            border-left: 5px solid #003366;
+            padding-left: 10pt;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .bias-card {
+            background: white;
+            border: 2px solid #003366;
+            border-radius: 8px;
+            padding: 15pt;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .bias-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .bias-card h4 {
+            color: #003366;
+            font-size: 10pt;
+            margin-bottom: 8pt;
+            font-weight: bold;
+        }
+        
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20pt;
+            margin: 20pt 0;
+        }
+        
+        .problem-box, .solution-box {
+            background: white;
+            border: 2px solid #003366;
+            border-radius: 8px;
+            padding: 15pt;	    
+            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
+        }
+        
+        .problem-box h3, .solution-box h3 {
+            text-align: center;
+            margin-top: 3pt;
+            border: none;
+            padding-left: 0;
+            color: #003366;
+            margin-bottom: 12pt;
+            padding-bottom: 8pt;
+            border-bottom: 1px solid #003366;
+        }
+
+        .click-hint {
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            font-size: 9pt; 
+            color: var(--accent); 
+            margin-bottom: 8pt; 
+            font-style: italic;
+        }
+        
+        .hand-icon { 
+            width: 18px; 
+            height: 18px;
+            transform: rotate(-180deg);
+            fill: var(--accent); 
+            margin: 0 2px;
+        }
+
+        .hand-icon.left { 
+            transform: rotate(90deg); 
+        }
+
+        .hand-icon.right { 
+            transform: rotate(-90deg); 
+        }
+
+        .click-hint .arrows-container {
+            display: flex;
+            align-items: center;
+            margin: 0 6px;
+        }
+
+        .image-container {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 8pt;
+            margin: 10pt 0;
+            background: #fafafa;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+        }
+
+        .image-caption {
+            font-size: 9pt;
+            color: #666;
+            margin-top: 4pt;
+            font-style: italic;
+        }
+
+        .analysis-box {
+            background: #fff; 
+            border: 1px solid var(--border);
+            padding: 12pt; 
+            border-radius: 6px; 
+            margin-top: 10pt;
+        }
+        
+        .analysis-box h4 { 
+            font-size: 10pt; 
+            text-transform: uppercase; 
+            color: var(--accent); 
+            margin-bottom: 8pt;
+            padding-bottom: 4pt;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        ul.analysis-list { 
+            margin-left: 0;
+            margin-top: 0;
+        }
+        
+        ul.analysis-list li { 
+            margin-bottom: 12pt;
+            font-size: 10pt; 
+            list-style: none;
+            padding-left: 15pt;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        ul.analysis-list li::before { 
+            content: '→'; 
+            position: absolute; 
+            left: 0; 
+            color: var(--primary); 
+        }
+
+        .error-tag {
+            display: inline-block;
+            background: #fff5f5;
+            color: var(--danger);
+            padding: 2pt 6pt;
+            border-radius: 4px;
+            font-size: 8pt;
+            font-weight: 600;
+            margin-top: 5pt;
+            margin-right: 4pt;
+            border: 1px solid #feb2b2;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: help;
+        }
+
+        .error-tag:hover {
+            background: var(--danger);
+            color: white;
+        }
+
+        .error-tag::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 75%;
+            transform: translateX(-50%);
+            background: rgba(197, 48, 48, 0.95);
+            color: white;
+            padding: 6pt 10pt;
+            border-radius: 4px;
+            font-size: 8.5pt;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+            margin-bottom: 6pt;
+        }
+
+        .error-tag:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .error-tag-after {
+            display: inline-block;
+            background: #F2FFEE;
+            color: var(--accent);
+            padding: 2pt 3pt;
+            border-radius: 4px;
+            border: 1px solid #9ae6b4;
+            font-size: 8pt;
+            font-weight: 600;
+            margin-top: 5pt;
+            margin-right: 4pt;
+            transition: all 0.3s ease;
+            position: relative;            
+        }
+
+        .error-tag-after:hover {
+            background: #2f855a;
+            color: white;
+        }
+
+        .error-tag-after:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .tech-term {
+            background: var(--primary-light);
+            color: var(--accent);
+            padding: 1pt 4pt;
+            border-radius: 3px;
+            font-weight: 600;
+            font-size: 9.5pt;
+            cursor: help;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .tech-term:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .tech-term::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 70%;
+            transform: translateX(-40%);
+            background: rgba(44, 82, 130, 0.95);
+            color: white;
+            padding: 6pt 10pt;
+            border-radius: 4px;
+            font-size: 8.5pt;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+            margin-bottom: 6pt;
+        }
+
+        .tech-term:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }        
+
+        .interactive-rewrite {
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20pt 0;
+            background: var(--card);
+        }
+        
+        .tab-nav { 
+            display: flex; 
+            background: var(--primary-light); 
+            border-bottom: 1px solid var(--border); 
+        }
+        
+        .tab-btn { 
+            flex: 1; 
+            padding: 10pt; 
+            border: none; 
+            background: none; 
+            cursor: pointer; 
+            font-weight: bold; 
+            color: var(--primary); 
+            transition: 0.3s; 
+            font-size: 10pt;
+            text-align: center;
+        }
+        
+        .tab-btn.active { 
+            background: var(--primary); 
+            color: white; 
+        }
+        
+        .tab-content { 
+            padding: 15pt; 
+            display: none; 
+        }
+        
+        .tab-content.active { 
+            display: block; 
+            border: 2px solid var(--primary);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+        }
+        
+        .methodology-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20pt 0;
+            font-size: 9pt;
+            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
+        }
+        
+        .methodology-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            padding: 10pt;
+            border: 1px solid var(--primary-light);
+            vertical-align: middle;
+        }
+        
+        .methodology-table td {
+            padding: 8pt;
+            border: 1px solid var(--border-light);
+            vertical-align: top;
+            background: white;
+        }
+        
+        .methodology-table tr:nth-child(even) td {
+            background: #f9f9f9;
+        }
+        
+        .methodology-table .example-cell {
+            text-align: center;
+            padding: 5pt;
+        }
+        
+        .methodology-table .example-img {
+            max-width: 120px;
+            max-height: 60px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .severity-badge {
+            display: inline-block;
+            padding: 3pt 8pt;
+            border-radius: 12px;
+            font-size: 8.5pt;
+            font-weight: bold;
+            margin: 2pt;
+        }
+        
+        .critical-severity { background: #fed7d7; color: #7b341e; border: 1px solid #fc8181; }
+        .major-severity { background: #feebc8; color: #744210; border: 1px solid #f6ad55; }
+        .minor-severity { background: #c6f6d5; color: #22543d; border: 1px solid #68d391; }
+        .not-present-severity { background: #e2e8f0; color: #2d3748; border: 1px solid #a0aec0; }
+        
+        .pipeline-wrapper {
+            position: relative;
+            background: var(--card);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 30pt 50pt;
+            margin: 20pt 0;
+            overflow: hidden;
+            min-height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .pipeline-container {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            transition: transform 0.6s ease;
+        }
+        
+        .pipeline-box {
+            width: 280px;
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            padding: 20pt;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            position: absolute;
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 0.4s ease;
+        }
+        
+        .pipeline-box.active {
+            opacity: 1;
+            transform: translateX(0);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11pt;
+            font-weight: bold;
+            z-index: 3;
+        }
+        
+        .arrow-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 51, 102, 0.2);
+            color: white;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.7;
+        }
+        
+        .arrow-btn:hover {
+            background: rgba(0, 51, 102, 0.8);
+            opacity: 1;
+        }
+        
+        .arrow-btn:disabled {
+            opacity: 0.2;
+            cursor: not-allowed;
+        }
+        
+        .arrow-btn:disabled:hover {
+            background: rgba(0, 51, 102, 0.2);
+        }
+        
+        .arrow-prev {
+            left: 10px;
+        }
+        
+        .arrow-next {
+            right: 10px;
+        }
+
+        .csat-scale {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8pt;
+            margin: 15pt 0;
+        }
+        
+        .csat-level {
+            padding: 10pt;
+            border-radius: 6px;
+            text-align: center;
+            color: white;
+            font-size: 9pt;
+            font-weight: bold;
+        }
+        
+        .csat-5 { background: #2f855a; }
+        .csat-4 { background: #48bb78; }
+        .csat-3 { background: #ecc94b; color: #333; }
+        .csat-2 { background: #ed8936; }
+        .csat-1 { background: #c53030; }
+
+        .severity-badges {
+            display: flex;
+            gap: 8pt;
+            margin: 10pt 0;
+            flex-wrap: wrap;
+        }
+        
+        .severity-badge {
+            padding: 6pt 12pt;
+            border-radius: 20px;
+            font-size: 9pt;
+            font-weight: bold;
+        }
+        
+        .critical-badge { background: #fff5f5; color: #c53030; border: 1px solid #fc8181; }
+        .major-badge { background: #fefcbf; color: #975a16; border: 1px solid #f6e05e; }
+        .minor-badge { background: #c6f6d5; color: #22543d; border: 1px solid #9ae6b4; }
+
+        .results-vertical {
+            display: block;
+            margin: 20pt 0;
+        }
+
+        .results-vertical > div {
+            margin-bottom: 20pt;
+        }
+
+        .results-vertical > div:last-child {
+            margin-bottom: 0;
+        }
+
+        .qualitative-box, .quantitative-box, .impact-box {
+            background: white;
+            border: 2px solid #003366;
+            border-radius: 8px;
+            padding: 15pt;
+            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
+            width: 100%;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10pt;
+            margin-top: 10pt;
+        }
+        
+        .metric-card {
+            background: #f0f7ff;
+            border: 1px solid #003366;
+            border-radius: 6px;
+            padding: 10pt;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 4pt;
+        }
+        
+        .metric-label {
+            font-size: 9pt;
+            color: #666;
+        }
+        
+        .quote-box {
+            background: linear-gradient(135deg, #003366, hsl(215, 50%, 35%));
+            color: white;
+            padding: 1.75rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(31, 79, 176, 0.2);
+            margin: 1.5rem 0;
+        }
+        
+        .quote-box p {
+            font-size: 1.05rem;
+            font-weight: 500;
+            font-style: italic;
+            opacity: 0.95;
+            text-align: center;
+            margin-bottom: 0.75rem;
+            color: white;
+        }
+        
+        .quote-box .source {
+            font-size: 0.7rem;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-style: normal;
+        }
+        
+        ul {
+            margin-left: 20pt;
+            margin-top: 8pt;
+        }
+        
+        li {
+            margin-bottom: 8pt;
+            text-align: justify;
+        }
+        
+        strong {
+            color: #003366;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15pt 0;
+            font-size: 9pt;
+        }
+        
+        .data-table th {
+            background: var(--primary-light);
+            color: var(--primary);
+            font-weight: bold;
+            text-align: left;
+            padding: 8pt;
+            border: 1px solid var(--border);
+        }
+        
+        .data-table td {
+            padding: 6pt 8pt;
+            border: 1px solid var(--border-light);
+            vertical-align: top;
+        }
+        
+        .data-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+        
+        @media print {
+            body { padding: 5mm; }
+        }
+        
+        @media (max-width: 768px) {
+            .methodology-table {
+                font-size: 8pt;
+            }
+            
+            .methodology-table th,
+            .methodology-table td {
+                padding: 5pt 3pt;
+            }
+            
+            .metrics-grid, .csat-scale {
+                grid-template-columns: 1fr;
+            }
+            
+            .pipeline-wrapper {
+                padding: 20pt 40pt;
+            }
+            
+            .pipeline-box {
+                width: 240px;
+            }
+            
+            .two-columns {
+                grid-template-columns: 1fr;
+            }
+            
+            .severity-badges {
+                flex-direction: column;
+            }
+        }
+
+        .example-block {
+            margin: 10pt 0;
+            padding: 8pt;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border-left: 3px solid var(--accent);
+        }
+        
+        .example-block strong {
+            display: block;
+            margin-bottom: 4pt;
+            color: var(--accent);
+        }
+        
+        .cc-quote {
+            background: #e3f2fd;
+            border-left: 4px solid #2c5282;
+            padding: 12pt;
+            margin: 12pt 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .mini-tab {
+            flex: 1;
+            padding: 6pt;
+            border: none;
+            background: #f0f0f0;
+            border-radius: 4px 4px 0 0;
+            font-size: 8.5pt;
+            cursor: pointer;
+        }
+        
+        .mini-tab.active {
+            background: #e6ffed;
+        }
+        
+        .vocab-tab-content {
+            display: none;
+        }
+        
+        .vocab-image-box {
+            text-align: center;
+            
+            background: #f9f9f9;
+            border-radius: 4px;
+            margin: 4pt;
+            
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15pt;
+            margin: 15pt 0;
+        }
+        
+        .comparison-card {
+            background: white;
+            border: 2px solid;
+            border-radius: 8px;
+            padding: 15pt;
+            text-align: center;
+        }
+        
+        .tab-btn small {
+            display: block;
+            font-size: 7.5pt;
+            font-weight: normal;
+            margin-top: 2pt;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABEÇALHO DO CASO 3 -->
+    <div class="case-header">
+        <div class="case-number">CASO 3 – PORTFÓLIO PARA PROFA. LENITA</div>
+        <h1>Fidelidade vs. Padronização:</h1>
+        <div class="case-subtitle">decisões éticas em localização e legendagem</div>
+        <div class="case-tags">
+            <span class="case-tag">Localização Crítica</span>
+            <span class="case-tag">Legendagem Acessível</span>
+            <span class="case-tag">Governança Terminológica</span>
+            <span class="case-tag">Análise de Erros Sistêmicos</span>            
+        </div>
+    </div>
+
+    <!-- BOX DE ABERTURA -->
+    <div class="research-statement">
+        <strong>Prof. Lenita:</strong> Em 2017, você me ensinou que toda tradução é um ato político. Hoje, vejo esse ato sendo automatizado em escala industrial: <strong>agências mandando "corrigir" dialetos e IAs obedecendo cegamente</strong>. Usei os conceitos de ética na tradução e análise contrastiva que aprendi com você para criar <strong>protocolos que interrompem o ciclo de violência linguística</strong> e preservam a diversidade identitária, mesmo em ambientes corporativos.
+    </div>
+
+    <!-- SEÇÃO 1: O PROBLEMA DO APAGAMENTO -->
+    <section>
+        <h2>O PROBLEMA: PADRONIZAÇÃO FORÇADA × DIVERSIDADE LINGUÍSTICA</h2>
+        <p style="text-align: justify;">
+            Sistemas de inteligência artificial de agências de localização frequentemente tratam variações dialetais ou de uso como <strong>"erros a serem corrigidos"</strong>. O resultado: <strong>personagens perdem suas marcas identitárias</strong>, conteúdos técnicos violam terminologias corporativas e normas regionais são ignoradas em favor de um suposto "padrão". A violência simbólica discutida em sala se torna <strong>violência automatizada industrial</strong>.
+        </p>
+        <br>
+        <div class="cards-grid">
+            <div class="bias-card">
+                <h4>Apagamento Dialetal</h4>
+                <p>"me grandfather" (irlandês) "corrigido" para "my grandfather", apagando sotaque <br> e identidade cultural.</p>
+            </div>
+            
+            <div class="bias-card">
+                <h4>Violência Terminológica</h4>
+                <p>"Job" traduzido como "trabalho" quando o glossário corporativo exige "processo", quebrando consistência.</p>
+            </div>
+            
+            <div class="bias-card">
+                <h4>Imperialismo Normativo</h4>
+                <p>"travelling" (EN-UK) "corrigido" para "traveling" <br> (EN-US), <br> ignorando contexto <br>  e audiência.</p>
+            </div>
+        </div>
+        
+        <div class="image-container">
+            <div style="background: #f5f5f5; padding: 20pt; border-radius: 4px;">
+                <strong>EXEMPLO DO MEU <i>FEEDBACK</I> PARA A AGÊNCIA:</strong><br><br>
+                <img src="https://github.com/alc-etimo/profa_lenita/blob/main/argumentacao-agencia.jp2?raw=true" alt="Captura de tela do aplicativo Telegram mostrando o texto 'Muitos desses 'in'' fazem parte da caracterização dos personagens, como 'outta' x 'ought to', marcando dialetos diferentes do inglês e regiões geralmente estereotipadas dos EUA, ou o 'me' para 'my' ou 'mine' do sotaque irlandês. Como são legendas CC, acho bem importante deixar marcado, pra audiência Surda e/ou ensurdecida não achar que se trata tudo de 'inglês padrão', se é que isso existe.'" style="width:70%; height:70%;"/>
+            </div>
+            <div class="image-caption">Trecho do meu argumento defendendo a preservação dialetal</div>
+        </div>
+    </section>
+
+    <!-- FUNDAMENTAÇÃO TEÓRICA -->
+    <section>
+        <h2>FUNDAMENTAÇÃO TEÓRICA: DA ÉTICA DA TRADUÇÃO À SOCIOLINGUÍSTICA APLICADA</h2>
+        
+        <p style="text-align: justify;">
+            Aplicação direta dos conceitos das suas disciplinas para criar <strong>protocolos de resistência linguística</strong>:
+        </p>
+        
+        <div class="two-columns">
+            <div class="problem-box">
+                <h3>Conceitos Teóricos Aplicados</h3>
+                <ul>
+                    <li><span class="tech-term" data-tooltip="Tradução como ato político que pode apagar ou visibilizar a alteridade">Ética da Tradução (Venuti):</span> Domesticação vs. Estrangeirização</li>
+                    <li><span class="tech-term" data-tooltip="Marcadores linguísticos de identidade social, regional e étnica">Sociolinguística (Labov):</span> Prestígio vs. Estigma linguístico</li>
+                    <li><span class="tech-term" data-tooltip="Padrões estabelecidos vs. usos reais da língua">Norma vs. Uso (Aubert):</span> Adequação contextual</li>
+                    <li><span class="tech-term" data-tooltip="Criação e imposição de vocabulário controlado em ambientes corporativos">Terminologia e Poder:</span> Glossários como instrumentos de governança</li>
+                    <li><span class="tech-term" data-tooltip="Acesso linguístico como direito, especialmente para pessoas Surdas">Linguística da Acessibilidade:</span> Legendas <i>closed caption</i> como ferramenta de inclusão</li>
+				<li><span class="tech-term" data-tooltip="Critérios que determinam quais variedades são preservadas ou corrigidas">Ideologia Linguística (Silverstein; Woolard):</span> Decisões técnicas como expressão de hierarquias sociais da linguagem</li>
+                </ul>
+            </div>
+            
+            <div class="solution-box">
+                <h3>Minha Intervenção Manual</h3>
+                <ul>
+                    <li><strong>Proposta de categoria</strong> "Language/Local/Dialect" no sistema de classificação de erros</li>
+                    <li><strong>Argumentação documentada</strong> para agências sobre preservação identitária em legendas <i>closed caption</i></li>
+                    <li><strong>Análise manual de variantes</strong> (EN-UK, EN-US, EN-AU) para bloquear "correções" indevidas</li>
+                    <li><strong>Marcações manuais</strong> com códigos de tempo para eventos dialetais a serem preservados</li>
+                    <li><strong>Documentação de casos</strong> com base em teoria linguística para justificar decisões com agências</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIPÓTESE CENTRAL -->
+    <div class="research-statement" style="background: #e3f2fd; border-left-color: #2c5282;">
+        <strong>Hipótese central:</strong> A padronização linguística automatizada por sistemas de IA e a mentalidade de "normalização" das agências de localização reproduzem e amplificam <strong>preconceitos sociolinguísticos e empobrecem escolhas lexicais apropriadas</strong>, transformando diferenças dialetais legítimas e estilo em "erros", apagando identidades culturais e empobrecendo o texto final. Protocolos baseados em <strong>ética da tradução e linguística aplicada</strong> podem interromper esse ciclo.
+    </div>
+
+    <!-- SEÇÃO DE METODOLOGIA -->
+    <section>
+        <h2>METODOLOGIA: DOS CONCEITOS AOS PROTOCOLOS IMPLEMENTADOS</h2>
+        
+        <div class="research-statement" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-left: 4px solid #2c5282; padding: 20pt; border-radius: 0 8px 8px 0;">
+            <strong>Inovação metodológica:</strong> Transformei <strong>conceitos teóricos abstratos</strong> em <strong>sistemas de governança linguística concretos</strong>, criando protocolos que não apenas classificam erros, mas <strong>protegem a diversidade linguística</strong> em ambientes corporativos globais.
+        </div>
+        
+        <h3>1. Protocolo de Análise em 5 Etapas</h3>
+        
+        <div class="pipeline-wrapper">
+            <button class="arrow-btn arrow-prev" onclick="moveMethodSlide(-1)" id="methodPrevBtn" disabled>❮</button>
+            
+            <div class="pipeline-container" id="methodPipeline">
+                <!-- Box 1 -->
+                <div class="pipeline-box active" id="methodStep1">
+                    <div class="step-number">1</div>
+                    <strong style="font-size: 11pt; color: var(--primary);">Identificação de Marcadores</strong>
+                    <p style="font-size: 9.5pt; margin-top: 8pt; color: #555;">
+                        Detecção de variações dialetais, terminologia corporativa e normas regionais nos conteúdos
+                    </p>
+                </div>
+                
+                <!-- Box 2 -->
+                <div class="pipeline-box" id="methodStep2">
+                    <div class="step-number">2</div>
+                    <strong style="font-size: 11pt; color: var(--primary);">Classificação Ética</strong>
+                    <p style="font-size: 9.5pt; margin-top: 8pt; color: #555;">
+                        Distinção: "erro real" <br> vs. <br> "marcador identitário a ser preservado"
+                    </p>
+                </div>
+                
+                <!-- Box 3 -->
+                <div class="pipeline-box" id="methodStep3">
+                    <div class="step-number">3</div>
+                    <strong style="font-size: 11pt; color: var(--primary);">Aplicação de Protocolos</strong>
+                    <p style="font-size: 9.5pt; margin-top: 8pt; color: #555;">
+                        Marcação para dialetos, <br> consulta a glossários corporativos <br> e detecção de variante
+                    </p>
+                </div>
+                
+                <!-- Box 4 -->
+                <div class="pipeline-box" id="methodStep4">
+                    <div class="step-number">4</div>
+                    <strong style="font-size: 11pt; color: var(--primary);">Documentação da Decisão</strong>
+                    <p style="font-size: 9.5pt; margin-top: 8pt; color: #555;">
+                        Registro do critério aplicado (preservação dialetal, <i>compliance</i> terminológica, adequação normativa)
+                    </p>
+                </div>
+                
+                <!-- Box 5 -->
+                <div class="pipeline-box" id="methodStep5">
+                    <div class="step-number">5</div>
+                    <strong style="font-size: 11pt; color: var(--primary);"><i>Feedback</i> Estruturado</strong>
+                    <p style="font-size: 9.5pt; margin-top: 8pt; color: #555;">
+                        Argumentação para agências <br> e gerentes de projetos <br> com base em teoria linguística
+                    </p>
+                </div>
+            </div>
+            
+            <button class="arrow-btn arrow-next" onclick="moveMethodSlide(1)" id="methodNextBtn">❯</button>
+        </div>
+        
+        <h3>2. Sistema de Classificação: Integrando Ética e Terminologia</h3>
+        
+        <table class="methodology-table compact">
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Conceito Teórico</th>
+                    <th style="width: 8%;">Categoria de Erro</th>
+                    <th style="width: 20%;">Operacionalização</th>
+                    <th style="width: 43%;">Exemplo</th>
+                    <th style="width: 15%;">Gravidade & Impacto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align: center; vertical-align: middle;"><strong>Sociolinguística</strong><br>(Labov)</td>
+                    <td style="text-align: center; vertical-align: middle;">Language/Local/Dialect</td>
+                    <td style="text-align: center; vertical-align: middle;">"A variação dialetal foi preservada como marcador identitário ou 'corrigida' como erro?"</td>
+                    <td style="text-align: left; vertical-align: middle; padding: 5pt;">
+                        <div style="font-size: 8.5pt; padding: 8pt; background: #f5f5f5; border-radius: 4px;">
+    
+                   <strong>• Original:</strong> "me grandfather"
+               <br>            <strong>• IA/Agência:</strong> "my grandfather"
+             <br>            <strong>• Problema:</strong> Apagamento do sotaque irlandês
+                        </div>
+                    </td>
+                    <td style="text-align: center; vertical-align: middle; padding: 5pt;">
+                        <span class="severity-badge critical-severity">Critical</span><br><br>
+                        <small style="font-size: 7.5pt; color: #666;">Perda identitária</small>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td style="text-align: center; vertical-align: middle;"><strong>Terminologia Corporativa</strong><br>(Governança)</td>
+                    <td style="text-align: center; vertical-align: middle;">Terminology Violation</td>
+                    <td style="text-align: center; vertical-align: middle;">"O termo segue o glossário corporativo ou foi traduzido de forma inconsistente?"</td>
+                    <td style="text-align: left; vertical-align: middle; padding: 5pt;">
+                        <div style="font-size: 8.5pt; padding: 8pt; background: #f5f5f5; border-radius: 4px;">
+                           <strong>• Glossário:</strong> "Job" → "processo"<br>
+                           <strong>• IA:</strong> "Job" → "trabalho"<br>
+                           <strong>• Problema:</strong> Quebra de consistência corporativa
+                        </div>
+                    </td>
+                    <td style="text-align: center; vertical-align: middle; padding: 5pt;">
+                        <span class="severity-badge major-severity">Major</span><br><br>
+                        <small style="font-size: 7.5pt; color: #666;">Inconsistência operacional</small>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: center; vertical-align: middle;"><strong>Norma vs. Uso</strong><br>(Aubert)</td>
+                    <td style="text-align: center; vertical-align: middle;">Dialect/Locale issues <br> (eg. en-AU and not en-US)</td>
+                    <td style="text-align: center; vertical-align: middle;">"A norma aplicada é apropriada ao contexto regional do conteúdo?"</td>
+                    <td style="text-align: left; vertical-align: middle; padding: 5pt;">
+                        <div style="font-size: 8.5pt; padding: 8pt; background: #f5f5f5; border-radius: 4px;">
+                          <strong>• Contexto:</strong> Conteúdo britânico<br>
+                        <strong>• IA:</strong> "travelling" → "traveling"<br>
+                           <strong>• Problema:</strong> Inadequação contextual EN-US
+                        </div>
+                    </td>
+                    <td style="text-align: center; vertical-align: middle; padding: 5pt;">
+                        <span class="severity-badge minor-severity">Minor</span><br><br>
+                        <small style="font-size: 7.5pt; color: #666;">Inadequação contextual</small>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: center; vertical-align: middle;"><strong>Localização de Marca</strong></td>
+                    <td style="text-align: center; vertical-align: middle;">Named Entity</td>
+                    <td style="text-align: center; vertical-align: middle;">"Nomes de produtos foram traduzidos indevidamente, perdendo sua identidade de marca?"</td>
+                    <td style="text-align: left; vertical-align: middle; padding: 5pt;">
+                        <div style="font-size: 8.5pt; padding: 8pt; background: #f5f5f5; border-radius: 4px;">
+                            <strong>• Produto:</strong> "Product X Boards"<br>
+                            <strong>• IA:</strong> "Quadros do Produto X"<br>
+                            <strong>• Problema:</strong> Tradução não autorizada de nome de produto
+                        </div>
+                    </td>
+                    <td style="text-align: center; vertical-align: middle; padding: 5pt;">
+                        <span class="severity-badge critical-severity">Critical</span><br><br>
+                        <small style="font-size: 7.5pt; color: #666;">Violação de marca</small>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="research-statement" style="background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); border-left: 4px solid #2c5282;">
+            <strong>Contribuição metodológica:</strong> Este protocolo representa a <strong>operacionalização da ética da tradução</strong>. Ao vincular cada categoria de erro a conceitos teóricos específicos, criei um sistema que não apenas classifica, mas <strong>justifica eticamente</strong> as decisões de preservação linguística, permitindo que equipes técnicas entendam <em>por que</em> certas "correções" são, na verdade, violências.
+        </div>
+    </section>
+
+    <!-- CASOS PARADIGMÁTICOS -->
+    <section>
+        <h2>CASOS PARADIGMÁTICOS: ANÁLISE ÉTICA APROFUNDADA</h2>
+        
+        <div class="click-hint">
+            <svg class="hand-icon" viewBox="0 0 24 24">
+                <path d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M7,9l1.41,1.41L11,7.83V16h2V7.83l2.59,2.58L17,9l-5-5L7,9z"/>
+            </svg>
+            Clique em cada caso para ver a análise ética detalhada
+        </div>
+
+        <div class="interactive-rewrite">
+            <div class="tab-nav">
+                <button class="tab-btn active" onclick="openTab(event, 'case1')">
+                    CASO 1: <br>IDENTIDADE DIALETAL
+                    <small>Sociolinguística do indivíduo</small>
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'case2')">
+                    CASO 2: <br>TERMINOLOGIA CORPORATIVA
+                    <small>Governança linguística</small>
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'case3')">
+                    CASO 3: <br>PLURICENTRISMO NEGADO
+                    <small>Hegemonia normativa regional</small>
+                </button>
+            </div>
+
+            <!-- CASO 1: CC e Dialetos -->
+            <div id="case1" class="tab-content active">
+                <div style="margin-bottom: 20pt; padding: 12pt; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #003366;">
+                    <span style="text-align: justify;"><strong>Contexto:</strong> Agência de legendagem solicitando "normalização para padrão" de dialetos irlandeses/rural americano em conteúdo autêntico de legendas para Surdos e/ou ensurdecidos.
+                    <div style="margin-top: 8pt; font-size: 9pt; color: #2c5282;">
+                        <strong>Nível de análise:</strong> <span class="tech-term" data-tooltip="Variação dentro de uma comunidade de fala">dialetal/idioletal</span><br> 
+                        <strong>Conceito-chave:</strong> <span class="tech-term" data-tooltip="Marcadores linguísticos de identidade social">sociolinguística variacionista (Labov)</span>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15pt;">
+                    <div>
+                        <h4 style="font-size: 9pt; color: var(--danger); text-align:center;">
+                            APAGAMENTO IDENTITÁRIO
+                            <small style="font-size: 8pt; font-weight: normal;">(nível dialetal/individual)</small>
+                        </h4>
+                        <div style="background: #fff5f5; padding: 15pt; margin-bottom: 15pt; border-radius: 4px; border: 1px solid #feb2b2;">
+                            <!-- Exemplo 1 -->
+                            <div class="example-block">
+                                <strong>Exemplo 1:</strong> <img src="https://github.com/alc-etimo/profa_lenita/blob/main/caso-3-exemplo-1.png?raw=true" style="width:100%;height:100%;" />
+<br>
+
+<div style="font-size: 10pt; color: #666; margin-top: 2pt;">IA "corrige" para: "It's like a contraction in <span style="color:#2c5382; font-weight: bold;">my</span> tubes."
+</div>
+                            </div>
+                            
+                            <!-- Exemplo 2 -->
+                            <div class="example-block">
+                                <strong>Exemplo 2:</strong>
+<img src="https://github.com/alc-etimo/profa_lenita/blob/main/caso-3-exemplo-2.png?raw=true" style="width:100%;height:100%;" />
+<br>
+                                <div style="font-size: 10pt; color: #666; margin-top: 2pt;">
+                                    IA "corrige" para: "Felix and <span style="color:#2c5382; font-weight: bold;">I are</span> going to write a book."
+                                </div>
+                            </div>
+                            
+                            <!-- Exemplo 3 -->
+                            <div class="example-block">
+                                <strong>Exemplo 3:</strong>
+<img src="https://github.com/alc-etimo/profa_lenita/blob/main/caso-3-exemplo-3.png?raw=true" style="width:100%;height:100%;" />
+<br>
+                                <div style="font-size: 10pt; color: #666; margin-top: 2pt;">
+                                    Agência sugere substituir por:<br> <span style="color:#2c5382; font-weight: bold;">-Hello</span>, Bancroft.<br> <span style="color:#2c5382; font-weight: bold;">-Hello.</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Exemplo 4 -->
+                            <div class="example-block">
+                                <strong>Exemplo 4:</strong>
+<img src="https://github.com/alc-etimo/profa_lenita/blob/main/caso-3-exemplo-4.png?raw=true" style="transform: rotate(360deg); width:100%;height:100%;" />
+<br>
+                                <div style="font-size: 10pt; color: #666; margin-top: 2pt;">
+                                    IA "corrige" para: "I <span style="color:#2c5382; font-weight: bold;">am not taking</span> any charity!"
+                                </div>
+                            </div>
+                            
+                            <!-- Exemplo 5 -->
+                            <div class="example-block">
+                                <strong>Exemplo 5:</strong>
+<img src="https://github.com/alc-etimo/profa_lenita/blob/main/caso-3-exemplo-5.png?raw=true" style="width:100%;height:100%;" />
+<br> 
+                                <div style="font-size: 10pt; color: #666; margin-top: 2pt;">
+                                    IA "corrige" para: "<span style="color:#2c5382; font-weight: bold;">Mother has got them. She is there.</span>"
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 9pt; color: var(--success); text-align:center;">
+                            PRESERVAÇÃO IDENTITÁRIA
+                            <small style="font-size: 8pt; font-weight: normal;">(ética da alteridade)</small>
+                        </h4>
+                        <div style="background: #f0fff4; padding: 15pt; border-radius: 4px; border: 1px solid #9ae6b4;">
+                                                        
+                            <div class="example-block" style="height:164px;">
+                                <strong>Exemplo 1:</strong> "<span style="color:#2c5382; font-weight: bold;">me</span>" em vez de "my"
+                             <br>   <div style="font-size: 10pt; color: #555; margin-top: 2pt; text-align:justify;">
+                                    Marcação sistemática de classe social e geográfica. A padronização para o inglês EN-US apaga a identidade do personagem
+                                </div>
+                            </div>
+                            
+                            <div class="example-block"  style="height:163px;">
+                                <strong>Exemplo 2:</strong> "Felix and <span style="color:#2c5382; font-weight: bold;">me is</span>"
+                            <br>    <div style="font-size: 10pt; color: #555; margin-top: 2pt; text-align:justify;">
+                                    Uso não padrão de concordância marca a escolaridade e humaniza o personagem, resistindo à uniformização que apagaria sua origem social
+                                </div>
+                            </div>
+                            
+                            <div class="example-block"  style="height:234px;">
+                                <strong>Exemplo 3:</strong> "<span style="color:#2c5382; font-weight: bold;">Howdy</span>"<br>
+                                <div style="font-size: 10pt; color: #555; margin-top: 2pt; text-align:justify;">
+                                    Saudação típica do Sul/Oeste dos EUA. Funciona como um "sotaque escrito". Substituir por um "Hello" genérico descaracteriza a performance do ator. Na legenda CC, manter o termo é essencial para garantir o acesso à comunidade Surda
+                                </div>
+                            </div>
+                            
+                            <div class="example-block"  style="height:153px;">
+                                <strong>Exemplo 4:</strong> "<span style="color:#2c5382; font-weight: bold;">ain't no takin' no</span>" <br>
+                                <div style="font-size: 10pt; color: #555; margin-top: 2pt; text-align:justify;">
+                                    Tripla negação e contrações preservam a textura cultural e a autenticidade regional do dialeto rural dos EUA (Ozarks)
+
+                                </div>
+                            </div>
+                            
+                            <div class="example-block"  style="height:163px;">
+                                <strong>Exemplo 5:</strong> "<span style="color:#2c5382; font-weight: bold;">Ma's got 'em</span>" <br>
+                                <div style="font-size: 10pt; color: #555; margin-top: 5pt; text-align:justify;">
+                                    Coloquialismo e contração que estabelecem relação familiar e informalidade, protegendo contra o engessamento da norma culta
+
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cc-quote" style=text-align:justify;">
+                        "Como são legendas CC, é crucial preservar essas marcas para que a audiência Surda e/ou ensurdecida perceba a diversidade linguística e não pense que tudo é 'inglês padrão'."
+                    </div>
+
+<div class="analysis-box">
+                    <h4>Análise Ética e Sociolinguística da Falha</h4>
+                    <ul class="analysis-list">
+                        <li><span class="tech-term" data-tooltip="Tratar dialetos como 'erros' reproduz hierarquias linguísticas opressivas">Prestígio vs. Estigma Linguístico:</span> A agência e a IA partem do pressuposto de que existe um "inglês padrão" superior, tratando variações dialetais como "defeitos" a serem corrigidos. Esta postura <span class="tech-term" data-tooltip="A padronização força grupos minoritários a abandonar suas marcas identitárias">estigmatiza identidades linguísticas</span> marginalizadas.</li>
+                        <li><span class="tech-term" data-tooltip="Domesticação que apaga completamente a alteridade do texto original">Violência Tradutória Automatizada:</span> A "correção" automática do "me" irlandês para "my" é um exemplo claro de <span class="tech-term" data-tooltip="A tradução que torna o texto estrangeiro familiar ao ponto de apagar suas marcas culturais">domesticação radical</span> que Venuti critica. A IA, treinada majoritariamente em corpora "padrão", não reconhece a legitimidade das variedades.</li>
+                        <li><span class="tech-term" data-tooltip="Acesso à diversidade linguística como direito da comunidade Surda">Ética da Acessibilidade:</span> Legendas CC têm função dupla: traduzir <strong>e</strong> representar a experiência auditiva. "Corrigir" dialetos para a norma priva a comunidade Surda e/ou ensurdecida de <span class="tech-term" data-tooltip="A diversidade linguística como parte da experiência humana completa">experienciar a diversidade linguística</span> presente no original.</li>
+                        <li><span class="tech-term" data-tooltip="Como ensinar sistemas de IA a reconhecer e respeitar variações linguísticas">Desafio para Ciência de Dados Linguísticos:</span> Este caso expõe a <span class="tech-term" data-tooltip="Corpora de treino compostos majoritariamente por textos padrão, marginalizando variedades">falha nos corpora de treino</span> dos modelos de IA. Para respeitar diversidade, precisamos de <span class="tech-term" data-tooltip="Dados que representem a riqueza das variedades linguísticas">corpora dialetalmente diversos</span> e sistemas que reconheçam marcas identitárias como <strong>características, não erros</strong>.</li>
+                    </ul>
+                    <center>
+                        <span class="error-tag" data-tooltip="Hierarquização de variedades linguísticas">PRECONCEITO LINGUÍSTICO</span>
+                        <span class="error-tag" data-tooltip="Apagamento de marcas culturais">DOMESTICAÇÃO RADICAL</span>
+                        <span class="error-tag" data-tooltip="Falta de representação da diversidade">FALHA NA ACESSIBILIDADE</span>
+                        <span class="error-tag" data-tooltip="Corpora de treino enviesados">VIÉS NOS DADOS</span><br>
+
+                        <span class="error-tag-after">PRESERVAÇÃO DIALETAL</span>
+                        <span class="error-tag-after">ESTRANGEIRIZAÇÃO ÉTICA</span>
+                        <span class="error-tag-after">ACESSIBILIDADE INCLUSIVA</span>
+                        <span class="error-tag-after">DADOS DIVERSIFICADOS</span>
+                    </center>
+                </div>
+            </div>
+
+                </div>
+              <!-- CASO 2: Terminologia Corporativa -->
+            <div id="case2" class="tab-content">
+                <div style="margin-bottom: 20pt; padding: 12pt; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #003366;">
+                    <strong>Contexto:</strong> Localização de software de uma Big Tech global. A IA ignora glossário terminológico validado, gerando inconsistências críticas.
+                    <div style="margin-top: 8pt; font-size: 9pt; color: #2c5282;">
+                        <strong>Nível de análise:</strong> <span class="tech-term" data-tooltip="Sistemas de controle terminológico em organizações">governança corporativa</span> <br> 
+                        <strong>Conceito-chave:</strong> <span class="tech-term" data-tooltip="Glossários como instrumentos de poder linguístico">terminologia como exercício de poder</span>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15pt;">
+                    <div>
+                        <h4 style="font-size: 9pt; color: var(--danger); text-align:center;">
+                            QUEBRA DE GOVERNANÇA
+                            <small style="font-size: 8pt; font-weight: normal;">(nível organizacional)</small>
+                        </h4>
+<br>
+<div class="click-hint" style="font-size:12px;">
+                                <svg class="hand-icon" viewBox="0 0 24 24">
+                                    <path d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M7,9l1.41,1.41L11,7.83V16h2V7.83l2.59,2.58L17,9l-5-5L7,9z"/>
+                                </svg>
+                                Clique nas imagens para vê-las em melhor resolução
+                            </div>
+
+                       <div style="background: #fff5f5; text-align:left; font-size: 10.5pt; padding: 20pt 15pt 65pt 15pt; border-radius: 4px; border: 1px solid #feb2b2; height:1158px;"> <div style="border-bottom: 1px solid #ccc; margin-bottom:13pt; text-align:center; font-size:8.5pt; padding: 0 0 13pt;"> Exemplos anonimizados</div>
+
+                            <!-- Exemplo 1 -->
+                            <div class="example-block" style="height:210px;">
+
+                                <strong>Exemplo 1 - Nome de produto:</strong><br>
+                                <a href="https://github.com/alc-etimo/profa_lenita/blob/main/caso-1-exemplo-1.png?raw=true" target="_blank;"><img src="https://github.com/alc-etimo/profa_lenita/blob/main/caso-1-exemplo-1.png?raw=true" style="width:100%;height:auto;"/></a>
+                              <br><br>  <div style="font-size: 8.5pt; color: #666; margin-top: 2pt;">
+                                    IA traduz como: "<span style="color:#2c5382; font-weight: bold;">Quadros do Produto X</span>"
+                                </div>
+                            </div>
+                            
+                            <!-- Exemplo 2 -->
+                            <div class="example-block">
+                                <strong>Exemplo 2 - Termo técnico:</strong>
+                                <a href="https://raw.githubusercontent.com/alc-etimo/profa_lenita/refs/heads/main/caso-1-exemplo-2.jp2?raw=true" target="_blank;"><img src="https://raw.githubusercontent.com/alc-etimo/profa_lenita/refs/heads/main/caso-1-exemplo-2.jp2" style="width:100%;height:100%;"/></a>
+                                <div style="font-size: 8.5pt; color: #666; margin-top: 2pt;">
+                                    IA traduz como: "Adicionar na caixa de pesquisa do <span style="color:#2c5382; font-weight: bold;">Trabalho</span> ID [...]"
+                                </div>
+                            </div>
+                            
+                            <!-- Exemplo 3 -->
+                            <div class="example-block">
+                                <strong>Exemplo 3 - Termo que deveria permanecer em inglês:</strong> 
+                                <a href="https://raw.githubusercontent.com/alc-etimo/profa_lenita/refs/heads/main/caso-1-exemplo-3.png?raw=true" target="_blank;"><img src="https://raw.githubusercontent.com/alc-etimo/profa_lenita/refs/heads/main/caso-1-exemplo-3.png" style="width:100%;height:100%;"/></a>
+                                <div style="font-size: 8.5pt; color: #666; margin-top: 2pt;">
+                                    IA traduz como: "<span style="color:#2c5382; font-weight: bold;">anúncios do Google</span>" (quando a marca deve permanecer)
+                                </div>
+                            </div>
+                            
+                            <!-- Exemplo 4 -->
+                            <div class="example-block">
+                                <strong>Exemplo 4 - Terminologia regulatória:</strong>
+                                <a href="https://raw.githubusercontent.com/alc-etimo/profa_lenita/refs/heads/main/caso-1-exemplo-4.png?raw=true" target="_blank;"><img src="https://raw.githubusercontent.com/alc-etimo/profa_lenita/refs/heads/main/caso-1-exemplo-4.png" style="width:100%;height:100%;"/></a>
+                                <div style="font-size: 8.5pt; color: #666; margin-top: 2pt;">
+                                    Mantido em conteúdo para o Brasil (deveria ser "<span style="color:#2c5382; font-weight: bold;">LGPD</span>")
+                                </div>
+                            </div>
+                            
+                            <!-- Exemplo 5 -->
+                            <div class="example-block">
+                                <strong>Exemplo 5 - Termo com múltiplas opções:</strong>
+                                <a href="https://raw.githubusercontent.com/alc-etimo/profa_lenita/refs/heads/main/caso-1-exemplo-5.png?raw=true" target="_blank;"><img src="https://raw.githubusercontent.com/alc-etimo/profa_lenita/refs/heads/main/caso-1-exemplo-5.png" style="width:100%;height:100%;"/></a>
+                                <div style="font-size: 8.5pt; color: #666; margin-top: 2pt;">
+                                    IA sempre traduz como "<span style="color:#2c5382; font-weight: bold;">objetivos</span>", mesmo quando "metas" seria mais apropriado ao contexto
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 9pt; color: var(--success); text-align:center;">
+                            GOVERNANÇA RESTAURADA
+                            <small style="font-size: 7.5pt; font-weight: normal;">(determinismo terminológico)</small>
+                        </h4>
+
+<br>
+                            <div class="click-hint" style="font-size:12px;">
+                                <svg class="hand-icon" viewBox="0 0 24 24">
+                                    <path d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M7,9l1.41,1.41L11,7.83V16h2V7.83l2.59,2.58L17,9l-5-5L7,9z"/>
+                                </svg>
+                                Clique nas imagens para vê-las em melhor resolução
+                            </div>
+
+                        <div style="background: #f0fff4; padding: 15pt; border-radius: 4px; border: 1px solid #9ae6b4;">
+                            <div style="margin-bottom: 10pt;">
+                                <div style="display: flex; border-bottom: 1px solid #ccc; margin-bottom: 8pt;">
+                                    <button class="mini-tab active" onclick="openVocabTab(event, 'minhaIntervencao')" style="flex: 1; padding: 6pt; border: none; background: #e6ffed; border-radius: 4px 4px 0 0; font-size: 8.5pt; cursor: pointer;">Minha Intervenção Manual</button>
+                                    <button class="mini-tab" onclick="openVocabTab(event, 'vocabularioAgencia')" style="flex: 1; padding: 6pt; border: none; background: #f0f0f0; border-radius: 4px 4px 0 0; font-size: 8.5pt; cursor: pointer;">Vocabulário da Agência</button>
+                                </div>
+
+                                <div id="minhaIntervencao" class="vocab-tab-content" style="display: block;">
+                                    <div class="example-block">
+                                        <strong>Exemplo 1:</strong> Nomes de produto
+                                        <div style="font-size: 8.5pt; color: #555; margin-top: 2pt;">
+                                            <strong>Ação:</strong> Rejeitei o segmento na plataforma com comentário: "Nome de produto não deve ser traduzido – manter 'Product X Boards'"<br>
+                                            <strong>Justificativa:</strong> Identidade de marca requer consistência global, não adaptação local
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="example-block" style="height:175px;">
+                                        <strong>Exemplo 2:</strong> <br>"Job" → "processo"
+                                  <br>      <div style="font-size: 8.5pt; color: #555; margin-top: 2pt;">
+                                        <br>    <strong>Glossário corporativo:</strong> termo técnico com tradução determinística
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="example-block" style="height:207px;">
+                                        <strong>Exemplo 3:</strong> <br>"Google ads" → manter em inglês
+                                        <div style="font-size: 9pt; color: #555; margin-top: 2pt;"><br>
+                                            <strong>Regra de marca:</strong> nomes de produtos/serviços mantêm identidade original
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="example-block" style="height:197px;">
+                                        <strong>Exemplo 4:</strong> <br>"GDPR" → "LGPD" (BR)
+                                        <div style="font-size: 9pt; color: #555; margin-top: 2pt;"><br>
+                                            <strong>Equivalência funcional jurídica:</strong> regulamentos têm equivalentes locais
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="example-block" style="height:204px;">
+                                        <strong>Exemplo 5:</strong> "Goals" → contexto define ("objetivos" ou "metas")<br>
+                                        <div style="font-size: 9pt; color: #555; margin-top: 2pt;"><br><br>
+                                            <strong>Calibragem do modelo:</strong> IA precisa de nuance para termos com múltiplas opções válidas
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div id="vocabularioAgencia" class="vocab-tab-content" style="display: none;">
+                                    <div class="example-block" style="height:210px;">
+
+                                        <strong>Exemplo 1 - Nome de produto:</strong>
+                                        <div class="vocab-image-box">
+                                            <a href="https://github.com/alc-etimo/profa_lenita/blob/main/caso-1-voc-exemplo-1.png?raw=true" target="_blank;">
+                                                <img src="https://github.com/alc-etimo/profa_lenita/blob/main/caso-1-voc-exemplo-1.png?raw=true" alt="Regra de não tradução de nomes de produto" style="max-width: 90%; height: auto;">
+                                            </a>
+                                            <div style="font-size: 8pt; color: #666; margin-top: 2pt;">
+                                                Regra documentada: <br> "Product names → do not translate"
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="example-block" style="height:175px;">
+                                        <strong>Exemplo 2 - Termo técnico:</strong>
+                                        <div class="vocab-image-box">
+                                            <a href="https://github.com/alc-etimo/profa_lenita/blob/main/caso-1-voc-exemplo-4.png?raw=true" target="_blank;">
+                                                <img src="https://github.com/alc-etimo/profa_lenita/blob/main/caso-1-voc-exemplo-4.png?raw=true" alt="Glossário corporativo 'Job → processo'" style="max-width: 30%; height: auto;">
+                                            </a>
+                                            <div style="font-size: 8pt; color: #666; margin-top: 2pt;">
+                                                Glossário corporativo exigindo <br> "Job" → "processo" (nunca "trabalho")
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="example-block" style="height:207px;">
+                                        <strong>Exemplo 3 - Termo que deveria permanecer em inglês:</strong>
+                                        <div class="vocab-image-box">
+                                          <a href="https://github.com/alc-etimo/profa_lenita/blob/main/caso-1-voc-exemplo-3.png?raw=true" target="_blank;">  <img src="https://github.com/alc-etimo/profa_lenita/blob/main/caso-1-voc-exemplo-3.png?raw=true" alt="Vocabulário controlado mostrando 'Job → processo'" style="max-width: 60%; height: auto;"></a>
+                                            <div style="font-size: 8pt; color: #666; margin-top: 4pt;">
+                                                Regra de não tradução de nomes de marca
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="example-block" style="height:197px;">
+                                        <strong>Exemplo 4 - Terminologia regulatória:</strong>
+                                        <div class="vocab-image-box">
+                                           <a href="https://github.com/alc-etimo/profa_lenita/blob/main/caso-1-voc-exemplo-5.png?raw=true" target="_blank">   <img src="https://github.com/alc-etimo/profa_lenita/blob/main/caso-1-voc-exemplo-5.png?raw=true" alt="Glossário com equivalências regulatórias" style="max-width: 30%; height: auto;"></a>
+
+
+                                            <div style="font-size: 8pt; color: #666; margin-top: 2pt;">
+                                                Glossário com equivalências regulatórias: <br> "GDPR" → "LGPD" (BR)
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="example-block" style="height:204px;">
+                                        <strong>Exemplo 5 - Termo com múltiplas opções:</strong>
+                                        <div class="vocab-image-box">
+                                         <a href="https://github.com/alc-etimo/profa_lenita/blob/main/caso-1-voc-exemplo-2.png?raw=true" target="_blank">   <img src="https://github.com/alc-etimo/profa_lenita/blob/main/caso-1-voc-exemplo-2.png?raw=true" alt="Glossário com nuances contextuais" style="max-width: 60%; height: auto;"></a>
+                                            <div style="font-size: 8pt; color: #666; margin-top: 2pt;">
+                                                Glossário com orientações contextuais <br> para "goals"
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analysis-box">
+                    <h4>Análise do Poder Corporativo e Consistência Terminológica</h4>
+                    <ul class="analysis-list">
+                        <li><span class="tech-term" data-tooltip="Glossários como instrumentos de controle e padronização em corporações globais">Terminologia como Exercício de Poder:</span> A existência de um glossário corporativo não é apenas uma questão de consistência – é um <span class="tech-term" data-tooltip="Empresas impondo escolhas linguísticas que afetam milhões de usuários">ato de poder linguístico.</span> Quando a IA o ignora, subverte a governança linguística da organização.</li>
+                        <li><span class="tech-term" data-tooltip="Sistemas probabilísticos vs. regras determinísticas">Tensão Probabilística-Determinística:</span> Modelos de IA funcionam por probabilidade ("job" provavelmente = "trabalho"), mas ambientes corporativos exigem <span class="tech-term" data-tooltip="Regras que devem ser seguidas independentemente de probabilidades">determinismo terminológico.</span> Meu protocolo cria uma <strong>camada de governança</strong> que força o determinismo sobre a probabilidade.</li>
+                        <li><span class="tech-term" data-tooltip="Problema duplo: rigidez onde precisa de nuance, flexibilidade onde precisa de rigidez">Erro em Duas Camadas:</span> A IA erra em duas frentes: 1) <strong>Ignora constraints rígidas</strong> (nomes de produtos não devem ser traduzidos); 2) <strong>Aplica rigidez indevida</strong> onde termos poderiam ter múltiplas opções válidas ("goals" → sempre "objetivos").</li>
+                        <li><span class="tech-term" data-tooltip="Como estruturar dados linguísticos para que sistemas os respeitem">Ontologias como Antídoto:</span> Este caso demonstra por que precisamos de <span class="tech-term" data-tooltip="Estruturas de conhecimento que relacionam termos e suas restrições">ontologias linguísticas</span> no lugar de apenas modelos probabilísticos. Uma ontologia corporativa diria: <em>"Product X Boards" → tipo: nome_de_produto → ação: não_traduzir</em> – e a IA obedeceria.</li>
+                    </ul>
+                    <center>
+                        <span class="error-tag" style="padding:3px; font-size:8pt;" data-tooltip="Ignorar regras terminológicas estabelecidas">QUEBRA DE GOVERNANÇA</span>
+                        <span class="error-tag" style="padding:3px; font-size:8pt;" data-tooltip="Probabilidade sobrepõe regras">DETERMINISMO IGNORADO</span>
+                        <span class="error-tag" style="padding:3px; font-size:8pt;" data-tooltip="Falta de adaptação jurídica local">EQUIVALÊNCIA FALHA</span>
+                        <span class="error-tag" style="padding:3px; font-size:8pt;" data-tooltip="Falta de estrutura de conhecimento">ONTOLOGIA AUSENTE</span><br>
+
+                        <span class="error-tag-after" style="padding:2px; font-size:7pt;">GOVERNANÇA RESTAURADA</span>
+                        <span class="error-tag-after" style="padding:2px; font-size:7pt;">DETERMINISMO APLICADO</span>
+                        <span class="error-tag-after" style="padding:2px; font-size:7pt;">EQUIVALÊNCIA FUNCIONAL</span>
+                        <span class="error-tag-after" style="padding:2px; font-size:7pt;">ONTOLOGIA IMPLEMENTADA</span>
+                    </center>
+                </div>
+            </div>
+            
+            <!-- CASO 3: Norma como Ditadura -->
+            <div id="case3" class="tab-content">
+                <div style="margin-bottom: 20pt; padding: 12pt; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #2c5282;">
+                    <strong>Contexto:</strong> Conteúdo britânico sendo processado por IA treinada majoritariamente em EN-US, resultando em "correções" que impõem norma americana sobre outras variedades nacionais legítimas.
+                    <div style="margin-top: 8pt; font-size: 9pt; color: #2c5282;">
+                        <strong>Nível de análise:</strong> <span class="tech-term" data-tooltip="Variação entre normas nacionais estabelecidas">normativo regional</span><br>
+                        <strong>Conceito-chave:</strong> <span class="tech-term" data-tooltip="Múltiplos centros normativos para uma mesma língua">pluricentrismo linguístico</span>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15pt;">
+                    <div>
+                        <h4 style="font-size: 9pt; color: var(--danger); text-align:center;">
+                            HEGEMONIA NORMATIVA
+                            <small style="font-size: 8pt; font-weight: normal;">(nível nacional/regional)</small>
+                        </h4>
+                        <div style="background: #fff5f5; padding: 15pt; border-radius: 4px; border: 1px solid #feb2b2;">
+                            <!-- Exemplo 1 -->
+                            <div class="example-block" style="height:192px;">
+                                <strong>Exemplo 1 - Ortografia:</strong> <br>
+                                <a href="https://github.com/alc-etimo/profa_lenita/blob/main/caso-3-aba-3-exemplo-1.png?raw=true" target="_blank;"><img src="https://github.com/alc-etimo/profa_lenita/blob/main/caso-3-aba-3-exemplo-1.png?raw=true" style="width:100%;height:auto;"/></a><br><br>
+                                <div style="font-size: 8.5pt; color: #666; margin-top: 2pt;">
+                                    IA "corrige" para: "<span style="color:#2c5382; font-weight: bold;">traveling</span> with 13 kids"
+                                </div>
+                            </div>
+                            
+                            <!-- Exemplo 2 -->
+                            <div class="example-block">
+                                <strong>Exemplo 2 - Vocabulário australiano:</strong>
+                                <img src="https://github.com/alc-etimo/profa_lenita/blob/main/caso-3-aba-3-exemplo-2.png?raw=true" style="width:100%;height:100%;"/>
+                                <div style="font-size: 8.5pt; color: #666; margin-top: 2pt;">
+                                    IA "corrige" para: "Is a small, <span style="color:#2c5382; font-weight: bold;">defenseless</span> bird of Australian origin."
+                                </div>
+                            </div>
+                            
+                            <!-- Exemplo 3 -->
+                            <div class="example-block" style="height:192px;">
+                                <strong>Exemplo 3 - Regionalismo irlandês:</strong><br>
+                                <img src="https://github.com/alc-etimo/profa_lenita/blob/main/caso-3-aba-3-exemplo-3.png?raw=true" style="width:100%;height:auto;"/>
+                                <div style="font-size: 8.5pt; color: #666; margin-top: 2pt;">
+                                    IA "corrige" para: "I remember once, when I was a <span style="color:#2c5382; font-weight: bold;">child</span>,"
+                                </div>
+                            </div>
+                            
+                            <!-- Exemplo 4 -->
+                            <div class="example-block" style="height:192px;">
+                                <strong>Exemplo 4 - Ortografia britânica:</strong>
+                                <img src="https://github.com/alc-etimo/profa_lenita/blob/main/caso-3-aba-3-exemplo-4.png?raw=true" style="width:100%;height:auto;"/>
+                                <div style="font-size: 8.5pt; color: #666; margin-top: 2pt;"><br>
+                                    IA "corrige" para: "I went to the <span style="color:#2c5382; font-weight: bold;">Labor</span> this morning"
+                                </div>
+                            </div>
+                            
+                            <!-- Exemplo 5 -->
+                            <div class="example-block">
+                                <strong>Exemplo 5 - Coloquialismo britânico:</strong>
+                                <img src="https://github.com/alc-etimo/profa_lenita/blob/main/caso-3-aba-3-exemplo-5.png?raw=true" style="width:100%;height:100%;"/>
+                                <div style="font-size: 8.5pt; color: #666; margin-top: 2pt;">
+                                    IA "corrige" para: "<span style="color:#2c5382; font-weight: bold;">Mom</span>, she can't use the spoon."
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 9pt; color: var(--success); text-align:center;">
+                            PLURICENTRISMO
+                            <small style="font-size: 8pt; font-weight: normal;">(reconhecimento de variedades)</small>
+                        </h4>
+                        <div style="background: #f0fff4; padding: 15pt; border-radius: 4px; border: 1px solid #9ae6b4;">
+                            <div class="example-block">
+                                <strong>Exemplo 1:</strong> "travelling" vs "traveling"
+                                <div style="font-size: 8.5pt; color: #555; margin-top: 2pt;">
+                                    <strong>Análise:</strong> Ortografia EN-UK preservada como marcador normativo regional<br>
+                                    <strong>Protocolo:</strong> Identificar conteúdo como EN-UK e bloquear "correções" para EN-US
+                                </div>
+                            </div>
+                            
+                            <div class="example-block" style="height:184px;">
+                                <strong>Exemplo 2:</strong> "defenceless" vs "defenseless"
+                                <div style="font-size: 8.5pt; color: #555; margin-top: 2pt;">
+                                    <strong>Análise:</strong> Vocabulário australiano legítimo, não erro<br>
+                                    <strong>Protocolo:</strong> Detectar variante EN-AU e preservar ortografia original
+                                </div>
+                            </div>
+                            
+                            <div class="example-block">
+                                <strong>Exemplo 3:</strong> "chiseller" (irl) vs "child"
+                                <div style="font-size: 8.5pt; color: #555; margin-top: 2pt;">
+                                    <strong>Análise:</strong> Regionalismo irlandês que caracteriza personagem<br>
+                                    <strong>Protocolo:</strong> Preservar termos regionais como marcadores identitários
+                                </div>
+                            </div>
+                            
+                            <div class="example-block">
+                                <strong>Exemplo 4:</strong> "Labour" vs "Labor"
+                                <div style="font-size: 8.5pt; color: #555; margin-top: 2pt;">
+                                    <strong>Análise:</strong> Ortografia política britânica com significado específico<br>
+                                    <strong>Protocolo:</strong> Respeitar convenções ortográficas da variante original
+                                </div>
+                            </div>
+                            
+                            <div class="example-block" style="height:185px;">
+                                <strong>Exemplo 5:</strong> "Mum" vs "Mom"
+                                <div style="font-size: 8.5pt; color: #555; margin-top: 2pt;">
+                                    <strong>Análise:</strong> Coloquialismo britânico autêntico<br>
+                                    <strong>Protocolo:</strong> Manter variações lexicais regionais como parte da autenticidade
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cc-quote" style=text-align:justify;">
+                    "A hegemonia linguística não está apenas nas IAs – editores de texto como Word e Bloco de Notas também sublinham em vermelho 'travelling' e 'defenceless' como 'erros', ensinando usuários que a norma EN-US é a única válida. Meu protocolo combate essa normalização automatizada em múltiplas camadas."
+                </div>
+                
+                <div class="analysis-box">
+                    <h4>Análise da Hegemonia Linguística Automatizada</h4>
+                    <ul class="analysis-list">
+                        <li><span class="tech-term" data-tooltip="A norma dominante (EN-US) sendo imposta sobre outras variedades legítimas">Hegemonia Linguística Automatizada:</span> A IA, treinada predominantemente em corpora americanos, trata o EN-US como <span class="tech-term" data-tooltip="A variedade vista como 'correta' por padrão">"padrão universal"</span> e outras variedades como "desvios". Isso automatiza a <span class="tech-term" data-tooltip="A dominação cultural através da imposição linguística">hegemonia linguística</span> em escala global.</li>
+                        <li><span class="tech-term" data-tooltip="Equilíbrio entre norma estabelecida e usos reais em diferentes contextos">Norma vs. Uso Contextualizado:</span> A teoria da norma (Aubert) distingue entre <span class="tech-term" data-tooltip="Regras abstratas">norma prescritiva</span> e <span class="tech-term" data-tooltip="Uso real em contexto">norma de uso.</span> A IA aplica cegamente a norma prescritiva EN-US, ignorando que a <strong>adequação contextual</strong> exige respeito às normas locais.</li>
+                        <li><span class="tech-term" data-tooltip="Representação enviesada de variedades linguísticas nos dados de treino">Viés nos Corpora de Treino:</span> O problema raiz está nos <span class="tech-term" data-tooltip="Conjuntos de dados desbalanceados que super-representam certas variedades">corpora desbalanceados.</span> Se 80% dos dados de treino são EN-US, a IA aprenderá que "traveling" é "correto" e "travelling" é "erro", reproduzindo <span class="tech-term" data-tooltip="Dominação numérica que se traduz em dominação linguística">hegemonia quantitativa</span> como hegemonia qualitativa.</li>
+                        <li><span class="tech-term" data-tooltip="Reconhecimento e valorização de múltiplas normas linguísticas legítimas">Pluricentrismo Linguístico como Solução:</span> Línguas como o inglês são <span class="tech-term" data-tooltip="Línguas com múltiplos centros normativos (UK, US, AU, etc.)">pluricêntricas</span> – têm múltiplas normas legítimas. Minha proposta implementa <span class="tech-term" data-tooltip="Sistemas que reconhecem e aplicam normas apropriadas ao contexto">reconhecimento pluricêntrico,</span> ensinando à IA que "travelling" não é um erro, é a norma EN-UK.</li>
+                    </ul>
+                    <center>
+                        <span class="error-tag" style="padding:3px; font-size:7.6pt;" data-tooltip="Imposição da variedade dominante">HEGEMONIA LINGUÍSTICA</span>
+                        <span class="error-tag" style="padding:3px; font-size:7.6pt;" data-tooltip="Aplicação cega de regras sem contexto">NORMATIVISMO CEGO</span>
+                        <span class="error-tag" style="padding:3px; font-size:7.6pt;" data-tooltip="Dados de treino desbalanceados">VIÉS NOS CORPORA</span>
+                        <span class="error-tag" style="padding:3px; font-size:7.6pt;" data-tooltip="Ignorar múltiplas normas legítimas">PLURICENTRISMO NEGADO</span><br>
+                        
+                        <span class="error-tag-after" style="padding:3px; font-size:7pt;">RESPEITO À VARIEDADE</span>
+                        <span class="error-tag-after" style="padding:3px; font-size:7pt;">CONTEXTUALIZAÇÃO NORMATIVA</span>
+                        <span class="error-tag-after" style="padding:3px; font-size:7pt;">CORPORA BALANCEADOS</span>
+                        <span class="error-tag-after" style="padding:3px; font-size:7pt;">PLURICENTRISMO APLICADO</span>
+                    </center>
+                </div>
+            </div>
+        </div>
+        
+        <!-- DIAGRAMA COMPARATIVO ENTRE OS CASOS 1 E 3 -->
+        <div class="research-statement" style="background: linear-gradient(135deg, #f0f7ff 0%, #d6e4ff 100%); border-left: 4px solid #4a90e2; margin-top: 20pt;">
+            <h4 style="color: #003366; margin-bottom: 10pt; text-align: center;">DISTINÇÃO TEÓRICA: DO INDIVÍDUO À NAÇÃO</h4>
+            
+            <div class="comparison-grid">
+                <div style="text-align: center;">
+                    <div class="comparison-card" style="border-color: #003366;">
+                        <h5 style="color: #003366; margin-bottom: 8pt;">CASO 1: IDENTIDADE DIALETAL</h5>
+                        <div style="font-size: 9pt;">
+                            <strong>Nível:</strong> Micro (indivíduo/comunidade)<br>
+                            <strong>Variação:</strong> Dialetal/Idioletal<br>
+                            <strong>Exemplo:</strong> "me" (irlandês) vs "my"<br>
+                            <strong>Teoria:</strong> Sociolinguística (Labov)<br>
+                            <strong>Problema:</strong> Apagamento identitário<br>
+                            <strong>Intervenção:</strong> Preservação cultural
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center;">
+                    <div class="comparison-card" style="border-color: #2c5282;">
+                        <h5 style="color: #2c5282; margin-bottom: 8pt;">CASO 3: PLURICENTRISMO NEGADO</h5>
+                        <div style="font-size: 9pt;">
+                            <strong>Nível:</strong> Macro (nação/região)<br>
+                            <strong>Variação:</strong> Normativa regional<br>
+                            <strong>Exemplo:</strong> "travelling" (UK) vs "traveling" (US)<br>
+                            <strong>Teoria:</strong> Pluricentrismo linguístico<br>
+                            <strong>Problema:</strong> Hegemonia normativa<br>
+                            <strong>Intervenção:</strong> Reconhecimento de variedades
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; font-size: 9.5pt; margin-top: 10pt; font-style: italic;">
+                <strong>Conclusão:</strong> O Caso 1 trata de como a IA apaga <em>identidades individuais</em>; 
+                o Caso 3 trata de como a IA impõe <em>hierarquias nacionais</em>. 
+                São faces diferentes da mesma violência linguística automatizada.
+            </p>
+        </div>
+        
+        
+    </section>
+
+    <!-- RESULTADOS -->
+    <section>
+        <h2>RESULTADOS QUALITATIVOS, QUANTITATIVOS E INSTITUCIONAIS</h2>
+        
+        <div class="results-vertical">
+            <div class="qualitative-box">
+                <h3 style="border-left:3px; margin-top: 5px; #ffffff">Resultados Qualitativos</h3>
+                <ul>
+                    <li><strong>Proposta de categoria "Language/Local/Dialect"</strong> apresentada a agências, com subcategorias para "Foreign Language Issues" e "Dialect/Locale issues"</li>                    
+                    <li><strong>Protocolo manual de análise de variantes</strong> implementado em projetos de localização, identificando e protegendo marcas dialetais</li>
+                    <li><strong>Argumentação teórica documentada</strong> para agências, vinculando preservação dialetal a ética da tradução e acessibilidade</li>
+                    <li><strong>Análise manual de compliance terminológica</strong> em projetos corporativos, identificando violações de glossários</li>
+                    <li><strong>Sistema manual de detecção de variante linguística</strong> (EN-UK, EN-US, EN-AU) com argumentação contra "correções" indevidas</li>
+                </ul>
+            </div>
+            
+            <div class="quantitative-box">
+                <h3 style="border-left:3px; margin-top: 5px; #ffffff">Resultados Quantitativos</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">5</div>
+                        <div class="metric-label">Categorias de análise implementadas<br>com base em teoria linguística</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">12+</div>
+                        <div class="metric-label">Projetos com análise manual<br>de preservação dialetal</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">100%</div>
+                        <div class="metric-label">Cobertura dos casos paradigmáticos<br>com análise ética aprofundada</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">3</div>
+                        <div class="metric-label">Agências que receberam<br>argumentação documentada</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="impact-box">
+                <h3 style="border-left:3px; margin-top: 5px; #ffffff">Impacto Institucional e Teórico</h3>
+                <ul>
+                    <li><strong>Mudança no discurso das agências:</strong> De "corrigir dialetos" para considerar "preservar marcas identitárias" após minha argumentação</li>
+                    <li><strong>Validação da metodologia:</strong> Protocolos manuais aplicados com sucesso em múltiplos projetos, demonstrando necessidade de automação</li>
+                    <li><strong>Ponte teoria-prática:</strong> Operacionalização de conceitos de Venuti, Labov e Aubert em análise de conteúdo real</li>
+                    <li><strong>Contribuição para ética em IA linguística:</strong> Demonstração concreta de como sistemas atuais reproduzem preconceitos linguísticos</li>
+                    <li><strong>Base para pesquisa no mestrado:</strong> Casos documentados que mostram a necessidade de sistemas automatizados de governança linguística ética</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGAÇÃO COM AS DISCIPLINAS -->
+    <section>
+        <h2>LIGAÇÃO COM AS DISCIPLINAS DA PROF. LENITA</h2>
+        
+        <div class="research-statement" style="padding: 20pt;">
+            <p style="font-style: normal; margin-bottom: 15pt;">Este caso aplica diretamente os conceitos das suas disciplinas de 2017:</p>
+            <div>
+                <ul style="margin-top: 0;">
+                    <li><strong>Ética da Tradução (Venuti) → Resistência à domesticação:</strong> Usei o conceito de "estrangeirização" para argumentar contra o apagamento do "me" irlandês, defendendo que a tradução deve tornar visível a alteridade, não apagá-la (Caso 1)</li>                        
+                    <li><strong>Análise Contrastiva → Detecção de variantes:</strong> Apliquei análise contrastiva não apenas entre línguas, mas entre variedades do inglês, identificando que "travelling" (EN-UK) não é erro, mas norma diferente (Caso 3)</li>
+                    <li><strong>Terminologia e Padronização → Governança corporativa:</strong> Usei glossários como instrumentos de poder linguístico corporativo, criando argumentação para que IA respeite terminologia aprovada (Caso 2)</li>                    
+                    <li><strong>Norma vs. Uso → Adequação contextual:</strong> Apliquei a distinção entre norma prescritiva e norma de uso para justificar a preservação de dialetos em contextos onde eles são marcadores identitários legítimos (Casos 1 e 3)</li>
+                    <li><strong>Tradução Técnica → Equivalência funcional:</strong> Usei o conceito de equivalência funcional para garantir que "GDPR" fosse traduzido como "LGPD" em conteúdo para o Brasil, mantendo função jurídica equivalente (Caso 2)</li>
+                </ul>
+            </div>
+        </div>
+        
+        
+        <!-- QUOTE BOX -->
+        <div class="quote-box">
+            <p>"Este estudo demonstra que a tradução é, essencialmente, uma tomada de posição ética. Diante de um cenário onde as escolhas são delegadas a algoritmos que silenciam o que foge ao padrão, a intervenção técnica atua como um mecanismo de resistência. O objetivo é garantir que a tradução permaneça como um espaço de visibilidade cultural, combatendo a tendência ao apagamento promovida pela escala industrial."</p>
+            <div class="source">Insight Principal do Caso</div>
+        </div>
+        
+        <div class="research-statement">
+            <p><strong>Para o EMLDS:</strong> Este caso demonstra que preciso do mestrado não para aprender teoria linguística – você já me deu essa base – mas para <strong>aprender a escalar a ética</strong>. Preciso de métodos computacionais para transformar estes protocolos manuais em <strong>sistemas automatizados de governança linguística ética</strong> que possam ser implementados em qualquer organização global.</p>
+        </div>
+    </section>
+
+    <script>
+        // Função de Tabs para Casos Paradigmáticos
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Pipeline da Metodologia
+        let currentMethodStep = 1;
+        const totalMethodSteps = 5;
+        const methodPrevBtn = document.getElementById('methodPrevBtn');
+        const methodNextBtn = document.getElementById('methodNextBtn');
+        
+        function updateMethodPipeline() {
+            for (let i = 1; i <= totalMethodSteps; i++) {
+                const box = document.getElementById(`methodStep${i}`);
+                if (box) box.classList.remove('active');
+            }
+            
+            const currentBox = document.getElementById(`methodStep${currentMethodStep}`);
+            if (currentBox) currentBox.classList.add('active');
+            
+            if (methodPrevBtn) methodPrevBtn.disabled = currentMethodStep === 1;
+            if (methodNextBtn) methodNextBtn.disabled = currentMethodStep === totalMethodSteps;
+        }
+        
+        function moveMethodSlide(direction) {
+            const newStep = currentMethodStep + direction;
+            if (newStep >= 1 && newStep <= totalMethodSteps) {
+                currentMethodStep = newStep;
+                updateMethodPipeline();
+            }
+        }
+        
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            updateMethodPipeline();
+            
+            // Inicializa a primeira aba como ativa
+            openTab({currentTarget: document.querySelector('.tab-btn.active')}, 'case1');
+        });
+
+        function openVocabTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("vocab-tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("mini-tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+                tablinks[i].style.background = "#f0f0f0";
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.classList.add("active");
+            evt.currentTarget.style.background = "#e6ffed";
+        }
+    </script>
+
+</body>
+</html>
