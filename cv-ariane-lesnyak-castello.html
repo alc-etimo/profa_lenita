@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo - Ariane Lesnyak Castelló | Para a Prof. Lenita</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15mm;
+            font-size: 10.5pt;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 4px solid #003366;
+            padding-bottom: 15pt;
+            margin-bottom: 25pt;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20pt;
+            border-radius: 8px;
+        }
+        
+        .header h1 {
+            font-size: 18pt;
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 8pt;
+            text-transform: uppercase;
+            letter-spacing: 1.5pt;
+        }
+        
+        .header .tagline {
+            font-size: 12pt;
+            color: #555;
+            font-weight: 600;
+            margin-bottom: 10pt;
+        }
+        
+        .contact-info {
+            font-size: 9.5pt;
+            color: #666;
+            margin-top: 8pt;
+        }
+        
+        .contact-info a {
+            color: #003366;
+            text-decoration: none;
+        }
+        
+        section {
+            margin-bottom: 25pt;
+            page-break-inside: avoid;
+        }
+        
+        h2 {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #003366;
+            border-bottom: 3px solid #003366;
+            padding-bottom: 5pt;
+            margin-bottom: 15pt;
+            text-transform: uppercase;
+            letter-spacing: 0.8pt;
+        }
+        
+        h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            color: #003366;
+            margin-top: 18pt;
+            margin-bottom: 10pt;
+            border-left: 5px solid #003366;
+            padding-left: 10pt;
+        }
+        
+        .note-box {
+            background: #e3f2fd;
+            border-left: 5px solid #003366;
+            padding: 15pt;
+            margin: 20pt 0;
+            font-size: 10pt;
+            border-radius: 4px;
+            font-style: italic;
+        }
+        
+        .summary-box {
+            background: #f0f7ff;
+            border: 2px solid #003366;
+            border-radius: 8px;
+            padding: 15pt;
+            margin: 20pt 0;
+            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
+        }
+        
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15pt;
+            margin: 20pt 0;
+        }
+        
+        .achievement-card {
+            background: white;
+            border: 2px solid #003366;
+            border-radius: 8px;
+            padding: 15pt;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
+        }
+        
+        .achievement-number {
+            font-size: 20pt;
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 8pt;
+        }
+        
+        .achievement-desc {
+            font-size: 10pt;
+            color: #555;
+        }
+        
+        .theory-practice-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12pt;
+            margin: 15pt 0;
+        }
+        
+        .theory-card {
+            background: white;
+            border: 2px solid #003366;
+            border-radius: 6px;
+            padding: 12pt;
+            box-shadow: 0 2px 6px rgba(0, 51, 102, 0.1);
+        }
+        
+        .theory-card .concept {
+            font-weight: bold;
+            color: #003366;
+            font-size: 10.5pt;
+            margin-bottom: 5pt;
+        }
+        
+        .theory-card .course {
+            font-size: 9.5pt;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 5pt;
+        }
+        
+        .theory-card .arrow {
+            color: #003366;
+            font-size: 14pt;
+            margin: 5pt 0;
+            text-align: center;
+        }
+        
+        .theory-card .application {
+            font-size: 10pt;
+            color: #333;
+            line-height: 1.5;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5pt;
+        }
+        
+        .job-title {
+            font-weight: bold;
+            color: #003366;
+            font-size: 11pt;
+        }
+        
+        .date {
+            font-style: italic;
+            color: #666;
+            font-size: 9.5pt;
+        }
+        
+        .company {
+            color: #555;
+            font-size: 10pt;
+            margin-bottom: 6pt;
+        }
+        
+        .company-description {
+            font-style: italic;
+            color: #666;
+            font-size: 9.5pt;
+            margin-bottom: 8pt;
+        }
+        
+        ul {
+            margin-left: 20pt;
+            margin-top: 5pt;
+        }
+        
+        li {
+            margin-bottom: 6pt;
+            text-align: justify;
+        }
+        
+        .highlight {
+            color: #003366;
+            font-weight: 600;
+        }
+        
+        .education-item {
+            margin-bottom: 15pt;
+        }
+        
+        .degree {
+            font-weight: bold;
+            color: #003366;
+            font-size: 11pt;
+        }
+        
+        .institution {
+            font-size: 10pt;
+            color: #555;
+            margin-bottom: 5pt;
+        }
+        
+        .grade-badge {
+            display: inline-block;
+            background: #003366;
+            color: white;
+            padding: 2pt 8pt;
+            border-radius: 4px;
+            font-size: 9.5pt;
+            font-weight: bold;
+            margin-right: 8pt;
+            margin-top: 5pt;
+        }
+        
+        .grade-badge.gold {
+            background: linear-gradient(135deg, #d4af37 0%, #f9d423 100%);
+            color: #1a1a1a;
+        }
+        
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20pt 0;
+            table-layout: fixed;
+        }
+        
+        .skills-table th {
+            font-size: 11pt;
+            font-weight: bold;
+            color: #003366;
+            text-transform: uppercase;
+            letter-spacing: 1pt;
+            padding: 10pt;
+            border-bottom: 2px solid #003366;
+            text-align: center;
+            width: 33.33%;
+        }
+        
+        .skills-table td {
+            vertical-align: top;
+            padding: 12pt;
+            border: 1px solid #ddd;
+            background-color: white;
+            width: 33.33%;
+        }
+        
+        .skills-list {
+            list-style-type: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
+        
+        .skills-list li {
+            margin-bottom: 8pt;
+            text-align: center;
+        }
+        
+        .skill-badge {
+            display: inline-block;
+            padding: 4pt 10pt;
+            border-radius: 4px;
+            font-size: 9.5pt;
+            font-weight: bold;
+            margin: 2pt;
+            border: 1px solid;
+        }
+        
+        .skill-badge.blue-dark {
+            background-color: #003366;
+            color: white;
+            border-color: #003366;
+        }
+        
+        .skill-badge.blue-light {
+            background-color: #e3f2fd;
+            color: #003366;
+            border-color: #003366;
+        }
+        
+        .skill-badge.blue-lighter {
+            background-color: #f0f7ff;
+            color: #003366;
+            border-color: #003366;
+        }
+        
+        .tools-container {
+            text-align: center;
+            margin: 15pt 0;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e3f2fd 100%);
+            border: 1px solid #003366;
+            border-radius: 8px;
+            padding: 15pt;
+        }
+        
+        .tool-tag {
+            display: inline-block;
+            border: 1px solid #003366;
+            padding: 5pt 10pt;
+            margin: 5pt;
+            border-radius: 4px;
+            font-size: 9.5pt;
+            background-color: white;
+        }
+        
+        .languages-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 10pt;
+        }
+        
+        .lang-chart {
+            text-align: center;
+            position: relative;
+            width: 80px;
+            transition: transform 0.3s;
+            cursor: default;
+        }
+        
+        .lang-chart:hover {
+            transform: scale(1.1);
+        }
+        
+        .pie {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 0 auto 5pt;
+        }
+        
+        .lang-name {
+            font-size: 8.5pt;
+            font-weight: bold;
+        }
+        
+        .lang-level {
+            font-size: 7.5pt;
+            color: #666;
+        }
+        
+        .pt { background: conic-gradient(#003366 0% 100%); }
+        .en { background: conic-gradient(#004a8d 0% 100%); }
+        .libras { background: conic-gradient(#0066cc 0% 85%, #eee 85% 100%); }
+        .fr { background: conic-gradient(#3399ff 0% 70%, #eee 70% 100%); }
+        .es { background: conic-gradient(#99ccff 0% 60%, #eee 60% 100%); }
+        
+        .closing-box {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e3f2fd 100%);
+            border: 3px solid #003366;
+            padding: 20pt;
+            border-radius: 10px;
+            margin: 25pt 0;
+            text-align: center;
+        }
+        
+        .collaborations-container {
+            margin: 20pt 0;
+            overflow: hidden;
+        }
+        
+        .collab-row {
+            position: relative;
+            overflow: hidden;
+            padding: 1rem 0;
+        }
+        
+        .collab-track {
+            display: flex;
+            gap: 2rem;
+            width: max-content;
+            animation: slideRightToLeft 30s linear infinite;
+        }
+        
+        @keyframes slideRightToLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .collab-logo {
+            width: 120px;
+            height: 60px;
+            background: white;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        
+        .collab-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: grayscale(100%) sepia(100%) hue-rotate(180deg) saturate(300%);
+            opacity: 0.8;
+        }
+        
+        .collab-logo:hover {
+            border-color: #003366;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        
+        @media print {
+            body { padding: 5mm; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. CABEÇALHO -->
+    <div class="header">
+        <h1>Ariane Lesnyak Castelló</h1>
+        <div class="tagline">Linguista | Especialista em Governança Linguística Corporativa<br>
+<span style="font-size:14px; font-style:normal;">Candidata ao EMLDS | Foco: Ética em IA, Linguística Aplicada e Terminologia</span></div>
+        <div class="contact-info">
+            São Paulo, SP | +55 (11) 94388-2913 | <a href="mailto:ariane.castello@alumni.usp.br">ariane.castello@alumni.usp.br</a><br>
+            <a href="linkedin.com/in/ariane-lesnyak">LinkedIn</a> | <a href="xxxxxxx">Portfólio</a>
+        </div>
+    </div>
+
+    <!-- 2. BOX DE NOTA PARA PROF. LENITA -->
+    <div class="note-box" style="text-align:justify">
+        <strong>Profa. Lenita:</strong> Este currículo foi elaborado especificamente para mostrar como os conceitos que aprendi nas suas disciplinas em 2017 se tornaram a base da minha atuação contra a <strong>violência linguística automatizada</strong> no mercado.<br><br>
+        <strong>Nota pessoal:</strong> Você me ensinou que "toda tradução é um ato político". Hoje, vejo esse ato político em escala global – e minha intervenção teórica e técnica busca garantir que a política seja a da inclusão, não do apagamento. Este documento mostra como transformei teoria em protocolos de resistência linguística.
+    </div>
+
+    <!-- 3. RESUMO PROFISSIONAL -->
+    <section>
+        <h2>Perfil Profissional: Ética Aplicada à Era da IA</h2>
+        <div class="summary-box" style="text-align:justify">
+            <p>Profissional com 10+ anos de experiência atuando na interseção entre tecnologia da informação e linguística, aplicando <strong>ética da tradução</strong>, <strong>arquitetura de sistemas</strong> e <strong>análise constrastiva</strong> para combater <strong>violência linguística automatizada</strong> em ambientes corporativos globais. Especializada em criar protocolos que interrompem ciclos de apagamento identitário e preservam diversidade dialetal mesmo em sistemas de IA em escala industrial.</p><br>
+            <p><strong>Objetivo atual:</strong> Candidatura ao <strong><a href="https://emlds.fcsh.unl.pt">European Master in Language Data Science (EMLDS)</a></strong> para formalizar academicamente minha prática de transformar teoria linguística crítica em sistemas de governança, aprendendo a operacionalizar intervenções manuais para maior abrangência e impacto sistêmico.</p>
+        </div>
+    </section>
+
+    <!-- 4. IMPACTOS CONCRETOS -->
+    <section>
+        <h2>Impactos e Resistência Linguística</h2>
+        <div class="achievement-grid">
+            <div class="achievement-card">
+                <div class="achievement-number">+2700</div>
+                <div class="achievement-desc">Termos governados em tesauro corporativo com 9 níveis hierárquicos em multinacional</div>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-number">3</div>
+                <div class="achievement-desc">Casos paradigmáticos documentados com análise ética e proposta de pesquisa</div>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-number">85%</div>
+                <div class="achievement-desc">Redução em "correções" dialetais indevidas após implementação de protocolos</div>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-number">31%</div>
+                <div class="achievement-desc">Melhora na busca de conteúdos após ajustes em base terminológica</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. DA SALA DE AULA À LINHA DE FRENTE INDUSTRIAL -->
+    <section>
+        <h2>Da Sala de Aula à Linha de Frente Industrial</h2>
+        <p style="font-size: 10pt; color: #555; font-style: italic; margin-bottom: 12pt;">Exemplos de como os conceitos teóricos aprendidos nas suas disciplinas fundamentam minha atuação contra violência linguística automatizada:</p>
+        
+<div class="theory-practice-grid" style="text-align:justify">
+
+    <div class="theory-card">
+        <div class="concept">⚖️ Ética da Tradução (Domesticação vs. Estrangeirização)</div>
+        <div class="course">Disciplina: Introdução aos Estudos Tradutológicos (USP)</div>
+        <div class="arrow">↓</div>
+        <div class="application">
+            <strong>Aplicação profissional:</strong> Definição de limites éticos para sistemas de tradução automática e legendagem assistida por IA, impedindo a normalização cultural excessiva em conteúdos audiovisuais. Elaboração de diretrizes que distinguem adaptação contextual legítima de apagamento cultural, com base em Venuti, aplicadas a fluxos de localização em larga escala.
+        </div>
+    </div>
+
+    <div class="theory-card">
+        <div class="concept">🏛️ Terminologia, Poder e Governança Linguística</div>
+        <div class="course">Disciplinas: Introdução aos Estudos Tradutológicos (USP) + Tecnologia e Organização da Informação (TI)</div>
+        <div class="arrow">↓</div>
+        <div class="application">
+            <strong>Aplicação profissional:</strong> Implementação de sistemas de governança terminológica em ambientes corporativos globais, com vocabulários controlados hierarquizados e regras de uso obrigatório em fluxos que usam IA. Transformação de decisões terminológicas em políticas institucionais, reduzindo ambiguidades conceituais e conflitos entre linguagem humana e sistemas automatizados.
+        </div>
+    </div>
+
+    <div class="theory-card">
+        <div class="concept">📏 Norma, Uso e Decisão Contextual</div>
+        <div class="course">Disciplina: Análise Contrastiva Inglês/Português (USP)</div>
+        <div class="arrow">↓</div>
+        <div class="application">
+            <strong>Aplicação profissional:</strong> Desenvolvimento de critérios linguísticos para validação de saídas de IA, distinguindo desvios aceitáveis de falhas críticas conforme gênero textual, público-alvo e função comunicativa. Aplicação da noção de adequação contextual para evitar correções automáticas indevidas em conteúdos institucionais e audiovisuais.
+        </div>
+    </div>
+
+    <div class="theory-card">
+        <div class="concept">♿ Linguagem, Acessibilidade e Responsabilidade Social</div>
+        <div class="course">Discussões em sala sobre inclusão linguística e tradução (USP)</div>
+        <div class="arrow">↓</div>
+        <div class="application">
+            <strong>Aplicação profissional:</strong> Atuação crítica em projetos de legendagem e acessibilidade, avaliando impactos linguísticos de escolhas automatizadas sobre públicos diversos. Defesa de decisões tradutórias que garantam acesso à informação sem simplificação excessiva, respeitando diversidade discursiva em contextos de geração automatizada de conteúdo.
+        </div>
+    </div>
+
+    <div class="theory-card">
+        <div class="concept">📊 Gerenciamento da Informação e Linguística de Corpus</div>
+        <div class="course">Disciplina: Gerenciamento da Informação (TI)</div>
+        <div class="arrow">↓</div>
+        <div class="application">
+            <strong>Aplicação profissional:</strong> Análise de grandes corpora de fala em projetos de <em>speech analytics</em>, incluindo interações entre clientes e operadores de <>telemarketing</i>. Estruturação de bases linguísticas com mapeamento de sinônimos funcionais, reformulações frequentes e padrões discursivos, otimizando recuperação de informação e interpretação semântica em sistemas integrados.
+        </div>
+    </div>
+
+    <div class="theory-card">
+        <div class="concept">🛡️ Ética, Poder e Automação Linguística</div>
+        <div class="course">Temas transversais em suas disciplinas (USP) + Modelagem de Sistemas de Informação (TI)</div>
+        <div class="arrow">↓</div>
+        <div class="application">
+            <strong>Aplicação profissional:</strong> Identificação e documentação de falhas éticas em sistemas de IA linguística, incluindo alucinações, apagamentos semânticos e padronizações indevidas. Criação de categorias críticas de avaliação linguística em fluxos de controle de qualidade, tratando linguagem não apenas como dado técnico, mas como prática social mediada por poder.
+        </div>
+    </div>
+
+</div>
+
+    </section>
+
+    <!-- 6. EXPERIÊNCIA PROFISSIONAL -->
+    <section>
+        <h2>Experiência Profissional</h2>
+        
+        <!-- MONISA -->
+        <div class="job-header">
+            <div>
+                <h3 class="job-title">Especialista em Linguística Computacional e Avaliação de LLMs</h3>
+                <div class="company"><a href="https://monisaenterprise.com/">Monisa</a></div>
+                <div class="company-description"><em>Empresa especializada em treinamento e avaliação de modelos de IA, focada em otimização de linguagem natural.</em></div>
+            </div>
+            <div class="date">Dez 2025–Presente</div>
+        </div>
+        <ul>
+            <li><strong>Avaliação Ética de Modelos:</strong> Identificação de vieses sociolinguísticos em Grandes Modelos de Linguagem (LLMs), focando em preconceitos contra variedades não padrão e dialetos marginalizados</li>
+            <li><strong>Curadoria de Corpora Diversificados:</strong> Seleção de dados de treino que representam variedades linguísticas legítimas, combatendo hegemonia de corpora majoritariamente "padrão"</li>
+            <li><strong>Engenharia de Prompts para Inclusão:</strong> Desenvolvimento de prompts que instruem modelos a respeitar marcas dialetais e identitárias em traduções e geração de texto</li>
+            <li><strong>Métricas de Qualidade Ética:</strong> Criação de métricas além da precisão técnica, incluindo "preservação identitária" e "respeito à diversidade linguística"</li>
+        </ul>
+
+        <!-- TEAMWORKER -->
+        <div class="job-header" style="margin-top: 15pt;">
+            <div>
+                <h3 class="job-title">Coordenadora de Governança de Dados Linguísticos e Taxonomia</h3>
+                <div class="company"><a href="https://www.teamworker.com.br/content-business.html">TeamWorker Content Business</a></div>
+                <div class="company-description"><em>Agência de conteúdo digital e arquitetura da informação que presta serviços para telecom líder, <br> atuando em governança de dados para sistemas de atendimento e experiência do cliente.</em></div>
+            </div>
+            <div class="date">Out 2020–Nov 2025</div>
+        </div>
+        <ul>
+
+    <li>
+        <span class="highlight">Governança Terminológica Ética:</span> 
+        Gestão de tesauro corporativo e definição de protocolos linguísticos que impedem sistemas de IA de violar terminologia institucional aprovada. Implementação de <em>hard constraints</em> para nomes de produtos e serviços (não tradução, não variação), transformando decisões terminológicas em política organizacional explícita.
+    </li>
+
+    <li>
+        <span class="highlight">Mediação Linguística entre Tecnologia e Instituição:</span>
+        Atuação como mediadora entre equipes técnicas, áreas jurídicas e times de conteúdo para traduzir exigências institucionais em regras linguísticas operacionais. Conversão de decisões abstratas sobre “tom”, “clareza” e “risco” em critérios linguísticos verificáveis por humanos e máquinas.
+    </li>
+
+    <li>
+        <span class="highlight">Análise Crítica de Linguagem Automatizada:</span>
+        Avaliação sistemática de saídas de IA em contextos de atendimento ao cliente, identificando apagamentos semânticos, reformulações indevidas e desvios pragmáticos. Classificação de falhas não apenas como “erros técnicos”, mas como problemas de adequação linguística e institucional.
+    </li>
+
+    <li>
+        <span class="highlight">Tradução, Localização e Decisão Ética:</span>
+        Participação em decisões estratégicas sobre localização e adaptação linguística de conteúdos sensíveis, ponderando fidelidade, padronização e impacto social. Aplicação prática de debates clássicos da ética da tradução em fluxos produtivos reais.
+    </li>
+
+    <li>
+        <span class="highlight">Documentação Linguística e Formação Interna:</span>
+        Produção de guias, protocolos e materiais formativos que explicitam critérios linguísticos para equipes multidisciplinares. Transformação de conhecimento tácito sobre linguagem em documentação institucional reutilizável, garantindo consistência e rastreabilidade das decisões linguísticas.
+    </li>
+
+</ul>
+
+
+        <!-- FREELANCER -->
+        <div class="job-header" style="margin-top: 15pt;">
+            <div>
+                <h3 class="job-title">Consultora de Localização e Investigadora em Pós-Edição de Tradução Automática</h3>
+                <div class="company"><a href="https://voxmundi.com.br/">VOX MUNDI</a> | <a href="https://www.acclaro.com/">Acclaro</a> | <a href="https://moshimedia.com.br/">Moshi Media</a> | Outros</div>
+                <div class="company-description"><em>Agências de localização e empresas de tecnologia. Trabalhei em projetos de tradução, pós-edição e anotação linguística.</em></div>
+            </div>
+            <div class="date">2015–Presente</div>
+        </div>
+        <ul>
+
+    <li>
+        <span class="highlight">Pós-edição Crítica de Tradução Automática (MTPE):</span>
+        Atuação em projetos de pós-edição com foco em decisões tradutórias complexas, indo além da correção gramatical. Avaliação de adequação pragmática, coerência discursiva e efeitos institucionais da tradução automática em produtos culturais e corporativos.
+    </li>
+
+    <li>
+        <span class="highlight">Localização como Mediação Cultural:</span>
+        Participação em projetos de localização que exigiam negociação entre fidelidade semântica, aceitabilidade cultural e restrições de mercado. Argumentação documentada junto a equipes e clientes para justificar escolhas tradutórias não triviais com base em Estudos da Tradução.
+    </li>
+
+    <li>
+        <span class="highlight">Classificação Linguística de Erros em QA:</span>
+        Desenvolvimento de categorias analíticas para avaliação de qualidade que distinguem erros técnicos de problemas linguísticos, pragmáticos e discursivos. Aplicação dessa classificação em fluxos de controle de qualidade para orientar correções humanas e ajustes em sistemas automatizados.
+    </li>
+
+    <li>
+        <span class="highlight">Anotação Linguística para Sistemas Automatizados:</span>
+        Criação de esquemas de anotação linguística voltados à identificação de falhas recorrentes em tradução automática e geração de texto, contribuindo para a construção de corpora de avaliação e treinamento mais sensíveis ao uso real da linguagem.
+    </li>
+
+    <li>
+        <span class="highlight">Mediação entre Teoria Linguística e Prática Profissional:</span>
+        Atuação como interlocutora entre equipes técnicas, gestores de projeto e tradutores, traduzindo conceitos de Linguística Aplicada e Análise Contrastiva em critérios operacionais compreensíveis e aplicáveis em ambientes produtivos.
+    </li>
+
+</ul>
+
+    </section>
+
+    <!-- 7. EDUCAÇÃO -->
+    <section>
+        <h2>Formação Acadêmica</h2>
+        
+        <div class="education-item">
+            <div class="job-header">
+                <div>
+                    <div class="degree">Bacharelado e Licenciatura em Letras — Português/Inglês</div>
+                    <div class="institution">Universidade de São Paulo (USP)</div>
+                </div>
+                <div class="date">2015–2019</div>
+            </div>
+            <div>
+                <span class="grade-badge">Média: 8.9/10</span>
+                <span class="grade-badge">Licenciatura: 10/10</span>
+            </div><br>
+            <strong><ul>Disciplinas com a Profa. Lenita (2017):</strong> <br><br> <li style="margin-left:10px;">Introdução aos Estudos Tradutológicos</li>
+<li style="margin-left:10px;">Análise Contrastiva Inglês/Português</li>
+<li style="margin-left:10px;">Introdução à Prática de Tradução do Inglês</li>
+        </div>
+
+        <div class="education-item">
+            <div class="job-header">
+                <div>
+                    <div class="degree">LIBRAS (Língua Brasileira de Sinais) — Programa de 3 anos</div>
+                    <div class="institution">PUC-SP</div>
+                </div>
+                <div class="date">2016–2019</div>
+            </div>
+            <p>Gramática visual-espacial, comparação entre modalidades linguísticas. Base para minha defesa da preservação dialetal em legendas CC para acessibilidade</p>
+        </div>
+
+        <div class="education-item">
+            <div class="job-header">
+                <div>
+                    <div class="degree">Curso Superior em Gestão da Tecnologia da Informação</div>
+                    <div class="institution">Faculdade Marechal Rondon</div>
+                </div>
+                <div class="date">2007–2009</div>
+            </div>
+            <p>Base técnica para implementar governança linguística: programação, bancos de dados, estruturas de dados, desenvolvimento de sistemas</p>
+        </div>
+    </section>
+
+    <!-- 8. HABILIDADES PRINCIPAIS -->
+    <section>
+        <h2>Habilidades Principais</h2>
+        
+        <table class="skills-table">
+            <tr>
+                <th>Ética & Sociolinguística <br> Aplicada</th>
+                <th>Governança & Tecnologia <br> Linguística</th>
+                <th>Competências de Mediação <br> & Resistência</th>
+            </tr>
+            <tr>
+                <td>
+                    <ul class="skills-list">
+                        <li><span class="skill-badge blue-dark">Ética da Tradução (Venuti)</span></li>
+                        <li><span class="skill-badge blue-dark">Sociolinguística Crítica</span></li>
+                        <li><span class="skill-badge blue-dark">Análise de Poder Linguístico</span></li>
+                        <li><span class="skill-badge blue-dark">Linguística da Acessibilidade</span></li>
+                        <li><span class="skill-badge blue-dark">Norma vs. Uso (Aubert)</span></li>
+                        <li><span class="skill-badge blue-dark">Terminologia Corporativa</span></li>
+                    </ul>
+                </td>
+                <td>
+                    <ul class="skills-list">
+                        <li><span class="skill-badge blue-light">Governança de Tesauros</span></li>
+                        <li><span class="skill-badge blue-light">Sistemas de QA Ético</span></li>
+                        <li><span class="skill-badge blue-light">Anotação Linguística</span></li>
+                        <li><span class="skill-badge blue-light">Validação de NLP</span></li>
+                        <li><span class="skill-badge blue-light">HTML/CSS para Protótipos</span></li>
+                        <li><span class="skill-badge blue-light">Excel Avançado (Dados)</span></li>
+                    </ul>
+                </td>
+                <td>
+                    <ul class="skills-list">
+                        <li><span class="skill-badge blue-lighter">Argumentação Documentada</span></li>
+                        <li><span class="skill-badge blue-lighter">Mediação Teoria-Prática</span></li>
+                        <li><span class="skill-badge blue-lighter">Resistência Sistêmica</span></li>
+                        <li><span class="skill-badge blue-lighter">Tradução de Conceitos</span></li>
+                        <li><span class="skill-badge blue-lighter">Articulação Institucional</span></li>
+                        <li><span class="skill-badge blue-lighter">Pensamento Crítico Aplicado</span></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- 9. IDIOMAS -->
+    <section>
+        <h2>Idiomas</h2>
+        <div class="languages-grid">
+            <div class="lang-chart"><div class="pie pt"></div><div class="lang-name">PT-BR</div><div class="lang-level">Nativo</div></div>
+            <div class="lang-chart"><div class="pie en"></div><div class="lang-name">Inglês</div><div class="lang-level">C2</div></div>
+            <div class="lang-chart"><div class="pie libras"></div><div class="lang-name">LIBRAS</div><div class="lang-level">Avançado</div></div>
+            <div class="lang-chart"><div class="pie fr"></div><div class="lang-name">Francês</div><div class="lang-level">B2</div></div>
+            <div class="lang-chart"><div class="pie es"></div><div class="lang-name">Espanhol</div><div class="lang-level">B1</div></div>
+        </div>
+    </section>
+
+    <!-- 10. DESENVOLVIMENTO PROFISSIONAL CONTÍNUO -->
+    <section>
+        <h2>Preparação para o EMLDS: Desenvolvimento Técnico-Crítico</h2>
+        <ul>
+            <li><strong>Google's Python Class (2025):</strong> Fundamentos de programação para implementar sistemas de governança linguística automatizada</li>
+            <li><strong>Hugging Face LLM Course (2025):</strong> Fine-tuning e avaliação ética de modelos de linguagem, com foco em mitigação de vieses</li>
+            <li><strong>Stanford CS224N Lectures (2025):</strong> Arquitetura Transformer e anotação linguística em escala</li>
+            <li><strong>IBM AI Engineering Professional Certificate (em andamento):</strong> Pipeline completo de ML para projetos linguísticos</li>
+            <li><strong>Stanford NLP Specialization (planejado):</strong> Modelos de sequência e representação linguística computacional</li>
+            <li><strong>Objetivo pré-EMLDS:</strong> 3-5 certificações + projeto GitHub (corpus anotado de violências linguísticas automatizadas) até 30/01/2026</li>
+        </ul>
+    </section>
+
+    <!-- 11. INTERESSES DE PESQUISA -->
+<section>
+    <h2>Interesses de Pesquisa e Alinhamento com o EMLDS</h2>
+    <ul>
+        <li>
+            <span class="highlight">Ética e Poder em Sistemas de Tradução Automatizada:</span>
+            Investigação de como decisões algorítmicas em tradução, localização e legendagem reproduzem ou mitigam assimetrias sociolinguísticas em contextos institucionais e comerciais.
+        </li>
+
+        <li>
+            <span class="highlight">Sociolinguística Aplicada à IA:</span>
+            Modelagem computacional de variação linguística que trate dialetos e usos não padrão como fenômenos legítimos, integrando teoria sociolinguística a sistemas automáticos de linguagem.
+        </li>
+
+        <li>
+            <span class="highlight">Governança Linguística e Regulação Algorítmica:</span>
+            Desenvolvimento de mecanismos formais que transformam políticas linguísticas, tesauros e vocabulários controlados em regras operacionais para sistemas de IA.
+        </li>
+
+        <li>
+            <span class="highlight">Avaliação Crítica de Qualidade Linguística em IA:</span>
+            Criação de métricas de avaliação que articulem precisão técnica, adequação pragmática e efeitos sociolinguísticos na geração automática de texto.
+        </li>
+
+        <li>
+            <span class="highlight">Infraestruturas Linguísticas Éticas:</span>
+            Uso de ontologias, <i>Linked Data</i> e arquitetura da informação para a construção de recursos linguísticos que sustentem diversidade, rastreabilidade e responsabilidade em ambientes digitais.
+        </li>
+    </ul>
+</section>
+
+
+    <!-- 12. NOTA DE ENCERRAMENTO -->
+    <div class="closing-box">
+        <h3 style="color: #003366; margin-bottom: 15pt; border: none;">Profa. Lenita,</h3>
+        
+        <p>Em 2017, nas suas disciplinas, tive contato com ferramentas teóricas que moldaram de forma duradoura minha prática profissional. Ao longo dos últimos anos, esses conceitos passaram a orientar decisões concretas em projetos de tradução, legendagem e governança linguística em ambientes mediados por tecnologia.</p>
+        <br>
+        <p>Na indústria, passei a lidar diretamente com sistemas automatizados de linguagem e com os limites entre fidelidade, padronização e uso real da língua. Esse percurso profissional gerou os estudos de caso apresentados neste portfólio, especialmente aqueles voltados à mediação linguística em contextos automatizados e à organização de recursos linguísticos em larga escala.</p>
+        <br>
+        <p>É nesse ponto que o EMLDS se torna fundamental para mim: como espaço para aprofundar métodos computacionais e modelos formais que permitam transformar práticas empíricas em soluções sistematizadas, escaláveis e academicamente fundamentadas.</p>
+        <br>
+        <p>Obrigada pelo seu tempo, pela leitura deste material e por ter plantado esta semente crítica em mim. Fico inteiramente à disposição para esclarecer qualquer ponto.</p>
+
+        <p style="margin-top: 20pt; font-size: 11pt;">Contando com seu apoio,
+        <br>
+        <strong> Ariane Lesnyak Castelló</strong></p>
+    </div>
+
+</body>
+</html>
