@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossiê de Candidatura ao EMLDS | Para a Profa. Lenita</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15mm;
+            font-size: 10.5pt;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 4px solid #003366;
+            padding-bottom: 15pt;
+            margin-bottom: 25pt;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20pt;
+            border-radius: 8px;
+        }
+        
+        .header h1 {
+            font-size: 18pt;
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 8pt;
+            text-transform: uppercase;
+            letter-spacing: 1.5pt;
+        }
+        
+        .header .tagline {
+            font-size: 12pt;
+            color: #555;
+            font-weight: 600;
+            margin-bottom: 10pt;
+        }
+        
+        .header .context {
+            font-size: 10pt;
+            color: #666;
+            font-style: italic;
+        }
+        
+        section {
+            margin-bottom: 25pt;
+            page-break-inside: avoid;
+        }
+        
+        h2 {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #003366;
+            border-bottom: 3px solid #003366;
+            padding-bottom: 5pt;
+            margin-bottom: 15pt;
+            text-transform: uppercase;
+            letter-spacing: 0.8pt;
+        }
+        
+        h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            color: #003366;
+            margin-top: 18pt;
+            margin-bottom: 10pt;
+            border-left: 5px solid #003366;
+            padding-left: 10pt;
+        }
+        
+        .highlight {
+            color: #003366;
+            font-weight: 700;
+        }
+        
+        .grade-badge {
+            display: inline-block;
+            background: #003366;
+            color: white;
+            padding: 2pt 8pt;
+            border-radius: 5px;
+            font-size: 10pt;
+            font-weight: bold;
+            margin-right: 6pt;
+            margin-bottom: 8pt;
+        }
+
+        .grade-badge.alone {
+            display: inline-block;
+            background: #7b98b5;
+            color: white;
+            padding: 2pt 8pt;
+            border-radius: 5px;
+            font-size: 10pt;
+            font-weight: bold;
+            margin-right: 10pt;
+            margin-bottom: 10pt;
+        }
+        
+        .grade-badge.gold {
+            background: linear-gradient(135deg, #d4af37 0%, #f9d423 100%);
+            color: #1a1a1a;
+            box-shadow: 0 2px 8px rgba(212, 175, 55, 0.4);
+        }
+        
+        .intro-box {
+            background: #f0f7ff;
+            border: 2px solid #003366;
+            border-radius: 8px;
+            padding: 15pt;
+            margin: 20pt 0;
+            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
+        }
+        
+        .intro-box p {
+            margin-bottom: 5pt;
+            line-height: 1.7;
+        }
+        
+        .toc {
+            background: #f8f9fa;
+            border: 2px solid #003366;
+            border-radius: 8px;
+            padding: 20pt;
+            margin: 20pt 0;
+        }
+        
+        .toc h3 {
+            margin-top: 0;
+            text-align: center;
+            border: none;
+            padding-left: 0;
+        }
+        
+        .toc ol {
+            margin-left: 20pt;
+        }
+        
+        .toc li {
+            margin-bottom: 8pt;
+            line-height: 1.6;
+        }
+        
+        .toc a {
+            color: #003366;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        
+        .work-card {
+            border: 2px solid #d0d0d0;
+            border-radius: 8px;
+            padding: 15pt;
+            margin: 15pt 0;
+            background: #fafafa;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        .work-card.featured {
+            border: 3px solid #d4af37;
+            background: linear-gradient(135deg, #fffaf0 0%, #fff8e1 100%);
+            box-shadow: 0 4px 16px rgba(212, 175, 55, 0.2);
+        }
+        
+        .work-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10pt;
+            padding-bottom: 8pt;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .work-title {
+            font-weight: bold;
+            color: #003366;
+            font-size: 11.5pt;
+        }
+        
+        .work-date {
+            color: #666;
+            font-style: italic;
+            font-size: 9.5pt;
+        }
+        
+        .work-content {
+            font-size: 10pt;
+            line-height: 1.7;
+        }
+        
+        .work-excerpt {
+            background: white;
+            border-left: 4px solid #003366;
+            padding: 12pt;
+            margin: 12pt 0;
+            font-style: italic;
+            color: #444;
+            border-radius: 4px;
+        }
+        
+        .work-excerpt.gold {
+            border-left-color: #d4af37;
+        }
+        
+        .work-excerpt strong {
+            color: #003366;
+            font-style: normal;
+        }
+        
+        .syntax-example {
+            background: #f8f9fa;
+            border: 1px solid #cce0ff;
+            padding: 12pt;
+            margin: 12pt 0;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 9.5pt;
+        }
+        
+        .note-box {
+            background: #fff8e1;
+            border-left: 5px solid #ffc107;
+            padding: 12pt;
+            margin: 15pt 0;
+            font-size: 10pt;
+            border-radius: 4px;
+        }
+        
+        .note-box.critical {
+            background: #e3f2fd;
+            border-left-color: #003366;
+        }
+        
+        .img-placeholder {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            border: 2px dashed #999;
+            padding: 5pt;
+            text-align: center;
+            margin: 15pt 0;
+            color: #666;
+            font-style: italic;
+            border-radius: 8px;
+        }
+        
+        .img-placeholder strong {
+            display: block;
+            color: #333;
+            font-size: 11pt;
+            margin-bottom: 8pt;
+        }
+        
+        .professor-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15pt;
+            margin-top: 15pt;
+        }
+        
+        .professor-card {
+            background: white;
+            padding: 15pt;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #003366;
+        }
+        
+        .professor-card h4 {
+            color: #003366;
+            margin-bottom: 8pt;
+            font-size: 11pt;
+        }
+        
+        .professor-card .research {
+            font-size: 9.5pt;
+            color: #555;
+            margin-bottom: 10pt;
+        }
+        
+        .professor-card .connection {
+            background: #f0f7ff;
+            padding: 8pt;
+            border-radius: 4px;
+            font-size: 9.5pt;
+            margin-top: 8pt;
+        }
+        
+        .timeline {
+            margin: 20pt 0;
+            position: relative;
+            padding-left: 40pt;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 18pt;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #003366 0%, #0066cc 100%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20pt;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -28pt;
+            top: 5pt;
+            width: 14px;
+            height: 14px;
+            background: #003366;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #003366;
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: #003366;
+            font-size: 11pt;
+            margin-bottom: 4pt;
+        }
+        
+        .timeline-content {
+            font-size: 10pt;
+            line-height: 1.6;
+        }
+        
+        .emlds-overview {
+            background: linear-gradient(135deg, #003366 0%, #0066cc 100%);
+            color: white;
+            padding: 20pt;
+            border-radius: 8px;
+            margin: 20pt 0;
+        }
+        
+        .emlds-overview h3 {
+            color: white;
+            border-left-color: white;
+        }
+        
+        .emlds-overview ul {
+            margin-left: 20pt;
+            margin-top: 10pt;
+        }
+        
+        .emlds-overview li {
+            margin-bottom: 6pt;
+        }
+        
+        .ti-connection {
+            background: #f5f5f5;
+            border: 2px solid #003366;
+            padding: 15pt;
+            border-radius: 8px;
+            margin: 15pt 0;
+        }
+        
+        .ti-connection ul {
+            margin-left: 20pt;
+            margin-top: 10pt;
+        }
+        
+        .ti-connection li {
+            margin-bottom: 6pt;
+        }
+        
+        .experience-summary {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e3f2fd 100%);
+            border: 2px solid #003366;
+            padding: 20pt;
+            border-radius: 10px;
+            margin: 20pt 0;
+        }
+        
+        .experience-summary ul {
+            margin-left: 20pt;
+            margin-top: 10pt;
+        }
+        
+        .experience-summary li {
+            margin-bottom: 8pt;
+            line-height: 1.6;
+        }
+        
+        .final-argument {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e3f2fd 100%);
+            border: 3px solid #003366;
+            padding: 20pt;
+            border-radius: 10px;
+            margin: 25pt 0;
+            text-align: center;
+        }
+        
+        .final-argument p {
+            font-size: 11pt;
+            line-height: 1.8;
+            margin-bottom: 12pt;
+        }
+        
+        .final-argument .signature {
+            font-style: italic;
+            color: #666;
+            margin-top: 20pt;
+            font-size: 10pt;
+        }
+        
+        .confidence-box {
+            background: linear-gradient(135deg, #fffaf0 0%, #ffeaa7 100%);
+            border: 3px solid #d4af37;
+            padding: 25pt;
+            border-radius: 10px;
+            margin: 25pt 0;
+            text-align: center;
+        }
+        
+        .confidence-box p {
+            font-size: 11pt;
+            line-height: 1.8;
+            margin-bottom: 12pt;
+        }
+        
+        .letter-preview {
+            background: white;
+            border: 2px solid #003366;
+            border-radius: 8px;
+            padding: 20pt;
+            margin: 20pt 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .letter-preview img {
+            max-width: 80%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 15pt 0;
+        }
+        
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10pt;
+            margin-top: 15pt;
+        }
+        
+        .case-study-card {
+            background: white;
+            padding: 15pt;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #003366;
+        }
+        
+        .case-study-card h4 {
+            color: #003366;
+            margin-bottom: 8pt;
+            font-size: 11pt;
+        }
+        
+        .case-study-card .challenge {
+            font-size: 9.5pt;
+            color: #555;
+            margin-bottom: 8pt;
+            font-style: italic;
+        }
+        
+        .case-study-card .solution {
+            font-size: 10pt;
+            color: #333;
+            margin-bottom: 10pt;
+        }
+        
+        .case-study-card .connection {
+            background: #f0f7ff;
+            padding: 8pt;
+            border-radius: 4px;
+            font-size: 9.5pt;
+            margin-top: 8pt;
+        }
+        
+        @media print {
+            body { padding: 5mm; }
+            .work-card { page-break-inside: avoid; }
+        }
+
+        /* Container para organizar o visual */
+        .indice-container {
+          font-family: sans-serif;
+          line-height: 1.6;
+        }
+
+        /* Reset da lista principal */
+        ol.dotted {
+          list-style: none;
+          counter-reset: item; /* Cria o contador 'item' */
+          margin-left: 0;
+        }
+
+        /* Estilo para cada item da lista */
+        ol.dotted li {
+          display: block;
+          position: relative;
+          margin-bottom: 5px;
+        }
+
+        /* Onde a mágica acontece: o gerador de números */
+        ol.dotted li::before {
+          content: counters(item, ".") ". "; /* Gera 1. , 3.1. , etc */
+          counter-increment: item;           /* Soma +1 ao contador */
+          font-weight: bold;
+        }
+
+        /* Reset para sub-listas (ol dentro de li) */
+        ol.dotted li ol {
+          list-style: none;
+          counter-reset: item; /* Reinicia o contador apenas para este nível */
+          padding-left: 20pt;  /* Recuo para os sub-itens */
+          margin-top: 5px;
+        }
+
+  /* CLICK HINT */
+        .click-hint {
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            font-size: 9pt; 
+            color: var(--accent); 
+            margin-bottom: 8pt; 
+            font-style: italic;
+        }
+        
+        .hand-icon { 
+            width: 18px; 
+            height: 18px;
+            transform: rotate(-180deg);
+            fill: var(--accent); 
+            margin: 0 2px;
+        }
+
+        .hand-icon.left { 
+            transform: rotate(90deg); 
+        }
+
+        .hand-icon.right { 
+            transform: rotate(-90deg); 
+        }
+
+        .click-hint .arrows-container {
+            display: flex;
+            align-items: center;
+            margin: 0 6px;
+        }
+
+	.read-link {
+		display: inline-block;
+		margin-top: 15px;
+		color: #003366;
+		font-weight: bold;
+		text-decoration: none;
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Dossiê de Candidatura ao EMLDS</h1>
+        <div class="tagline">Para a Profa. Dra. Lenita Maria Rimoli Pisetta</div>
+        <div class="context">
+            Preparado por: Ariane Lesnyak Castelló | Data: Janeiro 2026<br>
+            Contexto: Candidatura ao <a href="https://emlds.fcsh.unl.pt/" style="color: #003366; font-weight: bold;">Erasmus Mundus em Language Data Science (EMLDS)</a>
+        </div>
+    </div>
+
+    <div class="intro-box">
+        <p><strong>Professora Lenita,</strong></p>
+        <p style="text-align:justify;">Este dossiê não é só um pedido de carta de recomendação. É a retomada de um diálogo que começou em 2017, quando você redigiu para mim uma <span class="highlight">carta de proficiência em inglês</span> para intercâmbios pela FFLCH/USP, e quando conversamos sobre ética na tradução e carreira acadêmica.</p>
+        <p style="text-align:justify;">Na época, eu era a aluna do interior que queria ver o mundo. Hoje, retorno a você como profissional que trabalha na interseção entre linguística e tecnologia, buscando seu aval para um passo definitivo: o <span class="highlight">European Master in Language Data Science (EMLDS)</span>.</p>
+        <p style="text-align:justify;">Este documento organiza minha trajetória desde suas aulas até o mercado, mostrando como a ética da tradução que você me ensinou se tornou a base para meu trabalho com IA e dados linguísticos.</p>
+    </div>
+
+    <section id="toc">
+        <div class="toc">
+            <h3>📋 ÍNDICE DO DOCUMENTO</h3>
+            <p>Para facilitar sua navegação:</p><br>
+            <ol class="dotted" style="color: #003366;">
+                <li><a href="#programa">O Programa EMLDS: Contexto e Relevância</a></li>
+                <li><a href="#trajetoria">Minha Trajetória Acadêmica-Profissional</a></li>
+                <li>
+                    <a href="#desempenho">Desempenho nas Suas Disciplinas (2017)</a>
+                    <ol>
+                        <li><a href="#traducao-ingles">Introdução à Prática de Tradução do Inglês</a></li>
+                        <li><a href="#analise-contrastiva">Tradução: Análise Contrastiva Inglês-Português</a></li>
+                        <li><a href="#estudos-tradutologicos">Introdução aos Estudos Tradutológicos</a></li>
+                    </ol>
+                </li>
+                <li><a href="#ti">Graduação em Tecnologia da Informação (2007–2009)</a></li>
+                <li><a href="#confianca">Do Apoio de 2017 ao Desafio de 2026</a></li>
+                <li><a href="#casos">Casos de Estudo: Pontes entre a Ética da Tradução e a IA</a></li>
+                <li><a href="#conexoes">Conexões com a Equipe do EMLDS</a></li>
+                <li><a href="#documentos">Documentação Anexa</a></li>
+                <li><a href="#porque">Síntese e Compromisso Acadêmico</a></li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="programa">
+        <h2>🎯 1. O Programa EMLDS: Contexto e Relevância</h2>
+        
+        <div class="emlds-overview">
+            <h3 style="margin-top: 0;">European Master in Language Data Science (EMLDS)</h3>
+            <p><strong>O que é:</strong> Mestrado Erasmus Mundus focado na intersecção entre Linguística Teórica/Aplicada e Ciência de Dados.</p>
+            <p><strong>Estrutura:</strong> 2 anos (120 ECTS) • Mobilidade obrigatória entre universidades europeias.</p>
+            
+            <ul>
+                <li><strong>NOVA FCSH (Lisboa, Portugal)</strong> – Coordenação • Semestres 1 e 4</li>
+                <li><strong>Università Cattolica (Milão, Itália)</strong> – Semestre 2</li>
+                <li><strong>Universidad Zaragoza (Zaragoza, Espanha)</strong> – Semestre 3</li>
+            </ul>
+            
+            <p style="text-align:justify;"><strong>Objetivo:</strong> Formar especialistas que integrem teoria linguística e métodos computacionais para enfrentar desafios em processamento de linguagem natural (NLP), Terminologia, Bancos de Dados Lexicais e IA Ética.</p>
+        </div>
+        
+        <div class="note-box critical">
+            <strong>Por que este programa é estratégico para mim:</strong><br><br>
+<ul>
+<li style="text-align:justify; margin-left:25px;">A pesquisa em <span class="highlight">IA, Tradução e Inteligência Humana</span> que você coordena hoje dialoga diretamente com minha experiência prática</li>
+<li style="text-align:justify; margin-left:25px;">As disciplinas de <span class="highlight">Terminologia, Lexicografia e Padrões ISO</span> se conectam com meu trabalho em governança terminológica</li>
+<li style="text-align:justify; margin-left:25px;">O foco em <span class="highlight">ética em IA linguística</span> representa a evolução natural das discussões sobre ética na tradução que tivemos em 2017, em especial na disciplina de <span class="highlight">Estudos Tradutológicos</span></li>
+<li style="text-align:justify; margin-left:25px;">Minha formação dupla em <span class="highlight">TI + Linguística</span> me coloca na posição única de fazer a ponte entre teoria humanística e implementação técnica</li></ul>
+        </div>
+    </section>
+
+    <section id="trajetoria">
+        <h2>📈 2. Minha Trajetória Acadêmica-Profissional</h2>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2007–2009</div>
+                <div class="timeline-content">
+                    <strong>Graduação em Tecnologia da Informação | Faculdade Marechal Rondon (FMR)</strong><br>
+                    Base sólida em programação, bancos de dados, estruturas de dados e sistemas.
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">2015–2019</div>
+                <div class="timeline-content">
+                    <strong>Bacharelado e Licenciatura em Letras Português & Inglês | Universidade de São Paulo (USP)</strong><br>
+                    Média ponderada do curso: <strong>8.9/10</strong><br>
+                    Formação em Tradução e Estudos Tradutológicos sob sua orientação:<br>
+                    <ul>
+                        <li style="margin-left:20px;">FLM0288 - Introdução à Prática de Tradução do Inglês</li>
+                        <li style="margin-left:20px;">FLM0283 - Tradução: Análise Contrastiva Inglês-Português</li>
+                        <li style="margin-left:20px;">FLM0206 - Introdução aos Estudos Tradutológicos</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">2017</div>
+                <div class="timeline-content">
+                    <strong>Carta de Proficiência em Inglês</strong><br>
+                    Você redigiu uma carta atestando meu domínio do inglês para intercâmbios acadêmicos, o primeiro voto de confiança em meu potencial internacional.
+                </div>
+            </div>
+
+                        
+            <div class="timeline-item">
+                <div class="timeline-date">2020–presente</div>
+                <div class="timeline-content">
+                    <strong>Aplicação Profissional em Tradução, Localização e Dados Linguísticos</strong><br>
+           Experiência diversificada em contextos corporativos multinacionais e agências globais.</div>
+<ul>
+<li style="margin-left:20px;">Governança terminológica, controle de qualidade  linguística e <i>speech analytics</i></li>
+<li style="margin-left:20px;">Anotação de dados linguísticos em larga escala</li>
+<li style="margin-left:20px;">Machine Translation Post-Editing (MTPE) para plataformas de <i>streaming</i></li>
+<li style="margin-left:20px;">Criação de sistemas de metadados e taxonomias</li></ul>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">2026 (objetivo)</div>
+                <div class="timeline-content">
+                    <strong>EMLDS – Integração das Vertentes</strong><br>
+                    Programa que une exatamente minhas três áreas: <br><br>
+                    <p style="text-align: center;"><span class="highlight">Teoria da Tradução (USP) + Métodos Computacionais (TI) + Experiência de Mercado <br> = <br> Ciência de Dados Linguísticos Éticos</span></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="note-box" style="text-align: justify;">
+            <strong>Coerência da trajetória:</strong> Essa não é uma mudança de rumo, mas a <span class="highlight">materialização de experiências que venho construindo há quase 20 anos</span>. A ética na mediação linguística que você me apresentou virou o filtro através do qual vejo meu trabalho hoje.
+        </div>
+    </section>
+
+    <section id="desempenho">
+        <h2>📊 3. Desempenho nas Suas Disciplinas</h2>
+        
+        <div style="text-align: center; margin: 20pt 0;">
+            <div class="grade-badge" style="font-size: 9pt; padding: 4pt 5pt;">
+                ESTUDOS TRADUTOLÓGICOS: 10/10
+            </div>
+		<div class="grade-badge" style="font-size: 9pt; padding: 4pt 5pt;">
+                ANÁLISE CONTRASTIVA: 9,5/10
+            </div>
+<div class="grade-badge" style="font-size: 9pt; padding: 4pt 5pt;">
+                PRÁTICA DE TRADUÇÃO: 9,4/10
+            </div>
+            
+            
+        </div>
+        
+        <div class="intro-box">
+            <p style="text-align:justify;"><strong>Professora</strong>, nas próximas seções trago trechos de trabalhos que desenvolvi sob sua orientação para refrescar sua memória sobre meu perfil analítico. Estes materiais demonstram a <span class="highlight">sensibilidade para questões éticas e poder linguístico,</span> que hoje uso no mercado e <span class="highlight">espero aprofundar no mestrado</span>.</p>
+        </div>
+    </section>
+
+     <section id="estudos-tradutologicos">
+        <h2 style="fonte-size=10px;">🌟 3.1. FLM0206 – Introdução aos Estudos Tradutológicos</h2>
+        
+        <p style="font-style: italic; color: #555; margin-bottom: 15pt; text-align:justify;">
+            Onde as discussões sobre ética, poder e invisibilidade do tradutor moldaram minha visão crítica sobre mediação linguística, a base para meu interesse atual em ética em IA.
+        </p>
+
+ <div class="work-content">
+                <div style="text-align: center; margin-bottom: 10pt;">
+                    <div class="grade-badge">NOTA FINAL: 10/10</div>
+                </div>
+
+        <div class="work-card">
+            <div class="work-header">
+                <div class="work-title">3.1.1. Análise Crítica: Paternalismo do Clube do Livro</div>
+                <div class="work-date">Junho 2017</div>
+            </div>
+            
+           
+                <p style="text-align:justify;"<strong> Objeto:</strong> Análise das estratégias tradutórias e paratextuais do Clube do Livro, com foco na comparação entre traduções, notas editoriais e tratamento de referências culturais, gírias e dialetos, a fim de identificar como o projeto editorial molda a recepção do texto literário.</p><br>
+<div style="text-align: center; margin-bottom: 10pt;">
+<div class="grade-badge alone">NOTA: 10/10</div>
+<div class="img-placeholder">
+                    <img src="https://github.com/alc-etimo/profa_lenita/blob/main/FLM0206-introducao-aos-estudos-tradutologicos-(2017)/comando-de-prova-1.png?raw=true" style="width:100%; height:100%;"/>                    
+                </div>
+
+                <div class="work-excerpt" style="text-align:left;">
+                    <p><strong>Trecho da minha análise:</strong></p>
+                    <p style="text-align:justify;">"Os editores do Clube do Livro buscavam em Charlotte Brönte, em <i>O Professor</i> (1958), referências aos 'rudes cuidados de comer e beber' com a seguinte nota de rodapé: [...] 'este erradíssimo ponto de vista tem feito muitas vítimas; a própria Charlotte Bronté, talvez tenha pago com sua vida o descaso alimentar que se adivinha no que escreve'. [...] Tais conselhos nutricionais revelam uma postura paternalista que ultrapassa a mediação linguística para assumir uma missão civilizatória."</p>
+                </div>
+                
+                <div class="img-placeholder">
+                    <img src="https://github.com/alc-etimo/profa_lenita/blob/main/FLM0206-introducao-aos-estudos-tradutologicos-(2017)/tradutologicos-comentario-1.png?raw=true" style="width:auto; height:auto;"/>
+                </div>
+                
+                <div class="note-box" style="text-align:justify;">
+                    <strong>Por que este trabalho é estratégico para o EMLDS:</strong><br><br>
+<ul>
+<li style="margin-left:25px"><strong>Conexão direta com sua pesquisa atual:</strong> Minha análise de 2017 sobre invisibilidade e ética dialoga com as questões que você pesquisa hoje em "IA, Tradução e Inteligência Humana".</li>
+
+<li style="margin-left:25px"><strong>Sensibilidade crítica comprovada:</strong> Demonstrei capacidade de aplicar teoria tradutológica a contextos contemporâneos, habilidade essencial para pesquisar IA linguística.</li>
+                    
+<li style="margin-left:25px"><strong>Ponte teórico-prática:</strong> Já em 2017 eu fazia a ligação entre conceitos teóricos (Venuti) e aplicações tecnológicas (tradução automática).</li>
+                    
+<li style="margin-left:25px"><strong> Excelência acadêmica:</strong> Bom desempenho em disciplina fundamental da área.</li>
+</ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="work-card">
+            <div class="work-header">
+                <div class="work-title">3.1.2. Comparação da tradução de excertos do mesmo tradutor</div>
+                <div class="work-date">Junho 2017</div>
+            </div>
+            
+           
+                <strong> Objeto:</strong> Estratégias contrastivas de tradução: estrangeirização vs. domesticação na recriação de registro, dialeto e referências culturais em dois excertos atribuídos ao mesmo tradutor.<br><br>
+<div style="text-align: center; margin-bottom: 10pt;">
+<div class="grade-badge alone">NOTA: 10/10</div>
+
+
+<div class="click-hint">
+           <svg class="hand-icon" viewBox="0 0 24 24" >
+                <path d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M7,9l1.41,1.41L11,7.83V16h2V7.83l2.59,2.58L17,9l-5-5L7,9z"/>
+            </svg>
+            Clique nas imagens para vê-las em maior resolução
+        </div>
+
+
+<div class="img-placeholder">
+                   <a href="https://github.com/alc-etimo/profa_lenita/blob/main/FLM0206-introducao-aos-estudos-tradutologicos-(2017)/tradutologicos-comando-2-1.png?raw=true" target="_blank"> <img src="https://github.com/alc-etimo/profa_lenita/blob/main/FLM0206-introducao-aos-estudos-tradutologicos-(2017)/tradutologicos-comando-2-1.png?raw=true" style="width:100%; height:100;"/></a>
+                </div>
+
+<div class="img-placeholder">
+                 <a href="https://github.com/alc-etimo/profa_lenita/blob/main/FLM0206-introducao-aos-estudos-tradutologicos-(2017)/tradutologicos-comando-2-2.png?raw=true" target="_blank">   <img src="https://github.com/alc-etimo/profa_lenita/blob/main/FLM0206-introducao-aos-estudos-tradutologicos-(2017)/tradutologicos-comando-2-2.png?raw=true" style="width:100%; height:100;"/></a>
+                </div>
+
+
+                <div class="work-excerpt" style="text-align:left;">
+                    <p><strong>Trecho da minha análise:</strong></p>
+                    <p style="text-align:justify;">Os pontos que mais diferenciam os dois textos são o <span class="highlight">tipo de linguagem escolhido e o contexto cultural-geográfico trabalhado pelo tradutor.</span> No excerto 1 é observado o uso da linguagem que <span class="highlight">mais se aproxima da escrita, formal,</span> menos voltada ao coloquialismo e dentro dos padrões da norma culta – evidenciado, por exemplo, pela preferência do verbo “haver” ao verbo “ter” (“houve aqui um senhor-dos-diques”, “haviam escrito”) e pelo uso da ênclise em “dirigiu-me”, “apressou-se” e “mostrara-se”. <span class="highlight">Já no excerto 2, temos o exato oposto,</span> visto que é possível identificar um caráter mais informal e um vocabulário mais semelhante àquele falado, além de <span class="highlight">marcas de oralidade,</span> [...] por exemplo, no uso de contrações e abreviações como “pra” (para), “pro” (para o), “dês” (desde), “seo” (senhor) e “ce” (você) e expressões coloquiais como “as gentes”, “seo doutor” e “apois”.</p>
+                </div>
+                
+                <div class="img-placeholder">
+                   <img src="https://github.com/alc-etimo/profa_lenita/blob/main/FLM0206-introducao-aos-estudos-tradutologicos-(2017)/tradutologicos-comentario-2.png?raw=true" style="width:auto; height:auto;"/>
+                </div>
+                
+                <div class="note-box" style="text-align:justify;">
+                    <strong>Relevância para o mestrado:</strong><br>
+
+<p style="text-align:justify;">O trabalho mobiliza análise contrastiva, variação linguística, registro e ética da tradução, <span class="highlight">antecipando problemas de normalização, apagamento cultural e viés em sistemas de IA.</span> Demonstra capacidade de avaliar decisões tradutórias como curadoria de dados linguísticos, competência central para Linguistic Data Science, LLMs e governança linguística no EMLDS.</p></div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+    <section id="analise-contrastiva">
+        <h2 style="font-size:16px;">🔍 3.2. FLM0283 – Tradução: Análise Contrastiva Inglês-Português</h2>
+        
+        <p style="font-style: normal; color: #555; margin-bottom: 15pt; text-align:justify;">
+            Estudo aprofundado das diferenças estruturais entre inglês e português nos níveis micro e macrotextual, formando a base para minha análise de sistemas de NLP hoje.
+        </p>
+
+        <div class="work-card">
+            <div class="work-header">
+                <div class="work-title">Tradução com Adaptação Cultural: "No more FOMO"</div>
+                <div class="work-date">Maio 2017</div>
+            </div>
+            <div class="work-content">
+                <p><strong>Objeto:</strong> Tradução do capítulo "NO MORE FOMO: OVERCOMING THE FEAR OF MISSING OUT", com adaptação criativa de referências culturais e manutenção do tom irônico.</p>
+                
+                <div style="text-align: center; margin: 10pt 0;">
+                    <div class="grade-badge alone" style="font-size: 9pt; padding: 5pt 14pt;">
+                        NOTA: 9,9
+                    </div>
+                </div>
+                
+                <div class="img-placeholder">
+                    <img src="https://github.com/alc-etimo/profa_lenita/blob/main/FLM0283-traducao-analise-contrastiva-ingles-portugues-(2017)/comando-prova-fomo.png?raw=true" style="width:100%; height:100%;"/>
+                </div>
+                
+                                
+                <div class="img-placeholder">
+                    <img src="https://github.com/alc-etimo/profa_lenita/blob/main/FLM0283-traducao-analise-contrastiva-ingles-portugues-(2017)/overcoming-fomo-original.png?raw=true" style="width:100%; height:100%;"/>
+                </div>
+
+<div class="work-excerpt">
+                    <p><strong>Minhas escolhas tradutórias destacadas:</strong></p>
+                    <p><em>Original:</em> "NO MORE FOMO: OVERCOMING THE FEAR OF MISSING OUT"<br>
+                    <em>Minha tradução:</em> "CHEGA DE MEFFO: superando o Medo de Ficar por Fora"<br><br>
+                    
+                    <em>Original:</em> "I'm thinking about writing another book"<br>
+                    <em>Minha tradução:</em> "Tô pensando em escrever outro livro"<br><br>
+                    
+                    <em>Original:</em> "I rule!"<br>
+                    <em>Minha tradução:</em> "Eu que mando aqui!"<br><br>
+                    
+                    <em>Correção da professora:</em> "criou o mundo" → <span class="highlight">"criei o mundo"</span> (mantendo a primeira pessoa do original)</p>
+                </div>
+                </div>
+
+<div class="img-placeholder">
+                    <img src="https://github.com/alc-etimo/profa_lenita/blob/main/FLM0283-traducao-analise-contrastiva-ingles-portugues-(2017)/chega-de-meffo-29-30.png?raw=true" style="width:100%; height:100%;"/>
+                </div>
+                
+                <div class="note-box" style="text-align:justify;">
+                    <strong>Relevância para o mestrado:</strong> <p style="text-align:justify;">A prática de <span class="highlight">adaptação cultural criativa</span> ("FOMO" → "MEFFO") e <span class="highlight">manutenção de registro</span> (tom informal de Deus no Facebook) é exatamente a competência necessária para avaliar e treinar sistemas de tradução automática, identificando onde algoritmos falham em capturar nuances culturais e tom. A atenção ao detalhe (correção de pessoa verbal) mostra rigor técnico.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<section id="traducao-ingles">
+        <h2 style="font-size:16px;">🔍 3.3. FLM0288 – Introdução à Prática de Tradução do Inglês</h2>
+        
+        <p style="font-style: italic; color: #555; margin-bottom: 15pt;">
+            Bases práticas da tradução com foco em adequação estilística e resolução de problemas tradutórios em textos narrativos e literários.
+        </p>
+
+
+
+
+        <div class="work-card">
+            <div class="work-header">
+                <div class="work-title">3.3.1. Seminário: Tradução de Microcontos</div>
+                <div class="work-date">Novembro 2017</div>
+            </div>
+            <div class="work-content">
+                <p><strong>Objeto:</strong> Estratégias contrastivas de tradução literária em minicontos, comparando localização cultural radical e manutenção de efeitos sonoros e rítmicos, a partir de dois textos breves com forte carga pragmática.</p>
+                
+                <div style="text-align: center; margin: 10pt 0;">
+                    <div class="grade-badge alone" style="font-size: 9pt; padding: 5pt 14pt;">
+                        NOTA: 10/10
+                    </div>
+                </div>
+                
+                <div class="img-placeholder">
+                      <img src="https://github.com/alc-etimo/profa_lenita/blob/main/FLM0288-introducao-a-pratica-de-traducao-do-ingles-(2017)/typcast-estereotipo.png?raw=true" style="width:100%; height:100%;"/>
+                </div>
+                
+<div class="img-placeholder">
+                    <img src="https://github.com/alc-etimo/profa_lenita/blob/main/FLM0288-introducao-a-pratica-de-traducao-do-ingles-(2017)/typecast-estereotipo-dicionario.png?raw=true" style="width:100%; height:100%;"/>
+                </div>
+
+                <div class="work-excerpt">
+                    <p style="text-align:justify;"><strong>Síntese da abordagem:</strong> A tradução de "Typecast" prioriza <span class="highlight">localização cultural e equivalência pragmática,</span> substituindo referências socioculturais norte-americanas por marcadores reconhecíveis no contexto brasileiro. A estratégia segue <span class="highlight">princípios de domesticação (Venuti),</span> preservando o efeito comunicativo – humor, julgamento social e oralidade – mesmo com perda deliberada de literalidade. O <span class="highlight">foco desloca-se do léxico para a função discursiva,</span> evidenciando consciência de registro, variação diastrática e adequação ao público-alvo.</p>
+                </div>
+                
+                
+                
+ <div class="img-placeholder">
+                    <img src="https://github.com/alc-etimo/profa_lenita/blob/main/FLM0288-introducao-a-pratica-de-traducao-do-ingles-(2017)/evening-surprise-surpresa-noturna.png?raw=true" style="width:100%; height:100%;"/>
+                </div>
+
+<div class="work-excerpt">
+                    <p style="text-align:justify;"><strong>Síntese da abordagem:</strong> Em "Evening Surprise", a tradução privilegia a <span class="highlight">manutenção do efeito estético,</span> com atenção a <span class="highlight">aliteração</span>, <span class="highlight">assonância</span> e <span class="highlight">ritmo narrativo</span>. A escolha lexical busca reproduzir a progressão sensorial do texto-fonte, preservando o impacto do desfecho. A estratégia aproxima-se de uma <span class="highlight">equivalência formal-funcional</span>, articulando <span class="highlight">estilo</span>, <span class="highlight">prosódia</span> e <span class="highlight">efeito de leitura</span>, em consonância com abordagens de Jakobson e Hatim & Mason.</p>
+                </div>
+
+                <div class="note-box">
+                    <strong>Relevância para o mestrado:</strong>
+<br><br>
+<ul>
+<li style="margin-left:25px;">Demonstram tomada de decisão linguística baseada em função, não em literalidade.</li>
+
+<li style="margin-left:25px;">Evidenciam capacidade de modelar critérios tradutórios conforme contexto (cultural vs. estético).</li>
+
+<li style="margin-left:25px;">Dialogam com limites da IA generativa na captura de pragmática e estilo, parte do EMLDS.</li>
+
+<li style="margin-left:25px;">Conectam Linguística Aplicada e Ética da Tradução, eixos centrais da sua pesquisa.</li></ul>
+                
+            </div>
+        </div>
+</div>
+
+
+
+        <div class="work-card">
+            <div class="work-header">
+                <div class="work-title">3.3.2. Versão de "Cantiga de Esponsais", de Machado de Assis</div>
+                <div class="work-date">Novembro 2017</div>
+            </div>
+            <div class="work-content">
+                <p style="text-align:justify;"><strong>Objeto:</strong> Versão literária PT→EN de prosa machadiana, com foco em <span class="highlight">registro</span>, <span class="highlight">ironia discursiva</span> e <span class="highlight">equilíbrio entre literalidade e efeito</span>, analisando limites semânticos e pragmáticos da equivalência em tradução literária.</p>
+                
+                <div style="text-align: center; margin: 10pt 0;">
+                    <div class="grade-badge alone" style="font-size: 9pt; padding: 5pt 14pt;">
+                        NOTA: 10/10
+                    </div>
+                </div>
+                
+<div class="click-hint">
+           <svg class="hand-icon" viewBox="0 0 24 24" >
+                <path d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M7,9l1.41,1.41L11,7.83V16h2V7.83l2.59,2.58L17,9l-5-5L7,9z"/>
+            </svg>
+            Clique na imagem para vê-la em maior resolução
+        </div>
+
+                <div class="img-placeholder">
+                    <a href="https://github.com/alc-etimo/profa_lenita/blob/main/FLM0288-introducao-a-pratica-de-traducao-do-ingles-(2017)/comando-prova-2.png?raw=true" target="_blank">  <img src="https://github.com/alc-etimo/profa_lenita/blob/main/FLM0288-introducao-a-pratica-de-traducao-do-ingles-(2017)/comando-prova-2.png?raw=true" style="width:100%; height:100%;"/></a>
+                </div>
+                
+                
+                <div class="img-placeholder">
+                    <img src="https://github.com/alc-etimo/profa_lenita/blob/main/FLM0288-introducao-a-pratica-de-traducao-do-ingles-(2017)/prova-2-machado-original.png?raw=true" style="width:100%; height:100%;"/>
+                </div>
+                
+ <div class="img-placeholder">
+                    <img src="https://github.com/alc-etimo/profa_lenita/blob/main/FLM0288-introducao-a-pratica-de-traducao-do-ingles-(2017)/prova-2-machado-resposta-comentada.png?raw=true" style="width:100%; height:100%;"/>
+                </div>
+
+
+<div class="work-excerpt">
+                    <p><strong>Síntese da análise e comentários seus:</strong></p>
+<p style="text-align:justify;">A tradução exigiu decisões precisas de <span class="highlight">registro e controle semântico</span>, típicas da prosa machadiana. Optou-se por um inglês literário capaz de preservar a ironia e o ritmo psicológico do narrador, sem recorrer à simplificação estilística.
+<br><br>
+Seus comentários reforçam a importância da <span class="highlight">adequação lexical baseada no uso</span>. A observação sobre "caught" (sugerindo "had") evidencia limites de aceitabilidade semântica no inglês, enquanto a crítica a "ordeal" aponta para a necessidade de calibrar a <span class="highlight">intensidade semântica</span>, evitando reforço excessivo em relação ao “incômodo” do original.</p>
+<br>
+<table>
+<tr>
+<td>
+<img src="https://github.com/alc-etimo/profa_lenita/blob/main/FLM0288-introducao-a-pratica-de-traducao-do-ingles-(2017)/comentario-caught-versao-machado.png?raw=true" style="width:100%; height:100%;"/></td>
+<td>
+<img src="https://github.com/alc-etimo/profa_lenita/blob/main/FLM0288-introducao-a-pratica-de-traducao-do-ingles-(2017)/comentario-ordeal-versao-machado.png?raw=true" style="width:100%; height:100%;"/></td></tr></table>
+<br>
+<p style="text-align:justify;">Esses ajustes refinam a tradução no eixo da <span class="highlight">precisão e proporcionalidade semântica</span>, sem comprometer a estratégia discursiva adotada.</p>
+                </div>
+                
+
+
+                <div class="note-box">
+                    <strong>Relevância para o mestrado:</strong><br><br>
+<ul>
+<li style="margin-left:25px;">Demonstra competência em tradução bidirecional (PT→EN) com texto literário complexo.</li>
+
+<li style="margin-left:25px;">Evidencia capacidade de avaliar escolhas lexicais sob critérios de uso e intensidade, centrais para avaliação de outputs de IA.</li>
+
+<li style="margin-left:25px;">Conecta prática tradutória a problemas típicos de modelos de linguagem: sobrecarga semântica, escolhas plausíveis porém inadequadas.</li>
+
+<li style="margin-left:25px;">Alinha-se à pesquisa em qualidade linguística, ética da equivalência e curadoria de dados multilíngues.</li></ul>
+            </div>
+        </div>
+
+
+    </section>
+
+
+   
+    <section id="ti">
+        <h2>💻 4. Graduação em Tecnologia da Informação (2007–2009)</h2>
+        
+        <div class="ti-connection">
+            <h3 style="margin-top: 0; color: #003366;">Por que a formação em TI é essencial para pesquisar IA e Linguística?</h3>
+            
+            <p style="text-align:justify;">Sua pesquisa atual exige compreensão tanto dos aspectos humanísticos quanto dos técnicos da mediação linguística. Minha formação técnica me prepara para dialogar com ambas as dimensões:</p><br>
+            
+            <p><strong>🔹 Minhas competências técnicas (Graduação em TI):</strong></p>
+            <ul>
+                <li style="margin-left:10px;"><strong>Lógica Computacional:</strong> Base para entender como algoritmos de NLP tomam decisões</li>
+                <li style="margin-left:10px;"><strong>Bancos de Dados:</strong> Essencial para trabalhar com corpora linguísticos e recursos lexicais</li>
+                <li style="margin-left:10px;"><strong>Estruturas de Dados:</strong> Para modelar e analisar dados linguísticos complexos</li>
+                <li style="margin-left:10px;"><strong>Sistemas:</strong> Compreensão do ecossistema tecnológico onde ferramentas de tradução/IA operam</li>
+            </ul>
+            <br>
+            <p><strong>🔹 Conexão com sua pesquisa atual e o EMLDS:</strong></p>
+            <ul>
+                <li style="margin-left:10px;"><strong>"IA, Tradução e Inteligência Humana"</strong> → Capacidade de articular crítica tradutológica com funcionamento técnico de modelos de linguagem</li>
+                <li style="margin-left:10px;"><strong>"Autoria e Responsabilidade em Ambientes Algorítmicos":</strong> → Entendimento de como decisões humanas são codificadas, automatizadas e escaladas</li>
+                <li style="margin-left:10px;"><strong>"Linguística Contrastiva & Ética da Tradução":</strong> → Uso de dados e sistemas para evitar neutralização cultural, apagamento dialetal e vieses normativos</li>
+		   <li style="margin-left:10px;"><strong>Ensino de Tradução na Era da IA:</strong> → Potencial para desenvolver abordagens pedagógicas que integrem crítica humanística e literacia digital no EMLDS</li>
+            </ul>
+        </div>
+    </section>
+
+    
+    <section id="experiencia">
+        <h2>🏢 5. Experiência Profissional & Casos Paradigmáticos</h2>
+        
+        <div class="experience-summary" style="text-align:justify;">
+            <h3 style="margin-top: 0;">Aplicação Prática da Interseção Linguística + Dados + IA</h3>
+            
+            <p>Desde a graduação, atuei em múltiplos contextos aplicando teoria linguística e análise de dados a problemas reais de comunicação mediada por tecnologia:</p>
+            
+            <ul>
+                <li><strong>Governança Terminológica:</strong> Criação e gestão de taxonomias com 700+ termos técnicos, aplicando relações semânticas (hierarquia/sinonímia) em escala corporativa.</li>
+                <li><strong>Avaliação de Alucinações em IA:</strong> Beta testing e análise de <i>outputs</i> de sistemas de geração de conteúdo, identificando vieses e falhas éticas em modelos de linguagem.</li>
+                <li><strong>Anotação de Dados Linguísticos:</strong> Curadoria e anotação de <i>datasets</i> em larga escala para treinamento e avaliação de modelos de NLP.</li>
+                <li><strong>Localização Cultural:</strong> Gestão de projetos de localização, adaptação de conteúdo para múltiplos mercados e gêneros, garantindo adequação cultural e linguística.</li>
+                <li><strong><i>Speech Analytics</i> & Processamento de Fala:</strong> Análise de sistemas que interpretam intenção do cliente a partir de gravações, trabalhando na interseção entre fonética, pragmática e <i>machine learning</i>.</li>
+                <li><strong>Sistemas de Metadados e Taxonomias:</strong> Desenvolvimento de estruturas de organização da informação que facilitam a recuperação e análise de dados textuais.</li>
+            </ul>
+        </div>
+        
+        <div class="note-box" style="text-align:justify;">
+            <strong>Ponte teoria-prática:</strong> Esta experiência diversificada me permitiu <span class="highlight">operacionalizar conceitos teóricos</span> aprendidos com você (ética, poder linguístico, adaptação cultural) em <span class="highlight">soluções técnicas abrangentes</span>. Lido diariamente com os dilemas éticos da "tradução" feita por sistemas de IA, nosso foco em comum.
+        </div>
+        
+        <h3 style="margin-top: 30pt;">🔬 CASOS DE ESTUDO: PONTES ENTRE A ÉTICA DA TRADUÇÃO E A IA</h3>
+        
+        <div class="case-study-grid">
+            <div class="case-study-card">
+                <h4 style="text-align:center;">1. DA FALA <br> AO SISTEMA</h4>
+                <div class="challenge" style="text-align:justify;">
+                    <span style="font-style:normal;"><strong>Desafio:</strong> 700+ termos técnicos sem padronização em empresa multinacional, causando inconsistência em manuais, <i>chatbots</i> e treinamentos.</span>
+                </div>
+                <div class="solution" style="text-align:justify;">
+                    <strong>Minha atuação:</strong> Implementei sistema de governança baseado em corpus de falas entre operadores e clientes, criando glossário central que serviu de referência para todas as áreas.
+                </div>
+                <div class="academic-ref" style="text-align:justify;">
+                    <strong>Referência Acadêmica:</strong><br>
+                    AUBERT, F. H. (1998). <em>Modalidades de tradução: teoria e resultados.</em><br>
+                    <em>"A tradução técnica demanda padronização terminológica que respeite as convenções do campo especializado..."</em>
+                </div>
+                <div class="connection" style="height:321px;">
+                    <strong>⚡ CONEXÕES:</strong><br>
+                    • <span class="highlight">Com a Profa. Lenita:</span> Discussões sobre normas técnicas e padronização<br><br>
+                    • <span class="highlight">Com o EMLDS:</span> Disciplinas "Theories in Terminology" e "Standards Applied to Lexicographic Data"<br><br>
+                    • <span class="highlight">Pessoal:</span> Criação de vocabulário controlado para multinacional
+                </div>
+<div class="read-link" style="text-align:center;"><a href="https://alc-etimo.github.io/profa_lenita/caso-1.html" target="_blank">Ler o caso completo →</a></div>
+            </div>
+            
+            <div class="case-study-card">
+                <h4 style="text-align:center;">2. ALUCINAÇÕES ÉTICAS EM IA</h4>
+                <div class="challenge" style="text-align:justify;">
+                    <span style="font-style:normal;"><strong>Desafio:</strong> <i>Outputs</i> de IA em plataformas de <i>streaming</i> com viés, desinformação ou tom inadequado, incluindo casos como "amara.org".</span>
+                </div>
+                <div class="solution" style="text-align:justify;">
+                    <strong>Minha atuação:</strong> Desenvolvi protocolos de avaliação e métricas de "honestidade algorítmica" para auditar conteúdos gerados, identificando e categorizando falhas éticas.</p>
+                </div>
+                <div class="academic-ref" style="text-align:justify;">
+                    <strong>Referência Acadêmica:</strong><br>
+                    VENUTI, L. (1995). <br><em>The translator's invisibility.</em><br>
+                    <em>"A tradução pode ser um ato de violência etnocêntrica quando apaga a alteridade do texto fonte..."</em>
+                </div><br><br>
+                <div class="connection" style="height:321px;">
+                    <strong>⚡ CONEXÕES:</strong><br>
+                    • <span class="highlight">Com a Profa. Lenita:</span> Pesquisa atual em "IA, Tradução e Inteligência Humana"<br><br>
+                    • <span class="highlight">Com o EMLDS:</span> Disciplinas "Language Models" e "Ethics in AI"<br><br>
+                    • <span class="highlight">Pessoal:</span> Aplicação prática da ética da tradução que você me ensinou
+                </div>
+<div class="read-link" style="text-align:center;"><a href="https://alc-etimo.github.io/profa_lenita/caso-2.html" target="_blank">Ler o caso completo →</a></div>
+            </div>
+            
+            
+            <div class="case-study-card">
+                <h4 style="text-align:center;">3. FIDELIDADE VS. PADRONIZAÇÃO</h4>
+                <div class="challenge" style="text-align:justify;">
+                   <span style="font-style:normal;"> <strong>Desafio:</strong> Processos manuais e inconsistentes de pós-edição (MTPE) e garantia de qualidade (LQA) em projetos de localização de larga escala.</span>
+                </div>
+                <div class="solution" style="text-align:justify;">
+                    <strong>Minha atuação:</strong> Criei sistemas de auditoria linguística, protocolos de análise e métricas de gravidade, transformando julgamentos subjetivos em dados acionáveis.
+                </div>
+                <div class="academic-ref" >
+                    <strong>Referência Acadêmica:</strong><br>
+                    <span style="font-size:12.5px;">HATIM, B. & MASON, I. (1990).</span><br> <span style="text-align:left; font-size:13px;"><em>Discourse and the translator.</em></span><br>
+                   <span style="text-align:justify;"> <em>"O tradutor toma decisões com base no contexto discursivo e na função pragmática do texto..."</em></span>
+                </div><br><br>
+                <div class="connection">
+                    <strong>⚡ CONEXÕES:</strong><br>
+                    • <span class="highlight">Com a Profa. Lenita:</span> Aplicação prática da análise de erro e critérios de avaliação de tradução<br><br>
+                    • <span class="highlight">Com o EMLDS:</span> Disciplinas "Theory and Methods of Linguistic Annotation" e "Project Management"<br><br>
+                    • <span class="highlight">Competência:</span> Engenharia de processos linguísticos escaláveis
+                </div>
+            
+<div class="read-link" style="text-align:center;"><a href="https://alc-etimo.github.io/profa_lenita/caso-3.html" target="_blank;">Ler o caso completo →</a></div>
+            </div>
+        </div>
+        
+        <div class="note-box critical" style="margin-top: 20pt;">
+            <strong>Progressão dos Casos:</strong> Esta trilogia mostra a evolução do meu pensamento: da <span class="highlight">estruturação de dados linguísticos</span> (Caso 1) à aplicação de <span class="highlight">princípios éticos críticos</span> (Caso 2), culminando na <span class="highlight">engenharia de processos escaláveis</span> (Caso 3). Juntos, eles representam exatamente o perfil que o EMLDS busca: alguém que entende tanto a teoria humanística quanto a implementação técnica.
+        </div>
+    </section>
+
+    <section id="conexoes">
+        <h2>🔗 6. Conexões com a Equipe do EMLDS</h2>
+        
+        <p style="font-style: italic; color: #555; margin-bottom: 20pt;">
+            Minha formação híbrida e experiência profissional me conectam diretamente com as linhas de pesquisa dos professores do programa, especialmente na interseção entre tradução, terminologia e ética em IA:
+        </p>
+        
+        <div class="professor-grid">
+            <div class="professor-card">
+                <h4>Profa. Rute Costa</h4>
+                <p style="font-size: 9.5pt; color: #666; margin-bottom: 8pt;">
+                    NOVA FCSH | Centro de Linguística (CLUNL)<br>
+                    <a href="https://www.clunl.fcsh.unl.pt/en/members/rute-costa/" style="font-size: 8.5pt; color: #003366;">Perfil acadêmico ↗</a>
+                </p>
+                
+                <div class="research">
+                    <strong>Pesquisa:</strong><br>
+                    • Terminologia e Ontologias<br>
+                    • Padrões ISO para dados linguísticos (ISO TC37)<br>
+                    • Lexicografia e recursos lexicais digitais
+                </div>
+                
+                <div class="connection">
+                    <strong>⚡ EXPERIÊNCIA DIRETA:</strong><br>
+                    <p style="text-align:justify;">Cinco anos de <span class="highlight">governança terminológica</span> em ambiente corporativo, aplicando na prática os princípios de padronização e estruturação que ela pesquisa.</p>
+                </div>
+            </div>
+            
+            <div class="professor-card">
+                <h4>Prof. Jorge Gracia del Río</h4>
+                <p style="font-size: 9.5pt; color: #666; margin-bottom: 8pt;">
+                    Universidad Zaragoza | I3A Institute<br>
+                    <a href="https://jogracia.url.ph/web/" style="font-size: 8.5pt; color: #003366;">Perfil acadêmico ↗</a>
+                </p>
+                
+                <div class="research">
+                    <strong>Pesquisa:</strong><br>
+                    • Dados Linguísticos Conectados<br>
+                    • Acesso crosslingual à informação científica<br>
+                    • Grafos de conhecimento multilíngues
+                </div>
+                
+                <div class="connection">
+                    <strong>⚡ PONTE TÉCNICA:</strong><br>
+                    <p style="text-align:justify;">Minha experiência com <span class="highlight">modelagem de dados linguísticos</span> e <span class="highlight">estruturação de taxonomias</span> é a base prática para trabalhar com LLD e ontologias.</p>
+                </div>
+            </div>
+            
+            <div class="professor-card">
+                <h4>Profa. Raquel Amaro</h4>
+                <p style="font-size: 9.5pt; color: #666; margin-bottom: 8pt;">
+                    NOVA FCSH | Centro de Linguística (CLUNL)<br>
+                    <a href="https://www.cienciavitae.pt/portal/en/1515-3C52-D88C" style="font-size: 8.5pt; color: #003366;">Perfil acadêmico ↗</a>
+                </p>
+                
+                <div class="research">
+                    <strong>Pesquisa:</strong><br>
+                    • Linguística Computacional e NLP<br>
+                    • Lexicologia e Lexicografia Computacional<br>
+                    • Recursos e ferramentas para línguas
+                </div>
+                
+                <div class="connection">
+                    <strong>⚡ BASE TEÓRICO-COMPUTACIONAL:</strong><br>
+                    <p style="text-align:justify;">Minha formação dupla me prepara para as disciplinas técnicas do programa e para pesquisar na interseção entre linguística teórica e métodos computacionais.</p>
+                </div>
+            </div>
+            
+            <div class="professor-card">
+                <h4>Prof. Marco Passarotti</h4>
+                <p style="font-size: 9.5pt; color: #666; margin-bottom: 8pt;">
+                    Università Cattolica | CIRCSE Research Centre<br>
+                    <a href="https://docenti.unicatt.it/ppd2/it/docenti/14144/marco-carlo-passarotti/profilo" style="font-size: 8.5pt; color: #003366;">Perfil acadêmico ↗</a>
+                </p>
+                
+                <div class="research">
+                    <strong>Pesquisa:</strong><br>
+                    • Anotação linguística em larga escala<br>
+                    • Modelos de Língua (LLMs) e línguas clássicas<br>
+                    • Projeções arbóreas e <i>parsing</i>
+                </div>
+                
+                <div class="connection">
+                    <strong>⚡ HABILIDADES PRÁTICAS:</strong><br>
+                    <p style="text-align:justify;">Experiência em <span class="highlight">sistemas de anotação</span> e <span class="highlight">curadoria de dados textuais</span> em ambiente corporativo, lidando com desafios de escala e consistência.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="note-box critical" style="margin-top: 20pt; text-align: justify;">
+            <strong>Profa. Lenita e o EMLDS:</strong><br>
+            Seu papel foi fundamental em semear meu interesse pela <span class="highlight">ética na mediação linguística</span>. Hoje, sua pesquisa sobre <span class="highlight">IA e Tradução</span> é o quadro teórico perfeito para a experiência prática que acumulei. <span class="highlight">Sua carta validará essa ponte única</span> entre uma formação humanística crítica (USP/2017) e uma aplicação técnica (mercado/2020-2025), mostrando ao comitê do EMLDS que minha candidatura representa exatamente a integração que o programa busca.
+        </div>
+    </section>
+
+    <section id="documentos">
+        <h2>📎 7. Documentação Anexa</h2>
+        
+        <div class="note-box">
+            <strong>Professora, além deste dossiê, disponibilizo para sua consulta:</strong><br><br>
+            
+            <ul>
+		<li style="margin-left:25px;"><a href="https://github.com/alc-etimo/profa_lenita/blob/main/historico-escolar-ba-licenciatura-ingles-e-portugues-(USP).pdf?raw=true" target="_blank">Histórico Escolar USP completo</a></li>
+            <li style="margin-left:25px;"> <a href="https://github.com/alc-etimo/profa_lenita/blob/main/historico-escolar-tecnologia-em-gestao-da-tecnologia-da-informacao-(FMR).pdf?raw=true" target="_blank;">Histórico Escolar TI completo</a></li>
+	      <li style="margin-left:25px;"> <a href="https://github.com/alc-etimo/profa_lenita/blob/main/carta-de-comprovante-de-proficiencia-em-ingles-(2018).jpg?raw=true" target="_blank">Carta de Proficiência em Inglês (2018) - digitalizada</a></li>
+		<li style="margin-left:25px;"><a href="https://alc-etimo.github.io/profa_lenita/cv-ariane-lesnyak-castello.html" target="_blank">CV atualizado com experiência profissional detalhada</li>
+		<a href="https://alc-etimo.github.io/profa_lenita/codigo-mae-case-studies.html" target="_blank;"><li style="margin-left:25px;">Portfólio com os três estudos de casos aprofundados</a></li>
+		<a href="https://alc-etimo.github.io/profa_lenita/insumos-para-carta-de-recomendacao.html" target="_blank"><li style="margin-left:25px;">Documento com <strong>modelos prontos</strong> e <strong>sugestões</strong> de pontos para destacar na carta</li></a>
+            <li style="margin-left:25px;">Vídeos que podem ajudar na redação da carta:</li>
+	<ul>
+			<li style="margin-left:35px;">
+				<a href="https://www.youtube.com/watch?v=n1thpoBGXqU" target="_blank" style="color: #003366;">What makes a good college recommendation letter? | Bates College</a></li>
+			<li style="margin-left:35px;">
+				<a href="https://www.youtube.com/watch?v=nDRLs1llh2U" target="_blank" style="color: #003366;">Tips on Letters of Reference | Stanford Graduate School of Business</a></li>
+			<li style="margin-left:35px;">
+				<a href="https://www.youtube.com/watch?v=Zcpwdcvz3KE" target="_blank" style="color: #003366;">Elements of a strong recommendation letter | YouTube College Admissions</a></li>
+            
+        </div>
+    </section>
+
+    <section id="porque">
+        <h2>🎯 8. Do Apoio de 2017 ao Desafio de 2026</h2>
+         
+        <div class="final-argument">
+            <h2 style="color: #003366; margin-bottom: 10pt; border: none;">Professora Lenita,</h2>
+            
+            <p style="text-align:justify;">Em 2018, quando conversamos sobre iniciação científica, intercâmbio e carreira acadêmica, você não apenas me orientou – <strong>tomou uma ação concreta</strong>. Redigiu uma carta de proficiência em inglês atestando minhas capacidades linguísticas para que eu pudesse me candidatar a programas internacionais pela FFLCH/USP.</strong></p>
+            <div class="confidence-box">
+		<img src="https://github.com/alc-etimo/profa_lenita/blob/main/carta-de-comprovante-de-proficiencia-em-ingles-(2018).jpg?raw=true" style="width:100%; height:100%;"/></div>
+
+          <p style="text-align:justify;">Na época, essa carta representava o primeiro aval institucional de que minhas ambições faziam sentido, e isso teve um peso enorme. Hoje, ela simboliza algo maior: <strong>a continuidade de um compromisso acadêmico</strong>.</p>
+
+	    <p style="text-align:justify;">Quase dez anos depois, volto a você porque minha trajetória continua sendo, no fundo, a mesma conversa que começamos lá atrás, agora transformada pela bagagem do mercado de trabalho. O que era interesse por tradução humana virou expertise em "tradução" algorítmica: <i>chatbots</i> que interpretam intenção, modelos de linguagem que geram textos, aplicativos de reconhecimento de voz que decodificam emoção – ao avaliar sistemas de IA, sempre mantenho as mesmas considerações sobre ética e poder linguístico que aprendi em sala com você.</p>
+ 
+	    <p style="text-align:justify;">Por isso, este não é um pedido qualquer de carta de recomendação. É um pedido para <strong>renovar uma confiança</strong> – não na aluna de 2017 que queria ver o mundo, mas na profissional de 2025 que quer <strong>mudar a forma como o mundo processa linguagem</strong>.</p>
+
+<p style="text-align:justify;">Sua carta de recomendação não atestará só minhas notas e interesse em pesquisa, mas será o elo que conecta a aluna de 2017 à candidata de 2026, a validade desta trajetória híbrida única que você ajudou a iniciar em 2017 e que pretendo formalizar por meio do <strong>Erasmus Master in Linguistic Data Science</strong>, buscando mediações linguísticas mais éticas, seja entre humanos, seja entre humanos e máquinas.</p>
+
+<p style="text-align:justify;">Agradeço profundamente pela mentoria passada e por considerar este novo capítulo.</p><br>
+<p style="text-align:center;"><i>Com carinho, admiração e respeito,<br>
+<strong>Ariane Lesnyak Castelló</strong></i></p></div>
+
+    </section>
+</body>
+</html>
